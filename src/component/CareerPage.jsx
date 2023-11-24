@@ -7,53 +7,51 @@ import { useEffect } from "react";
 
 function CareerPage() {
   const [toggle, setToggle] = useState(false);
-  console.log(toggle);
 
-  useEffect(() => {
+  function checkToggle() {
     const slider = document.querySelector(".slider");
     const sliderbtn = document.querySelector(".slider-button");
-    slider.addEventListener("click", function(){
-        if (toggle) {
-          slider.classList.remove("active");
-          sliderbtn.innerHTML = "x";
-          setToggle(!toggle);
-          console.log("toggle removed");
-        }else{
-          slider.classList.add("active");
-          sliderbtn.innerHTML = "&#10003;";
-          setToggle(!toggle);
-          console.log("toggle added");
-
-        }
-        // console.log(slider);
+    slider.addEventListener("click", function () {
+      if (toggle) {
+        slider.classList.remove("active");
+        sliderbtn.innerHTML = "x";
+        setToggle(!toggle);
+      } else {
+        slider.classList.add("active");
+        sliderbtn.innerHTML = "&#10003;";
+        setToggle(!toggle);
+      }
     });
-  }, [toggle]);
+  }
 
   return (
     <React.Fragment>
-      <section className="careerHead">
-        <div className="container" id="careerHead">
-          <div className="careerText">
-            <h1>
-              Join Our Dynamic Team <br /> At Veteran Media
-            </h1>
+      <section className="careerTop">
+        <section className="careerHead">
+          <div className="container" id="careerHead">
+            <div className="careerText">
+              <h1>
+                Join Our Dynamic Team <br /> At Veteran Media
+              </h1>
+            </div>
+            <div className="careerImg">
+              <img src={careerImg} alt="vector image" />
+            </div>
+            <div className="searchBar">
+              <input type="text" placeholder="Search..." />
+              <button id="searchBtn">Looking for</button>
+            </div>
           </div>
-          <div className="careerImg">
-            <img src={careerImg} alt="vector image" />
-          </div>
-          <div className="searchBar">
-            <input type="text" placeholder="Search..." />
-            <button id="searchBtn">Looking for</button>
-          </div>
-        </div>
-        <p>
-          Are you passionate about creativity, innovation, and making a
-          significant impact in advertising and branding? At Veteran Media
-          Solutions LLP, We're looking for dynamic individuals to join our
-          dedicated team of professionals.
-        </p>
-        <img id="bar" src={bar} alt="bar" />
+        </section>
+          <p>
+            Are you passionate about creativity, innovation, and making a
+            significant impact in advertising and branding? At Veteran Media
+            Solutions LLP, We're looking for dynamic individuals to join our
+            dedicated team of professionals.
+          </p>
+          <img id="bar" src={bar} alt="bar" />
       </section>
+
       <section className="careerSec sectionPadding">
         <div className="container" id="careerSec">
           <h3>Apply Now to be part of the Veteran Team</h3>
@@ -141,7 +139,7 @@ function CareerPage() {
               ></textarea>
               <div className="formfooter">
                 <div className="left">
-                  <div class="slider">
+                  <div class="slider" onClick={checkToggle}>
                     <div class="slider-button">x</div>
                   </div>
                   <p>

@@ -3,6 +3,7 @@
   height: 100%;
   @include flexrow;
   flex-direction: column;
+  border: 1px solid red;
 
 
   .portHead {
@@ -309,10 +310,6 @@
             }
             @include extraSmallDevice {
               height: 15rem;
-            }
-
-            &.p1 {
-              // background-image: url(../media/jpg/p1.jpg);
             }
             &.p2 {
               background-image: url(../media/jpg/p2.jpg);

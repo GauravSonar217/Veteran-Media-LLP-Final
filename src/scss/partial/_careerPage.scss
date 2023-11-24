@@ -1,165 +1,9 @@
-.careerHead {
+.careerTop {
   width: 100%;
   height: 100%;
   @include flexrow;
   flex-direction: column;
-  //   border: 1px solid rgb(3, 248, 3);
-
-  #careerHead {
-    width: 100%;
-    position: relative;
-    background: #dcf2e7;
-    border-radius: 1.25rem;
-    padding-top: 2rem;
-    padding-bottom: 4rem;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 2rem;
-    margin-bottom: 5rem;
-    @include mediumDevice {
-      grid-template-columns: repeat(1, 1fr);
-      grid-gap: 2rem;
-    }
-    @include smallDevice {
-      grid-template-columns: repeat(1, 1fr);
-      grid-gap: 2rem;
-    }
-    @include extraSmallDevice {
-      grid-template-columns: repeat(1, 1fr);
-      grid-gap: 1rem;
-      padding-bottom: 0rem;
-      margin-bottom: 4rem;
-    }
-    @include mobile {
-      grid-template-columns: repeat(1, 1fr);
-      grid-gap: 1rem;
-      padding-bottom: 0rem;
-    }
-
-    .careerText {
-      @include flexrow;
-      //   border: 1px solid blue;
-      @include largeDevice {
-        justify-content: start;
-      }
-      @include extraLargeDevice {
-        justify-content: start;
-      }
-      h1 {
-        font-size: 3.8rem;
-        font-weight: 500;
-        text-align: left;
-        @include largeDevice {
-          font-size: 3.4rem;
-          text-align: center;
-        }
-        @include mediumDevice {
-          font-size: 3rem;
-          text-align: center;
-        }
-        @include smallDevice {
-          font-size: 2.8rem;
-          text-align: center;
-        }
-        @include extraSmallDevice {
-          font-size: 2rem;
-          text-align: center;
-        }
-        @include mobile {
-          font-size: 1.3rem;
-          text-align: center;
-        }
-      }
-    }
-    .careerImg {
-      @include flexrow;
-      justify-content: end;
-
-      @include mediumDevice {
-        width: 60%;
-        margin: 0 auto;
-        justify-content: center;
-      }
-      @include smallDevice {
-        width: 70%;
-        margin: 0 auto;
-        justify-content: center;
-      }
-      @include extraSmallDevice {
-        width: 100%;
-        height: 80%;
-        margin: 0 auto;
-        justify-content: center;
-      }
-      @include mobile {
-        width: 100%;
-        margin: 0 auto;
-        justify-content: center;
-      }
-      img {
-        height: 100%;
-        @include largeDevice {
-          height: 80%;
-        }
-        @include mediumDevice {
-          height: 80%;
-        }
-        @include smallDevice {
-          height: 80%;
-        }
-        @include extraSmallDevice {
-          height: 70%;
-        }
-        @include mobile {
-          height: 60%;
-        }
-      }
-    }
-    .searchBar {
-      width: 80%;
-      padding: 0.3rem;
-      //   border: 1px solid blue;
-      @include flexrow;
-      justify-content: space-between;
-      background-color: $white;
-      position: absolute;
-      left: 50%;
-      transform: translate(-50%, 0);
-      bottom: -2rem;
-      z-index: 100;
-      border-radius: 0.8rem;
-      box-shadow: 0px 4px 11.6px 0px #d3d3d3;
-      input {
-        width: 50%;
-        height: 100%;
-        padding-left: 1.5rem;
-        font-size: 1.2rem;
-        font-weight: 400;
-        border: none;
-        outline: none;
-        @include extraSmallDevice {
-          width: 35%;
-          padding-left: 1rem;
-          font-size: 0.9rem;
-        }
-      }
-      #searchBtn {
-        font-size: 1.25rem;
-        padding: 0.5em 2em;
-        background-color: #b1df41;
-        border-radius: 0.8rem;
-        @include smallDevice {
-          font-size: 1.1rem;
-        }
-        @include extraSmallDevice {
-          font-size: 0.9rem;
-        }
-        @include mobile {
-          font-size: 0.7rem;
-        }
-      }
-    }
-  }
+  border: 1px solid red;
   p {
     font-size: 1.1rem;
     text-align: center;
@@ -183,6 +27,180 @@
   #bar {
     margin: 1rem 0;
   }
+
+  .careerHead {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    @include flexrow;
+    // flex-direction: column;
+    background: #dcf2e7;
+    margin-bottom: 5rem;
+
+    border: 1px solid rgb(3, 248, 3);
+
+    #careerHead {
+      width: 100%;
+      height: 100%;
+      border-radius: 1.25rem;
+      padding-top: 2rem;
+      padding-bottom: 4rem;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 2rem;
+      // margin-bottom: 5rem;
+      border: 1px solid blue;
+      @include mediumDevice {
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 2rem;
+      }
+      @include smallDevice {
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 2rem;
+      }
+      @include extraSmallDevice {
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 1rem;
+        padding-bottom: 0rem;
+        margin-bottom: 4rem;
+      }
+      @include mobile {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 0rem !important;
+      }
+
+      .careerText {
+        @include flexrow;
+        border: 1px solid blue;
+        @include largeDevice {
+          justify-content: start;
+        }
+        @include extraLargeDevice {
+          justify-content: start;
+        }
+        @include extraSmallDevice {
+          width: 100%;
+        }
+        h1 {
+          font-size: 3.8rem;
+          font-weight: 500;
+          text-align: left;
+          @include largeDevice {
+            font-size: 3.4rem;
+            text-align: center;
+          }
+          @include mediumDevice {
+            font-size: 3rem;
+            text-align: center;
+          }
+          @include smallDevice {
+            font-size: 2.8rem;
+            text-align: center;
+          }
+          @include extraSmallDevice {
+            font-size: 2rem;
+            text-align: center;
+          }
+          @include mobile {
+            font-size: 1.5rem;
+            text-align: center;
+          }
+        }
+      }
+      .careerImg {
+        border: 1px solid red;
+        @include flexrow;
+        justify-content: end;
+
+        @include mediumDevice {
+          width: 60%;
+          margin: 0 auto;
+          justify-content: center;
+        }
+        @include smallDevice {
+          width: 70%;
+          margin: 0 auto;
+          justify-content: center;
+        }
+        @include extraSmallDevice {
+          width: 100%;
+          height: 80%;
+          margin: 0 auto;
+          justify-content: center;
+        }
+        @include mobile {
+          width: 80%;
+          justify-content: center;
+        }
+        img {
+          height: 100%;
+          @include largeDevice {
+            height: 80%;
+          }
+          @include mediumDevice {
+            height: 80%;
+          }
+          @include smallDevice {
+            height: 80%;
+          }
+          @include extraSmallDevice {
+            height: 70%;
+          }
+          @include mobile {
+            justify-content: center;
+            width: 100%;
+            border: 1px solid red;
+          }
+        }
+      }
+      .searchBar {
+        width: 60%;
+        padding: 0.3rem;
+        //   border: 1px solid blue;
+        @include flexrow;
+        justify-content: space-between;
+        background-color: $white;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 0);
+        bottom: -2rem;
+        z-index: 100;
+        border-radius: 0.8rem;
+        box-shadow: 0px 4px 11.6px 0px #d3d3d3;
+        input {
+          width: 50%;
+          height: 100%;
+          padding-left: 1.5rem;
+          font-size: 1.2rem;
+          font-weight: 400;
+          border: none;
+          outline: none;
+          @include extraSmallDevice {
+            width: 35%;
+            padding-left: 1rem;
+            font-size: 0.9rem;
+          }
+        }
+        #searchBtn {
+          font-size: 1.25rem;
+          padding: 0.5em 2em;
+          background-color: #b1df41;
+          border-radius: 0.8rem;
+          border: 1px solid #b1df41;
+          @include smallDevice {
+            font-size: 1.1rem;
+          }
+          @include extraSmallDevice {
+            font-size: 0.9rem;
+          }
+          @include mobile {
+            font-size: 0.7rem;
+          }
+        }
+      }
+    }
+  }
 }
 
 .careerSec {
@@ -196,6 +214,7 @@
     justify-content: start;
     h3 {
       margin-bottom: 1rem;
+      text-align: center;
     }
     p {
       width: 80%;
@@ -211,7 +230,7 @@
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 1rem;
       }
-      @include largeDevice{
+      @include largeDevice {
         padding-top: 2rem;
       }
       .feedbackCont {
@@ -225,7 +244,7 @@
           h4 {
             margin-left: 3rem;
             position: relative;
-            @include extraSmallDevice{
+            @include extraSmallDevice {
               margin: 0;
             }
             &::before {
@@ -235,7 +254,7 @@
               position: absolute;
               top: 50%;
               left: -3rem;
-              @include extraSmallDevice{
+              @include extraSmallDevice {
                 display: none;
               }
             }
@@ -249,14 +268,14 @@
               @include flexrow;
               margin: 0 0.5rem;
               font-size: 1.3rem;
-              @include smallDevice{
+              @include smallDevice {
                 width: 1.5rem;
-                 height: 1.5rem;
+                height: 1.5rem;
               }
-              @include extraSmallDevice{
+              @include extraSmallDevice {
                 width: 1.5rem;
-                 height: 1.5rem;
-                 font-size: 1rem;
+                height: 1.5rem;
+                font-size: 1rem;
               }
             }
             #left {
@@ -273,26 +292,26 @@
           justify-content: space-between;
           align-items: start;
           padding-top: 1.5rem;
-          @include largeDevice{
+          @include largeDevice {
             padding-top: 1.5rem;
           }
-          @include extraSmallDevice{
+          @include extraSmallDevice {
             flex-wrap: wrap;
           }
 
           .emplyeeCont {
             width: 43%;
-           
+
             @include flexrow;
             flex-direction: column;
-            @include extraSmallDevice{
+            @include extraSmallDevice {
               width: 100%;
             }
 
             .employeeBox {
               width: 100%;
               height: 100px;
-            
+
               @include flexrow;
               justify-content: space-between;
               padding: 1rem;
@@ -300,22 +319,22 @@
               background: #fff;
               margin-bottom: 1rem;
               box-shadow: -3px 6px 26.4px -9px rgba(46, 46, 46, 0.15);
-              @include smallDevice{
+              @include smallDevice {
                 padding: 0.2rem 1rem;
               }
-              @include extraSmallDevice{
+              @include extraSmallDevice {
                 padding: 0rem 1rem;
                 border-radius: 0;
               }
 
-              &:first-child{
+              &:first-child {
                 width: 100%;
               }
 
               &:nth-child(2) {
                 opacity: 0.8;
                 box-shadow: -3px 6px 26.4px -9px rgba(46, 46, 46, 0.15);
-                @include extraSmallDevice{
+                @include extraSmallDevice {
                   display: none;
                 }
                 .employeeImg {
@@ -323,7 +342,7 @@
                 }
               }
               &:last-child {
-                @include extraSmallDevice{
+                @include extraSmallDevice {
                   display: none;
                 }
                 opacity: 0.5;
@@ -338,21 +357,21 @@
               .employeeImg {
                 width: 3.5rem;
                 height: 3.5rem;
-               
+
                 border-radius: 50%;
-                @include largeDevice{
+                @include largeDevice {
                   width: 5rem;
                   height: 5rem;
                 }
-                @include mediumDevice{
+                @include mediumDevice {
                   width: 4rem;
                   height: 4rem;
                 }
-                @include smallDevice{
+                @include smallDevice {
                   width: 3.5rem;
                   height: 3.5rem;
                 }
-                @include extraSmallDevice{
+                @include extraSmallDevice {
                   width: 3.5rem;
                   height: 3.5rem;
                 }
@@ -369,16 +388,16 @@
                 flex-direction: column;
                 align-items: start;
                 h4 {
-                 @include extraLargeDevice {
+                  @include extraLargeDevice {
                     font-size: 1.1vw;
                   }
-                 @include mediumDevice {
+                  @include mediumDevice {
                     font-size: 2vw;
                   }
-                 @include smallDevice {
+                  @include smallDevice {
                     font-size: 2vw;
                   }
-                 @include extraSmallDevice {
+                  @include extraSmallDevice {
                     font-size: 3.5vw;
                   }
                 }
@@ -401,16 +420,16 @@
           }
           .feedback {
             width: 50%;
-            @include extraSmallDevice{
+            @include extraSmallDevice {
               width: 100%;
             }
             h3 {
               font-size: 1.5rem;
-              @include smallDevice{
+              @include smallDevice {
                 font-size: 3vw;
                 margin: 0;
               }
-              @include extraSmallDevice{
+              @include extraSmallDevice {
                 font-size: 3vw;
                 margin: 0;
               }
@@ -419,10 +438,10 @@
               font-size: 0.95rem;
               width: 100%;
               text-align: left;
-              @include smallDevice{
+              @include smallDevice {
                 font-size: 2vw;
               }
-              @include extraSmallDevice{
+              @include extraSmallDevice {
                 font-size: 2.2vw;
               }
             }
@@ -439,24 +458,23 @@
         justify-content: space-between;
         gap: 2rem;
         position: relative;
-        @include smallDevice{
+        @include smallDevice {
           gap: 1rem;
         }
-        @include extraSmallDevice{
+        @include extraSmallDevice {
           gap: 1rem;
         }
-       
 
         .inputCont {
           width: 100%;
           display: grid;
           grid-template-columns: repeat(2, 1fr);
           grid-gap: 2rem;
-          @include smallDevice{
+          @include smallDevice {
             grid-template-columns: repeat(1, 1fr);
             grid-gap: 1rem;
           }
-          @include extraSmallDevice{
+          @include extraSmallDevice {
             grid-template-columns: repeat(1, 1fr);
             grid-gap: 1rem;
           }
@@ -467,10 +485,10 @@
           border: 2px solid #e8e8e8;
           outline: none;
           font-size: 1rem;
-          &:active{
+          &:focus {
             border: 2px solid #b1df41;
           }
-          @include extraSmallDevice{
+          @include extraSmallDevice {
             padding: 0.8rem;
           }
         }
@@ -484,37 +502,42 @@
           border: 1px solid #e8e8e8;
           outline: none;
           font-size: 1rem;
+          &:focus {
+            border: 2px solid #b1df41;
+          }
         }
         .formfooter {
           width: 100%;
           @include flexrow;
           justify-content: space-between;
+          border: 1px solid red;
 
           .left {
+            border: 1px solid blue;
             @include flexrow;
-            @include largeDevice{
+            @include largeDevice {
               justify-content: start;
               width: 50%;
             }
-            @include mediumDevice{
+            @include mediumDevice {
               justify-content: start;
               width: 50%;
             }
-            @include smallDevice{
+            @include smallDevice {
+              justify-content: start;
+              width: 50%;
+            }
+            @include extraSmallDevice {
               width: 70%;
             }
-            @include extraSmallDevice{
-              width: 60%;
-            }
-            @include mobile{
-              width: 80%;
-            }
             p {
+              margin: 0;
               margin-left: 1rem;
-              @include extraSmallDevice{
+              @include extraSmallDevice {
                 font-size: 0.9rem;
+                margin-left: 0rem;
               }
-              @include mobile{
+              @include mobile {
                 font-size: 0.8rem;
               }
             }
@@ -522,13 +545,16 @@
 
           #applybtn {
             font-size: 1.2rem;
+            font-weight: 600;
             padding: 0.5em 3em;
             background-color: #b1df41;
             border-radius: 0.8rem;
+            border: none;
+            border: 1px solid #b1df41;
             @include largeDevice {
               font-size: 1rem;
             }
-            @include mediumDevice{
+            @include mediumDevice {
               font-size: 1.1rem;
             }
             @include smallDevice {
@@ -536,11 +562,11 @@
               padding: 0.5em 2em;
             }
             @include extraSmallDevice {
-              font-size: 0.8rem;
-              padding: 0.5rem 2rem;
+              font-size: 0.9rem;
+              padding: 0.3em 2em;
             }
             @include mobile {
-              font-size: 0.7rem;
+              font-size: 0.8rem;
               padding: 0.3em 1.5em;
             }
           }
@@ -548,6 +574,10 @@
             font-size: 1.1rem;
             @include largeDevice {
               font-size: 1rem;
+            }
+            @include extraSmallDevice {
+              font-size: 0.5rem;
+              text-align: left;
             }
             a {
               color: #000;
@@ -563,9 +593,15 @@
             cursor: pointer;
             padding: 0.2rem;
             // display: none;
+            border: 1px solid red;
 
             @include extraLargeDevice {
               display: inline-block;
+            }
+            @include extraSmallDevice {
+              width: 75px;
+              // width: 60px;
+              // height: 25px;
             }
 
             .slider-button {
@@ -580,13 +616,17 @@
               @include flexrow;
               font-size: 1.2rem;
               font-weight: bold;
+              @include extraSmallDevice {
+                width: 22px;
+                height: 22px;
+                font-size: 1rem;
+              }
             }
           }
-          .active{
+          .active {
             .slider-button {
-              transform: translateX(30px);
+              transform: translateX(28px);
             }
-
           }
         }
       }
