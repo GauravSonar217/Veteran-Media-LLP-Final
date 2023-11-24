@@ -18,7 +18,6 @@ function Footer() {
                 </div>
                 <div className="addressBox">
                   <h3>Inquires</h3>
-                  <p><HashLink to="mailto: contact@veteranmedias.com">contact@veteranmedias.com</HashLink></p>
                   <p><HashLink to="mailto: info@veteranmedias.com">info@veteranmedias.com</HashLink></p>
                 </div>
               </div>
@@ -33,10 +32,10 @@ function Footer() {
                       <HashLink to="/career/#careerHead">Services</HashLink>
                     </li>
                     <li>
-                      <HashLink to="/career/#careerHead">Career</HashLink>
+                      <HashLink to="/career/#nav">Career</HashLink>
                     </li>
                     <li>
-                      <HashLink to="/career/#careerHead">Contact Us</HashLink>
+                      <HashLink to="/contact/#nav">Contact Us</HashLink>
                     </li>
                   </ul>
                 </div>
@@ -60,9 +59,6 @@ function Footer() {
                 <div className="linkBox">
                   <ul className="flinkCont">
                     <li>
-                      <a href="#">Employment</a>
-                    </li>
-                    <li>
                       <a href="#">Privacy Policy</a>
                     </li>
                     <li>
@@ -84,9 +80,6 @@ function Footer() {
           <div className="container" id="copyCont">
             <div className="innerCont" id="copy">
               <h6>All rights reserved © 2009 - 2023 Veteran Media LLP.</h6>
-              <h6>
-                Designed By <a href="https://www.yashwebdesign.com" target="_blank">yashwebdesign.com</a>
-              </h6>
             </div>
           </div>
         </div>

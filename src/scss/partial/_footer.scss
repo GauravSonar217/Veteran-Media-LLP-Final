@@ -15,7 +15,6 @@ footer {
       text-decoration: underline;
     }
   }
-
   .footerTextCont {
     width: 100%;
     z-index: 1000;
@@ -223,7 +222,7 @@ footer {
         width: 100%;
         padding: 1rem 0;
         @include flexrow;
-        justify-content: space-between;
+        justify-content: center;
 
         @include extraSmallDevice {
           flex-direction: column;

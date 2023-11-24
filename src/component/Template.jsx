@@ -38,6 +38,8 @@ function Template() {
   //     console.log(btn);
   //   });
   // }, []);
+  
+
 
   useEffect(() => {
     function moveCursor(dets) {
@@ -738,8 +740,8 @@ function Template() {
         ></iframe>
         <div id="mapShadow" className="shadow"></div>
         <h3 id="mapShower" onClick={mapShower}>
-          <p>Look at the google map</p>
-          <img src={arrow} alt="arrow" />
+          <p>Click here to adjust google map    <img src={arrow} alt="arrow" /></p>
+      
         </h3>
         <div className="contactForm">
           <h2>Enquiry Form</h2>
@@ -749,8 +751,12 @@ function Template() {
               <input type="text" name="name" id="name" />
             </div>
             <div>
-              <label htmlFor="email">Email*</label>
+              <label htmlFor="email" aria-required>Email*</label>
               <input type="email" name="email" id="email" />
+            </div>
+            <div>
+              <label htmlFor="contactNo">Contact No*</label>
+              <input type="tel" name="contact" id="contact" />
             </div>
             <div>
               <label htmlFor="query">What are you looking for*</label>
