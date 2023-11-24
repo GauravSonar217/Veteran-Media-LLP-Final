@@ -104,13 +104,13 @@ function Navbar() {
         <nav className="navbar navbar-expand-lg">
           <div className="container" id="navbar">
             <h1 className="navbar-brand">
-              <HashLink to="/">
+              <HashLink to="index.html">
                 <img src={logo} alt="Company Logo" />
               </HashLink>
             </h1>
             <ul className="firstLinkCont">
               <li id="homelink" className="nav-item">
-                <HashLink className="nav-link active" to="/">
+                <HashLink className="nav-link active" to="index.html">
                   Home
                 </HashLink>
               </li>
@@ -120,7 +120,7 @@ function Navbar() {
                 </HashLink>
               </li>
               <li className="nav-item">
-                <HashLink className="nav-link" to="/portfolio/#projectSec">
+                <HashLink className="nav-link" to="/portfolio">
                   Projects
                 </HashLink>
               </li>
