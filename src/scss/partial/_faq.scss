@@ -1,0 +1,87 @@
+#faq {
+  width: 100%;
+  height: 100%;
+  #faqSection {
+    @include flexrow;
+    flex-direction: column;
+
+    h4 {
+      font-size: 1.25rem;
+      text-align: center;
+      color: #b0b0c0;
+    }
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      @include extraSmallDevice{
+        font-size: 2.2rem;
+        margin-bottom: 1.5rem;
+      }
+    }
+    #faqCont {
+
+      .faq-card {
+        border: 1px solid #ccc;
+        margin-bottom: 1.5rem;
+        padding: 2rem 3.5rem;
+        border-radius: 40px;
+        border: 1px solid rgba(176, 176, 192, 0.3);
+        @include largeDevice{
+          padding: 1.5rem 2rem;
+        }
+        @include mediumDevice{
+          padding: 1.5rem 2.5rem;
+        }
+        @include extraSmallDevice{
+          padding: 1rem 1.3rem;
+        }
+
+
+        .question {
+          display: flex;
+          justify-content: space-between;
+          cursor: pointer;
+          h3 {
+            font-size: 1.25rem;
+            font-weight: 500;
+            @include largeDevice{
+              font-size: 1.20rem;
+            }
+            @include extraSmallDevice{
+              font-size: 1.1rem;
+            }
+          }
+          .toggle {
+            background-color: black;
+            // padding: 5px 10px;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            @include flexrow;
+            @include extraSmallDevice{
+              width: 1.2rem;
+              height: 1.2rem;
+              padding: 0.9rem;
+            }
+
+            .icon {
+              font-size: 1.5rem;
+              color: white;
+              @include extraSmallDevice{
+                font-size: 1.1rem;
+              }
+            }
+          }
+        }
+        .answer {
+          display: none;
+          margin-top: 10px;
+          p {
+            font-size: 1.125rem;
+          }
+        }
+      }
+    }
+  }
+}
