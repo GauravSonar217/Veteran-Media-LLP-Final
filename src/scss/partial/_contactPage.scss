@@ -1,10 +1,174 @@
-.contactPage{
-    width: 100%;
-    height: 100vh;
+.projectSec {
+  width: 100%;
+  height: 100%;
+  @include flexrow;
+  flex-direction: column;
+  border: 1px solid red;
 
-    #contactCont{
-        width: 100%;
-        height: 100%;
-        @include flexrow;
+  .portHead {
+    width: 100%;
+
+    background: #dcf2e7;
+    padding: 7.5rem 0;
+    @include mediumDevice {
+      padding: 6rem 0;
     }
+    @include extraSmallDevice {
+      padding: 4rem 0;
+    }
+
+    #projectCont {
+      width: 100%;
+      position: relative;
+      border-radius: 1.25rem;
+      border: 1px solid red;
+      @include flexrow;
+      justify-content: space-between;
+      gap: 8rem;
+      @include mediumDevice {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 4rem;
+      }
+      @include smallDevice {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 2rem;
+      }
+      @include extraSmallDevice {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 1rem;
+      }
+      @include mobile {
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 1rem;
+        padding-bottom: 0rem;
+      }
+
+      .contactText {
+        @include flexrow;
+        flex-direction: column;
+        align-items: start;
+        border: 1px solid blue;
+
+        @include largeDevice {
+          align-items: center;
+        }
+        @include mediumDevice {
+          justify-content: center;
+        }
+        @include extraLargeDevice {
+          justify-content: start;
+        }
+        @include extraSmallDevice {
+          width: 100%;
+        }
+        h1 {
+          font-size: 4rem;
+          font-weight: 500;
+          text-align: left;
+          @include largeDevice {
+            font-size: 3.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+          }
+          @include mediumDevice {
+            font-size: 3rem;
+            text-align: center;
+          }
+          @include smallDevice {
+            font-size: 2.8rem;
+            text-align: center;
+          }
+          @include extraSmallDevice {
+            font-size: 2rem;
+            text-align: center;
+          }
+        }
+        p{
+            margin: 0;
+            @include largeDevice{
+                text-align: center;
+            }
+            @include mediumDevice{
+                text-align: center;
+            }
+        }
+      }
+      .contactImg {
+        @include flexrow;
+        justify-content: end;
+
+        @include mediumDevice {
+          width: 60%;
+          margin: 0 auto;
+          justify-content: center;
+        }
+        @include smallDevice {
+          width: 70%;
+          margin: 0 auto;
+          justify-content: center;
+        }
+        @include extraSmallDevice {
+          width: 100%;
+          // height: 80%;
+          margin: 0 auto;
+          justify-content: center;
+        }
+        @include mobile {
+          width: 100%;
+          margin: 0 auto;
+          justify-content: center;
+        }
+        img {
+          width: 27rem;
+          height: 27.5rem;
+        //   width: 100%;
+        //   height: 100%;
+
+          @include largeDevice {
+            width: 22rem;
+            height: 22rem;
+          }
+          @include mediumDevice {
+            height: 80%;
+          }
+          @include smallDevice {
+            height: 80%;
+          }
+          @include extraSmallDevice {
+            width: 70%;
+            height: 80%;
+          }
+          @include mobile {
+            height: 60%;
+          }
+        }
+      }
+    }
+  }
+  #textSec {
+    text-align: center;
+    p {
+      font-size: 1.125rem;
+      text-align: center;
+      margin: 3rem 0;
+      @include mediumDevice {
+        font-size: 1rem;
+      }
+      @include smallDevice {
+        font-size: 1rem;
+      }
+      @include extraSmallDevice {
+        font-size: 1rem;
+        margin-bottom: 0;
+      }
+      @include mobile {
+        font-size: 0.9rem;
+        margin-bottom: 0;
+      }
+    }
+  }
 }
+
