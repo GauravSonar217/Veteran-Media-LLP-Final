@@ -15,7 +15,14 @@ function Header() {
             branding, clever promotions, and online exposure services to shine a
             light on your brand.
           </p>
-          
+          <div className="scrollDown">
+            <div class="scroll-downs">
+              <div class="mousey">
+                <div class="scroller"></div>
+              </div>
+            </div>
+            <p>Scroll Down</p>
+          </div>
         </div>
       </header>
     </React.Fragment>

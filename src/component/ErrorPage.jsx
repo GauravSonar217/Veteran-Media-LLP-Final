@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import errorImg from "../media/jpg/errorImg.jpg";
+import errorImg from "../media/svg/404.svg";
 import { HashLink } from "react-router-hash-link";
 
 function ErrorPage() {

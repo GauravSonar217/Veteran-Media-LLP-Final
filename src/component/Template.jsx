@@ -483,7 +483,7 @@ function Template() {
           </div>
         </div>
       </section>
-      <section className="partnerSec sectionPadding">
+      <section className="partnerSec sectionPadding container">
         <h2>Our Major Clients</h2>
         <div class="logo-slider">
           <div class="logo-slide-track">
@@ -544,7 +544,8 @@ function Template() {
                     Veteran Media provides a comprehensive range of services
                     tailored to meet your specific needs. Our offerings include
                     Services.html designed to empower businesses and individuals
-                    in achieving their goals.
+                    in achieving their goals. &nbsp;{" "}
+                    <a href="">Check Servies</a>
                   </p>
                 </div>
               </div>
@@ -552,17 +553,15 @@ function Template() {
             <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
               <div class="faq-card" id="faq-card-2">
                 <div class="question">
-                  <h3>Lorem Ipsum is simply dummy text of the?</h3>
+                  <h3>How can I get started with Veteran Media?</h3>
                   <div class="toggle">
                     <span class="icon">+</span>
                   </div>
                 </div>
                 <div class="answer">
                   <p>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to
+                    Simply fill this form &nbsp;<a href="">Contact Us</a>. Our
+                    team is ready to guide you through every step.
                   </p>
                 </div>
               </div>
@@ -570,17 +569,54 @@ function Template() {
             <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
               <div class="faq-card" id="faq-card-3">
                 <div class="question">
-                  <h3>Lorem Ipsum is simply dummy text of the?</h3>
+                  <h3>
+                    What sets Veteran Media apart from other agencies in the
+                    industry?
+                  </h3>
                   <div class="toggle">
                     <span class="icon">+</span>
                   </div>
                 </div>
                 <div class="answer">
                   <p>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to
+                    At Veteran, we distinguish ourselves through Veteran Media
+                    stands out in the industry through its:
+                    <ul>
+                      <li>
+                        Expertise: A team with extensive experience and
+                        specialized knowledge.
+                      </li>
+                      <li>
+                        Personalized Approach: Tailoring solutions to each
+                        client's unique needs. Cutting-edge
+                      </li>
+                      <li>
+                        Technology: Utilizing innovative tools and staying
+                        current with industry trends.
+                      </li>
+                      <li>
+                        Commitment to Excellence: Industry recognition,
+                        certifications, and a track record of success.
+                      </li>
+                      <li>
+                        Client Satisfaction: Positive testimonials, case
+                        studies, and a client-centric approach.
+                      </li>
+                      <li>
+                        Innovative Strategies: Creative problem-solving and
+                        adaptability to industry changes.
+                      </li>
+                      <li>
+                        Proven Track Record: Successful past campaigns and
+                        long-term client relationships.
+                      </li>
+                      <li>
+                        Collaborative Partnerships: Working closely with clients
+                        as trusted, long-term partners..
+                      </li>
+                    </ul>
+                    Our commitment to excellence and client satisfaction sets us
+                    apart in the competitive landscape.
                   </p>
                 </div>
               </div>
@@ -588,17 +624,21 @@ function Template() {
             <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
               <div class="faq-card" id="faq-card-4">
                 <div class="question">
-                  <h3>Lorem Ipsum is simply dummy text of the?</h3>
+                  <h3>
+                    Is Veteran suitable for small Businesses/ Startups or larger
+                    enterprises?
+                  </h3>
                   <div class="toggle">
                     <span class="icon">+</span>
                   </div>
                 </div>
                 <div class="answer">
                   <p>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to
+                    Veteran Media caters to a diverse clientele, including small
+                    businesses, startups, and larger enterprises. Our scalable
+                    solutions are adaptable to the unique requirements of
+                    businesses of all sizes. Whether you're just starting or
+                    looking to expand, we have the expertise to assist you.
                   </p>
                 </div>
               </div>
@@ -606,17 +646,18 @@ function Template() {
             <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
               <div class="faq-card" id="faq-card-5">
                 <div class="question">
-                  <h3>Lorem Ipsum is simply dummy text of the?</h3>
+                  <h3>What is the typical timeline for project completion?</h3>
                   <div class="toggle">
                     <span class="icon">+</span>
                   </div>
                 </div>
                 <div class="answer">
                   <p>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to
+                    Project timelines can vary based on the nature and scope of
+                    the work. During the initial consultation, we'll work with
+                    you to establish realistic timelines that align with your
+                    objectives. Our commitment to efficiency ensures timely
+                    delivery without compromising on quality.
                   </p>
                 </div>
               </div>
@@ -624,17 +665,21 @@ function Template() {
             <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
               <div class="faq-card" id="faq-card-6">
                 <div class="question">
-                  <h3>Lorem Ipsum is simply dummy text of the?</h3>
+                  <h3>
+                    How does Veteran Media LLP ensure client satisfaction?
+                  </h3>
                   <div class="toggle">
                     <span class="icon">+</span>
                   </div>
                 </div>
                 <div class="answer">
                   <p>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to
+                    Client satisfaction is at the core of our values. We
+                    maintain transparent communication throughout the project,
+                    provide regular updates, and actively seek feedback. Our
+                    team is dedicated to surpassing your expectations, and we
+                    prioritize your satisfaction in every aspect of our
+                    partnership.
                   </p>
                 </div>
               </div>
@@ -699,16 +744,34 @@ function Template() {
         <div className="contactForm">
           <h2>Enquiry Form</h2>
           <form>
-            <label htmlFor="name">Name*</label>
-            <input type="text" name="name" id="name" />
-            <label htmlFor="email">Email*</label>
-            <input type="email" name="email" id="email" />
-            <label htmlFor="query">What are you looking for*</label>
-            <input type="text" name="query" id="query" />
-            <label htmlFor="message">Message*</label>
-            <textarea name="message" id="message"></textarea>
-            <div className="uploadCont">
-              <input type="file" id="myFile" name="filename" />
+            <div>
+              <label htmlFor="name">Name*</label>
+              <input type="text" name="name" id="name" />
+            </div>
+            <div>
+              <label htmlFor="email">Email*</label>
+              <input type="email" name="email" id="email" />
+            </div>
+            <div>
+              <label htmlFor="query">What are you looking for*</label>
+              <input type="text" name="query" id="query" />
+            </div>
+            <div>
+              <label htmlFor="message">Message*</label>
+            </div>
+            <div>
+              <textarea name="message" id="message"></textarea>
+            </div>
+            <div id="upload-container" className="uploadCont">
+              <label for="file-input" id="upload-label">
+                <div id="upload-icon"><img src="../media/png/upload.png" alt="upload Image"></img></div> Upload File
+              </label>
+              <input
+                type="file"
+                id="file-input"
+                accept=".pdf"
+                onchange="handleFileUpload()"
+              ></input>
               <button>Send Message</button>
             </div>
           </form>
