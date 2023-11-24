@@ -31,27 +31,6 @@ function Navbar() {
     document.getElementById("followCont").style.display = "block";
   };
 
-  // useEffect(() => {
-  //   let menubar = document.getElementById("toggleMenu");
-  //   let linkbar1 = document.querySelector(".firstLinkCont");
-  //   let linkbar2 = document.querySelector(".secondLinkCont");
-  //   console.log(menubar);
-  //   console.log(linkbar1);
-  //   console.log(linkbar2);
-  //   menubar.addEventListener("click", function () {
-  //     if (!showMenu) {
-  //       linkbar1.style.display = "flex";
-  //       linkbar2.style.display = "flex";
-  //       setShowMenu(true);
-  //     }
-  //     if (showMenu) {
-  //       linkbar1.style.display = "none";
-  //       linkbar2.style.display = "none";
-  //       setShowMenu(false);
-  //     }
-  //   });
-  // }, []);
-
   function menuToggler() {
     let menubar = document.getElementById("toggleMenu");
     let linkbar1 = document.querySelector(".firstLinkCont");
@@ -104,13 +83,13 @@ function Navbar() {
         <nav className="navbar navbar-expand-lg">
           <div className="container" id="navbar">
             <h1 className="navbar-brand">
-              <HashLink to="index.html">
+              <HashLink to="/">
                 <img src={logo} alt="Company Logo" />
               </HashLink>
             </h1>
             <ul className="firstLinkCont">
               <li id="homelink" className="nav-item">
-                <HashLink className="nav-link active" to="index.html">
+                <HashLink className="nav-link active" to="/home">
                   Home
                 </HashLink>
               </li>
@@ -120,7 +99,7 @@ function Navbar() {
                 </HashLink>
               </li>
               <li className="nav-item">
-                <HashLink className="nav-link" to="/portfolio">
+                <HashLink className="nav-link" to="/portfolio/#projectSec">
                   Projects
                 </HashLink>
               </li>

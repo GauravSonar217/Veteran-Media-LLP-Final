@@ -3,7 +3,6 @@
   height: 100%;
   @include flexrow;
   flex-direction: column;
-  border: 1px solid red;
 
   .portHead {
     width: 100%;
@@ -21,7 +20,6 @@
       width: 100%;
       position: relative;
       border-radius: 1.25rem;
-      border: 1px solid red;
       @include flexrow;
       justify-content: space-between;
       gap: 8rem;
@@ -50,7 +48,6 @@
         @include flexrow;
         flex-direction: column;
         align-items: start;
-        border: 1px solid blue;
 
         @include largeDevice {
           align-items: center;

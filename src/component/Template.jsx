@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
+import { HashLink } from "react-router-hash-link";
 import Swiper from "swiper";
 import Header from "./Header";
-import Accordion from "react-bootstrap/Accordion";
 import playbtn from "../media/png/play.png";
 import promovideo from "../media/production_id_5207408 (1080p).mp4";
 import serviceImg from "../media/png/services.png";
@@ -12,6 +12,7 @@ import prog3 from "../media/png/execution 1.png";
 import prog4 from "../media/png/innovation 1.png";
 import prog5 from "../media/png/creativity 1.png";
 import aboutImg from "../media/jpg/image 46.jpg";
+import upload from "../media/png/upload.png";
 import blog1 from "../media/jpg/blog1.jpg";
 import blog2 from "../media/jpg/blog2.jpg";
 import arrow from "../media/png/Vector 1.png";
@@ -28,16 +29,86 @@ function Template() {
   const [showbtn, setShowbtn] = useState(false);
   const [showMap, setShowMap] = useState(false);
   const [counter, setCounter] = useState(false);
-  // useEffect(() => {
-  //   let btn = document.querySelector(".accordion-button");
-  //   console.log(btn);
-  //   btn.addEventListener("click", function () {
-  //     console.log("btn clicked");
-  //     btn.classList.toggle("mystyle");
-  //     btn.classList.toggle("click");
-  //     console.log(btn);
-  //   });
-  // }, []);
+
+  const targetRef = useRef();
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Start the counter when the section is visible
+            startCounter();
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.5 } // Adjust threshold as needed
+    );
+
+    // Observe the target element
+    if (targetRef.current) {
+      observer.observe(targetRef.current);
+    }
+
+    return () => {
+      if (targetRef.current) {
+        observer.unobserve(targetRef.current);
+      }
+    };
+  }, []);
+
+  const startCounter = () => {
+    // Your existing counter logic goes here
+    var a = 0;
+    var b = 0;
+    var c = 0;
+    var d = 0;
+
+    const clientCounter = setInterval(function () {
+      a = a + Math.floor(Math.random() * 100);
+      if (a < 700) {
+        document.querySelector("#one").innerHTML = a + "+";
+      } else {
+        a = 700;
+        document.querySelector("#one").innerHTML = a + "+";
+      }
+    }, 100);
+    const regularCLient = setInterval(function () {
+      b = b + Math.floor(Math.random() * 10);
+      if (b < 30) {
+        document.querySelector("#two").innerHTML = b + "+";
+      } else {
+        b = 30;
+        document.querySelector("#two").innerHTML = b + "+";
+      }
+    }, 100);
+    const projectDone = setInterval(function () {
+      c = c + Math.floor(Math.random() * 100);
+      if (c < 999) {
+        document.querySelector("#three").innerHTML = c + "+";
+      } else {
+        c = 999;
+        document.querySelector("#three").innerHTML = c + "+";
+      }
+    }, 100);
+    const experience = setInterval(function () {
+      d = d + Math.floor(Math.random() * 2);
+      if (d < 5) {
+        document.querySelector("#four").innerHTML = d;
+      } else {
+        d = 5;
+        document.querySelector("#four").innerHTML = d;
+      }
+    }, 100);
+
+    return () => {
+      clearInterval(clientCounter);
+      clearInterval(regularCLient);
+      clearInterval(projectDone);
+      clearInterval(experience);
+    };
+  };
 
   useEffect(() => {
     function moveCursor(dets) {
@@ -66,7 +137,8 @@ function Template() {
       imgCont.removeEventListener("mousemove", moveCursor);
     };
   }, []);
-  useEffect(() => {
+
+  function faqToggler() {
     document.querySelectorAll(".faq-card").forEach((card) => {
       const question = card.querySelector(".question");
       const answer = card.querySelector(".answer");
@@ -75,21 +147,15 @@ function Template() {
       const h3 = card.querySelector("h3");
       const p = card.querySelector("p");
 
-      let defaultIconColor = icon.style.color;
-      let defaultCardColor = card.style.backgroundColor;
-      let defaultH2Color = h3.style.color;
-      let defaultPColor = p.style.color;
-      let defaultToggleColor = toggle.style.backgroundColor; // Store the default toggle color
-
       question.addEventListener("click", () => {
         if (answer.style.display === "block") {
           answer.style.display = "none";
           icon.textContent = "+";
-          icon.style.color = defaultIconColor;
+          icon.style.color = "white";
           card.style.backgroundColor = "white";
-          h3.style.color = defaultH2Color;
-          p.style.color = defaultPColor;
-          toggle.style.backgroundColor = defaultToggleColor; // Restore the default toggle color
+          h3.style.color = "black";
+          p.style.color = "black";
+          toggle.style.backgroundColor = "black"; // Restore the default toggle color
         } else {
           answer.style.display = "block";
           icon.textContent = "-";
@@ -101,73 +167,64 @@ function Template() {
         }
       });
     });
-  }, []);
+  }
 
-  useEffect(() => {
-    const counter = () => {
-      var a = 0;
-      var b = 0;
-      var c = 0;
-      var d = 0;
-      const clientCounter = setInterval(function () {
-        a = a + Math.floor(Math.random() * 100);
-        if (a < 700) {
-          document.querySelector("#one").innerHTML = a + "+";
-        } else {
-          a = 700;
-          document.querySelector("#one").innerHTML = a + "+";
-        }
-      }, 100);
-      const regularCLient = setInterval(function () {
-        b = b + Math.floor(Math.random() * 10);
-        if (b < 30) {
-          document.querySelector("#two").innerHTML = b + "+";
-        } else {
-          b = 30;
-          document.querySelector("#two").innerHTML = b + "+";
-        }
-      }, 100);
-      const projectDone = setInterval(function () {
-        c = c + Math.floor(Math.random() * 100);
-        if (c < 999) {
-          document.querySelector("#three").innerHTML = c + "+";
-        } else {
-          c = 999;
-          document.querySelector("#three").innerHTML = c + "+";
-        }
-      }, 100);
-      const experience = setInterval(function () {
-        d = d + Math.floor(Math.random() * 2);
-        if (d < 5) {
-          document.querySelector("#four").innerHTML = d;
-        } else {
-          d = 5;
-          document.querySelector("#four").innerHTML = d;
-        }
-      }, 100);
+  // useEffect(() => {
+  //   const counter = () => {
+  //     var a = 0;
+  //     var b = 0;
+  //     var c = 0;
+  //     var d = 0;
+  //     const clientCounter = setInterval(function () {
+  //       a = a + Math.floor(Math.random() * 100);
+  //       if (a < 700) {
+  //         document.querySelector("#one").innerHTML = a + "+";
+  //       } else {
+  //         a = 700;
+  //         document.querySelector("#one").innerHTML = a + "+";
+  //       }
+  //     }, 100);
+  //     const regularCLient = setInterval(function () {
+  //       b = b + Math.floor(Math.random() * 10);
+  //       if (b < 30) {
+  //         document.querySelector("#two").innerHTML = b + "+";
+  //       } else {
+  //         b = 30;
+  //         document.querySelector("#two").innerHTML = b + "+";
+  //       }
+  //     }, 100);
+  //     const projectDone = setInterval(function () {
+  //       c = c + Math.floor(Math.random() * 100);
+  //       if (c < 999) {
+  //         document.querySelector("#three").innerHTML = c + "+";
+  //       } else {
+  //         c = 999;
+  //         document.querySelector("#three").innerHTML = c + "+";
+  //       }
+  //     }, 100);
+  //     const experience = setInterval(function () {
+  //       d = d + Math.floor(Math.random() * 2);
+  //       if (d < 5) {
+  //         document.querySelector("#four").innerHTML = d;
+  //       } else {
+  //         d = 5;
+  //         document.querySelector("#four").innerHTML = d;
+  //       }
+  //     }, 100);
 
-      return () => {
-        clearInterval(clientCounter);
-        clearInterval(regularCLient);
-        clearInterval(projectDone);
-        clearInterval(experience);
-      };
-    };
-    const intervalFunctions = counter();
-    return () => {
-      intervalFunctions();
-    };
-  }, []);
+  //     return () => {
+  //       clearInterval(clientCounter);
+  //       clearInterval(regularCLient);
+  //       clearInterval(projectDone);
+  //       clearInterval(experience);
+  //     };
+  //   };
+  //   const intervalFunctions = counter();
+  //   return () => {
+  //     intervalFunctions();
+  //   };
+  // }, []);
 
-  const expandVideo = () => {
-    setShowVideo(true);
-    var playBtn = document.getElementById("pause");
-    var videoCont = document.getElementById("promoCont");
-    console.log(videoCont);
-    videoCont.style.height = "100vh";
-    console.log(videoCont);
-    playBtn.style.display = "none";
-  };
   function playVideo() {
     const video = document.getElementById("video");
     const videoSection = document.getElementById("videoSection");
@@ -175,35 +232,14 @@ function Template() {
     console.log(videoCont);
     const playButton = document.querySelector(".play-button");
 
-    videoCont.style.height = "100vh"; // Increase section height
+    videoCont.style.height = "100vh";
     videoSection.style.width = "100%";
     videoSection.style.height = "100%";
-    // video.style.visibility = "visible";
     playButton.style.display = "none";
 
     video.play();
   }
 
-  // useEffect(() => {
-  //   let mapShow = document.getElementById("mapShower");
-  //   let mapShadow = document.getElementById("mapShadow");
-  //   let contactBox = document.querySelector(".contactText");
-  //   let head = document.querySelector("#head");
-  //   console.log(contactBox);
-  //   console.log(mapShow);
-  //   console.log(mapShadow);
-  //   mapShow.addEventListener("click", function () {
-  //     if (!showMap) {
-  //       mapShadow.style.visibility = "hidden";
-  //       contactBox.style.backgroundColor = "black";
-  //       setShowMap(true);
-  //     } else {
-  //       mapShadow.style.visibility = "visible";
-  //       contactBox.style.backgroundColor = "transparent";
-  //       setShowMap(false);
-  //     }
-  //   });
-  // }, []);
   function mapShower() {
     let mapShow = document.getElementById("mapShower");
     let mapShadow = document.getElementById("mapShadow");
@@ -264,7 +300,7 @@ function Template() {
           </div>
         </div>
       </section>
-      <section className="counterCont sectionPadding">
+      <section className="counterCont sectionPadding" ref={targetRef}>
         <div className="container" id="clientCont">
           <div className="innerCont" id="innercont">
             <div className="projectBox">
@@ -381,11 +417,13 @@ function Template() {
                 </div>
               </div>
             </div>
-            <button id="workBtn">See Our Work</button>
+            <HashLink to="/portfolio/#projectSec">
+              <button id="workBtn">See Our Work</button>
+            </HashLink>
           </div>
         </div>
       </section>
-      <Testimonial></Testimonial>
+      {/* <Testimonial></Testimonial> */}
       <section className="progressSec sectionPadding">
         <div className="container" id="progressSec">
           <div className="innerCont" id="innerProgressSec">
@@ -533,7 +571,7 @@ function Template() {
           <div class="row my-4" id="faqCont">
             <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
               <div class="faq-card" id="faq-card-1">
-                <div class="question">
+                <div onClick={faqToggler} class="question">
                   <h3>What services does Veteran Media offer?</h3>
                   <div class="toggle">
                     <span class="icon">+</span>
@@ -544,7 +582,7 @@ function Template() {
                     Veteran Media provides a comprehensive range of services
                     tailored to meet your specific needs. Our offerings include
                     Services.html designed to empower businesses and individuals
-                    in achieving their goals. &nbsp;{" "}
+                    in achieving their goals. &nbsp;
                     <a href="">Check Servies</a>
                   </p>
                 </div>
@@ -552,7 +590,7 @@ function Template() {
             </div>
             <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
               <div class="faq-card" id="faq-card-2">
-                <div class="question">
+                <div onClick={faqToggler} class="question">
                   <h3>How can I get started with Veteran Media?</h3>
                   <div class="toggle">
                     <span class="icon">+</span>
@@ -568,7 +606,7 @@ function Template() {
             </div>
             <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
               <div class="faq-card" id="faq-card-3">
-                <div class="question">
+                <div onClick={faqToggler} class="question">
                   <h3>
                     What sets Veteran Media apart from other agencies in the
                     industry?
@@ -583,36 +621,36 @@ function Template() {
                     stands out in the industry through its:
                     <ul>
                       <li>
-                        Expertise: A team with extensive experience and
+                        1. Expertise: A team with extensive experience and
                         specialized knowledge.
                       </li>
                       <li>
-                        Personalized Approach: Tailoring solutions to each
+                        2. Personalized Approach: Tailoring solutions to each
                         client's unique needs. Cutting-edge
                       </li>
                       <li>
-                        Technology: Utilizing innovative tools and staying
+                        3. Technology: Utilizing innovative tools and staying
                         current with industry trends.
                       </li>
                       <li>
-                        Commitment to Excellence: Industry recognition,
+                        4. Commitment to Excellence: Industry recognition,
                         certifications, and a track record of success.
                       </li>
                       <li>
-                        Client Satisfaction: Positive testimonials, case
+                        5. Client Satisfaction: Positive testimonials, case
                         studies, and a client-centric approach.
                       </li>
                       <li>
-                        Innovative Strategies: Creative problem-solving and
+                        6. Innovative Strategies: Creative problem-solving and
                         adaptability to industry changes.
                       </li>
                       <li>
-                        Proven Track Record: Successful past campaigns and
+                        7. Proven Track Record: Successful past campaigns and
                         long-term client relationships.
                       </li>
                       <li>
-                        Collaborative Partnerships: Working closely with clients
-                        as trusted, long-term partners..
+                        8. Collaborative Partnerships: Working closely with
+                        clients as trusted, long-term partners..
                       </li>
                     </ul>
                     Our commitment to excellence and client satisfaction sets us
@@ -623,7 +661,7 @@ function Template() {
             </div>
             <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
               <div class="faq-card" id="faq-card-4">
-                <div class="question">
+                <div onClick={faqToggler} class="question">
                   <h3>
                     Is Veteran suitable for small Businesses/ Startups or larger
                     enterprises?
@@ -645,7 +683,7 @@ function Template() {
             </div>
             <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
               <div class="faq-card" id="faq-card-5">
-                <div class="question">
+                <div onClick={faqToggler} class="question">
                   <h3>What is the typical timeline for project completion?</h3>
                   <div class="toggle">
                     <span class="icon">+</span>
@@ -664,7 +702,7 @@ function Template() {
             </div>
             <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
               <div class="faq-card" id="faq-card-6">
-                <div class="question">
+                <div onClick={faqToggler} class="question">
                   <h3>
                     How does Veteran Media LLP ensure client satisfaction?
                   </h3>
@@ -746,11 +784,11 @@ function Template() {
           <form>
             <div>
               <label htmlFor="name">Name*</label>
-              <input type="text" name="name" id="name" />
+              <input type="text" name="name" id="name" required />
             </div>
             <div>
               <label htmlFor="email">Email*</label>
-              <input type="email" name="email" id="email" />
+              <input type="email" name="email" id="email" required />
             </div>
             <div>
               <label htmlFor="query">What are you looking for*</label>
@@ -764,7 +802,10 @@ function Template() {
             </div>
             <div id="upload-container" className="uploadCont">
               <label for="file-input" id="upload-label">
-                <div id="upload-icon"><img src="../media/png/upload.png" alt="upload Image"></img></div> Upload File
+                <div id="upload-icon">
+                  <img src={upload} alt="upload Image"></img>
+                </div>
+                Upload File
               </label>
               <input
                 type="file"

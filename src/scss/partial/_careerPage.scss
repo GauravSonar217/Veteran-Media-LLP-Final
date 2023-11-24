@@ -3,7 +3,7 @@
   height: 100%;
   @include flexrow;
   flex-direction: column;
-  border: 1px solid red;
+ 
   p {
     font-size: 1.1rem;
     text-align: center;
@@ -37,8 +37,6 @@
     background: #dcf2e7;
     margin-bottom: 5rem;
 
-    border: 1px solid rgb(3, 248, 3);
-
     #careerHead {
       width: 100%;
       height: 100%;
@@ -48,8 +46,7 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       grid-gap: 2rem;
-      // margin-bottom: 5rem;
-      border: 1px solid blue;
+
       @include mediumDevice {
         grid-template-columns: repeat(1, 1fr);
         grid-gap: 2rem;
@@ -72,7 +69,7 @@
 
       .careerText {
         @include flexrow;
-        border: 1px solid blue;
+      
         @include largeDevice {
           justify-content: start;
         }
@@ -109,7 +106,7 @@
         }
       }
       .careerImg {
-        border: 1px solid red;
+    
         @include flexrow;
         justify-content: end;
 
@@ -150,7 +147,6 @@
           @include mobile {
             justify-content: center;
             width: 100%;
-            border: 1px solid red;
           }
         }
       }
@@ -510,10 +506,10 @@
           width: 100%;
           @include flexrow;
           justify-content: space-between;
-          border: 1px solid red;
+          
 
           .left {
-            border: 1px solid blue;
+          
             @include flexrow;
             @include largeDevice {
               justify-content: start;
@@ -592,16 +588,9 @@
             position: relative;
             cursor: pointer;
             padding: 0.2rem;
-            // display: none;
-            border: 1px solid red;
 
-            @include extraLargeDevice {
-              display: inline-block;
-            }
             @include extraSmallDevice {
               width: 75px;
-              // width: 60px;
-              // height: 25px;
             }
 
             .slider-button {

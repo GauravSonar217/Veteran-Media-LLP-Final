@@ -9,6 +9,7 @@ import Footer from './component/Footer';
 import Contact from './component/Contact';
 import PortfolioPage from './component/PortFolio';
 import "../src/App.css";
+import Testimonial from './component/Testimonial';
 
 
 function App() {
@@ -45,7 +46,7 @@ function App() {
         },
         {
           path: "/contact/",
-          element: <Contact />,
+          element: <Contact></Contact>,
         },
       ],
     }

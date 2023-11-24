@@ -79,6 +79,11 @@
           margin-top: 10px;
           p {
             font-size: 1.125rem;
+
+            a{
+              color: $white;
+              text-decoration: underline;
+            }
           }
         }
       }
