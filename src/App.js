@@ -10,6 +10,7 @@ import Contact from './component/Contact';
 import PortfolioPage from './component/PortFolio';
 import "../src/App.css";
 import Testimonial from './component/Testimonial';
+import Services from './component/Services';
 
 
 function App() {
@@ -47,6 +48,10 @@ function App() {
         {
           path: "/contact/",
           element: <Contact></Contact>,
+        },
+        {
+          path: "/service/",
+          element: <Services></Services>,
         },
       ],
     }

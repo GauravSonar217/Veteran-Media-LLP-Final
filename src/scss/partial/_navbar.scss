@@ -6,7 +6,7 @@
     width: 20rem;
     padding: 1.8rem;
     position: absolute;
-    top: 4rem;
+    top: 5rem;
     right: 0;
     background-color: $red-900;
     @include flexrow;
@@ -251,6 +251,9 @@
             left: 0;
             top: 4.5rem;
             display: none;
+            @include extraLargeDevice{
+            height: calc(90vh - 100px);
+            }
 
             .serviceCont {
               width: 70%;

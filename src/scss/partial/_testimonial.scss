@@ -1,181 +1,116 @@
-.hero {
+.testiSec {
   width: 100%;
-  height: 100vh;
-  background-color: #14161b;
+  height: 80vh;
+  background-color: $light;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-  #slider{
-    word-wrap: 100%;
-    height: 100%;
-  }
-
-  h2 {
-    font-size: 2.5rem;
-    font-weight: 400;
-    line-height: 120%;
-    margin-bottom: 2.5rem;
-    position: relative;
-    // margin-bottom: 80px;
-    text-align: center;
-    @include mediumDevice {
-      font-size: 2.2rem;
-      // margin-bottom: 1rem;
+  #sliderCont {
+    width: 100%;
+    @include flexrow;
+    @include largeDevice {
+      width: 100%;
     }
-    @include smallDevice {
-      font-size: 2rem;
-      // margin-bottom: 1rem;
+
+    .card {
+      width: 400px;
+      height: 500px;
+      position: relative;
+      background: #fff;
+      border-radius: 20px;
+      padding: 1.5rem;
+      box-shadow: 0 0 10px #ccc;
+      @include flexrow;
+      flex-direction: column;
+      justify-content: start;
+      text-align: center;
+      @include largeDevice {
+        height: 450px;
+      }
+    }
+    .card .image {
+      width: 150px;
+      height: 150px;
+      padding: 3px;
+      border: 3px solid blueviolet;
+      background: #fff;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      @include largeDevice {
+        width: 120px;
+        height: 120px;
+      }
+    }
+    .card .image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+    .card h3 {
       text-align: center;
     }
-    @include extraSmallDevice {
-      font-size: 2.2rem;
+    .card h5 {
+      color: orange;
       text-align: center;
     }
-    @include mobile {
-      font-size: 2rem;
+    .card p {
+      font-size: 1.1rem;
+      text-align: center;
+      margin-top: 1rem;
+    }
+    .swiper-container {
+      position: relative;
+      margin: 0 auto;
+      width: 100%;
+      height: 100%;
+      @include flexrow;
       margin-bottom: 1rem;
-      text-align: center;
+    }
+    .swiper {
+      margin: 0 auto;
+      cursor: grab;
+    }
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .swiper-button-next,
+    .swiper-button-prev {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: #f80303;
+      box-shadow: 0 0 10px #ccc;
+    }
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
+      font-size: 16px;
+      font-weight: bold;
+      color: #000;
+    }
+    .swiper-button-next:hover {
+      transform: scale(1.2) translateX(80%);
+    }
+    .swiper-button-prev:hover {
+      transform: scale(1.2) translateX(-80%);
+    }
+    .swiper-button-next {
+      transform: translateX(100%);
+    }
+    .swiper-button-prev {
+      transform: translateX(-100%);
+    }
+    .swiper-pagination {
+      transform: translateY(200%);
+    }
+    .swiper-pagination-bullet {
+      background: #b1f603;
+      width: 20px;
+      height: 20px;
     }
   }
 }
-
-// /*
-//   Inspired by the testimonials slider as seen on https://www.sellx.com/
-// */
-// @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
-
-// html,
-// body {
-//   line-height: 1.15; /* 1 */
-//   -webkit-text-size-adjust: 100%; /* 2 */
-//   height: 100%;
-//   margin: 0;
-//   font-family: "Inter", sans-serif;
-// }
-// .testimonialSec {
-//   width: 100%;
-//   height: 100%;
-//   border: 1px solid red;
-//   overflow: hidden;
-
-//   .swiper {
-//     width: 100%;
-//     max-width: 980px;
-//     position: relative;
-//     background-color: black;
-//     border-radius: 2rem;
-//     margin: 0 auto;
-//   }
-
-//   .swiper-quote {
-//     width: 70px;
-//     object-fit: contain;
-//     z-index: 100;
-//     margin-left: 2rem;
-//     margin-top: 2rem;
-//     user-select: none;
-//   }
-
-//   .swiper-slide {
-//     background-color: black;
-//     color: #eee;
-//   }
-
-//   .swiper-slide-data {
-//     padding: 2rem;
-//     display: flex;
-//     flex-direction: column;
-//   }
-
-//   .swiper-slide-data-text {
-//     font-size: 3.5rem;
-//     font-weight: 400;
-//     margin-bottom: 3rem;
-//   }
-
-//   .swiper-slide-data-info {
-//     display: flex;
-//   }
-
-//   .swiper-slide-data-info-img {
-//     width: 70px;
-//     min-width: 70px;
-//     height: 70px;
-//     min-height: 70px;
-//     border-radius: 70px;
-//     overflow: hidden;
-//     margin-right: 2rem;
-//   }
-
-//   .swiper-slide-data-info-img img {
-//     width: 100%;
-//     object-fit: cover;
-//     user-select: none;
-//   }
-
-//   .swiper-slide-data-info-author {
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: center;
-//     font-size: 1.4rem;
-//   }
-
-//   .swiper-slide-data-info-author span {
-//     margin-top: 8px;
-//     color: #777;
-//     font-size: 0.85rem;
-//   }
-
-//   .swiper-navigation {
-//     position: absolute;
-//     bottom: 2rem;
-//     right: 2rem;
-//     display: flex;
-//   }
-
-//   .swiper-button-next,
-//   .swiper-button-prev {
-//     background-color: white;
-//     border: solid 2px white;
-//     transition: all 0.3s;
-//     width: 52px;
-//     height: 52px;
-//     border-radius: 52px;
-//     position: relative;
-//     left: auto;
-//     right: auto;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     overflow: hidden;
-//   }
-
-//   .swiper-button-next:hover,
-//   .swiper-button-prev:hover {
-//     background-color: black;
-//     border-color: #777;
-//   }
-
-//   .swiper-button-next:hover svg,
-//   .swiper-button-prev:hover svg {
-//     color: white;
-//   }
-
-//   .swiper-button-next::after,
-//   .swiper-button-prev::after {
-//     display: none;
-//   }
-
-//   .swiper-button-next svg,
-//   .swiper-button-prev svg {
-//     color: black;
-//     display: block;
-//     transform: scale(1.9);
-//   }
-//   .swiper-button-next svg path,
-//   .swiper-button-prev svg path {
-//     stroke-width: 1;
-//   }
-
-//   .swiper-button-next {
-//     margin-left: 8px;
-//   }
-// }

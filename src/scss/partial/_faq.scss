@@ -42,11 +42,18 @@
           display: flex;
           justify-content: space-between;
           cursor: pointer;
+         
           h3 {
             font-size: 1.25rem;
             font-weight: 500;
             @include largeDevice{
               font-size: 1.20rem;
+            }
+            @include mediumDevice{
+              font-size: 1.1rem;
+            }
+            @include smallDevice{
+              font-size: 1.1rem;
             }
             @include extraSmallDevice{
               font-size: 1.1rem;
@@ -59,6 +66,12 @@
             height: 2rem;
             border-radius: 50%;
             @include flexrow;
+           
+            @include smallDevice{
+              width: 1.1rem;
+              height: 1.1rem;
+              padding: 0.9rem;
+            }
             @include extraSmallDevice{
               width: 1.2rem;
               height: 1.2rem;
@@ -68,8 +81,10 @@
             .icon {
               font-size: 1.5rem;
               color: white;
+          
               @include extraSmallDevice{
                 font-size: 1.1rem;
+                
               }
             }
           }

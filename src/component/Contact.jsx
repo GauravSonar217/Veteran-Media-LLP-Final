@@ -7,7 +7,7 @@ function Contact() {
   return (
     <React.Fragment>
       <section className="projectSec">
-        <section className="portHead" id="projectSec">
+        <section className="portHead" id="ContactSec">
           <div className="container" id="projectCont">
             <div className="contactText">
               <h1>

@@ -80,7 +80,7 @@ function Navbar() {
             </a>
           </div>
         </div>
-        <nav className="navbar navbar-expand-lg">
+        <nav className="navbar navbar-expand-lg" id="nav">
           <div className="container" id="navbar">
             <h1 className="navbar-brand">
               <HashLink to="/">
@@ -94,7 +94,7 @@ function Navbar() {
                 </HashLink>
               </li>
               <li className="nav-item">
-                <HashLink className="nav-link" to="/about/#aboutSec">
+                <HashLink className="nav-link" to="#aboutSec">
                   About us
                 </HashLink>
               </li>
@@ -134,7 +134,7 @@ function Navbar() {
                 </div>
               </li>
               <li className="nav-item">
-                <HashLink className="nav-link" to="/contact/#contactCont">
+                <HashLink className="nav-link" to="/contact/#nav">
                   contact
                 </HashLink>
               </li>

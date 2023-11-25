@@ -29,9 +29,9 @@ function Template() {
   const [showbtn, setShowbtn] = useState(false);
   const [showMap, setShowMap] = useState(false);
   const [counter, setCounter] = useState(false);
-
   const targetRef = useRef();
 
+  let clientCounter, regularClient, projectDone, experience;
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -43,10 +43,9 @@ function Template() {
           }
         });
       },
-      { threshold: 0.5 } // Adjust threshold as needed
+      { threshold: 0.5 }
     );
 
-    // Observe the target element
     if (targetRef.current) {
       observer.observe(targetRef.current);
     }
@@ -55,56 +54,41 @@ function Template() {
       if (targetRef.current) {
         observer.unobserve(targetRef.current);
       }
+      // Clear the intervals when the component unmounts or is no longer visible
+      clearInterval(clientCounter);
+      clearInterval(regularClient);
+      clearInterval(projectDone);
+      clearInterval(experience);
     };
   }, []);
 
   const startCounter = () => {
-    // Your existing counter logic goes here
-    var a = 0;
-    var b = 0;
-    var c = 0;
-    var d = 0;
+    let a = 0,
+      b = 0,
+      c = 0,
+      d = 0;
 
-    const clientCounter = setInterval(function () {
-      a = a + Math.floor(Math.random() * 100);
-      if (a < 700) {
-        document.querySelector("#one").innerHTML = a + "+";
-      } else {
-        a = 700;
-        document.querySelector("#one").innerHTML = a + "+";
-      }
-    }, 100);
-    const regularCLient = setInterval(function () {
-      b = b + Math.floor(Math.random() * 10);
-      if (b < 30) {
-        document.querySelector("#two").innerHTML = b + "+";
-      } else {
-        b = 30;
-        document.querySelector("#two").innerHTML = b + "+";
-      }
-    }, 100);
-    const projectDone = setInterval(function () {
-      c = c + Math.floor(Math.random() * 100);
-      if (c < 999) {
-        document.querySelector("#three").innerHTML = c + "+";
-      } else {
-        c = 999;
-        document.querySelector("#three").innerHTML = c + "+";
-      }
-    }, 100);
-    const experience = setInterval(function () {
-      d = d + Math.floor(Math.random() * 2);
-      if (d < 5) {
-        document.querySelector("#four").innerHTML = d;
-      } else {
-        d = 5;
-        document.querySelector("#four").innerHTML = d;
-      }
-    }, 100);
+    const updateCounter = () => {
+      a = Math.min(a + Math.floor(Math.random() * 100), 700);
+      b = Math.min(b + Math.floor(Math.random() * 10), 30);
+      c = Math.min(c + Math.floor(Math.random() * 100), 999);
+      d = Math.min(d + Math.floor(Math.random() * 2), 5);
+
+      document.querySelector("#one").innerHTML = a + "+";
+      document.querySelector("#two").innerHTML = b + "+";
+      document.querySelector("#three").innerHTML = c + "+";
+      document.querySelector("#four").innerHTML = d;
+    };
+
+    // Update the counter values at intervals
+    clientCounter = setInterval(updateCounter, 100);
+    regularClient = setInterval(updateCounter, 500);
+    projectDone = setInterval(updateCounter, 100);
+    experience = setInterval(updateCounter, 500);
 
     return () => {
       clearInterval(clientCounter);
-      clearInterval(regularCLient);
+      clearInterval(regularClient);
       clearInterval(projectDone);
       clearInterval(experience);
     };
@@ -169,67 +153,10 @@ function Template() {
     });
   }
 
-  // useEffect(() => {
-  //   const counter = () => {
-  //     var a = 0;
-  //     var b = 0;
-  //     var c = 0;
-  //     var d = 0;
-  //     const clientCounter = setInterval(function () {
-  //       a = a + Math.floor(Math.random() * 100);
-  //       if (a < 700) {
-  //         document.querySelector("#one").innerHTML = a + "+";
-  //       } else {
-  //         a = 700;
-  //         document.querySelector("#one").innerHTML = a + "+";
-  //       }
-  //     }, 100);
-  //     const regularCLient = setInterval(function () {
-  //       b = b + Math.floor(Math.random() * 10);
-  //       if (b < 30) {
-  //         document.querySelector("#two").innerHTML = b + "+";
-  //       } else {
-  //         b = 30;
-  //         document.querySelector("#two").innerHTML = b + "+";
-  //       }
-  //     }, 100);
-  //     const projectDone = setInterval(function () {
-  //       c = c + Math.floor(Math.random() * 100);
-  //       if (c < 999) {
-  //         document.querySelector("#three").innerHTML = c + "+";
-  //       } else {
-  //         c = 999;
-  //         document.querySelector("#three").innerHTML = c + "+";
-  //       }
-  //     }, 100);
-  //     const experience = setInterval(function () {
-  //       d = d + Math.floor(Math.random() * 2);
-  //       if (d < 5) {
-  //         document.querySelector("#four").innerHTML = d;
-  //       } else {
-  //         d = 5;
-  //         document.querySelector("#four").innerHTML = d;
-  //       }
-  //     }, 100);
-
-  //     return () => {
-  //       clearInterval(clientCounter);
-  //       clearInterval(regularCLient);
-  //       clearInterval(projectDone);
-  //       clearInterval(experience);
-  //     };
-  //   };
-  //   const intervalFunctions = counter();
-  //   return () => {
-  //     intervalFunctions();
-  //   };
-  // }, []);
-
   function playVideo() {
     const video = document.getElementById("video");
     const videoSection = document.getElementById("videoSection");
     const videoCont = document.getElementById("videoOuter");
-    console.log(videoCont);
     const playButton = document.querySelector(".play-button");
 
     videoCont.style.height = "100vh";
@@ -261,37 +188,18 @@ function Template() {
     });
   }
 
-  useEffect(() => {
-    var swiper = new Swiper(".mySwiper", {
-      autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-      },
-      loop: true,
-      effect: "fade",
-      autoHeight: true,
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-    });
-    console.log("slider working");
-  }, []); // Ensure this effect runs only once by passing an empty dependency arra
-
-  // swiper();
-
   return (
     <React.Fragment>
       <Header></Header>
       <section className="videoCont">
-        <img
-          src={playbtn}
-          alt="Play Button"
-          className="play-button"
-          onClick={playVideo}
-          id="pause"
-        />
         <div id="videoOuter">
+          <img
+            src={playbtn}
+            alt="Play Button"
+            className="play-button"
+            onClick={playVideo}
+            id="pause"
+          />
           <div class="video-section" id="videoSection">
             <video id="video" loop muted autoPlay>
               <source src={promovideo} type="video/mp4" />
@@ -423,7 +331,7 @@ function Template() {
           </div>
         </div>
       </section>
-      {/* <Testimonial></Testimonial> */}
+      <Testimonial></Testimonial>
       <section className="progressSec sectionPadding">
         <div className="container" id="progressSec">
           <div className="innerCont" id="innerProgressSec">
@@ -499,7 +407,7 @@ function Template() {
             <div className="aboutImgCont" id="imgCont">
               <img src={aboutImg} alt="about section image" />
               <div id="cursor">
-                <a href="">Read More</a>
+                <HashLink>Read More</HashLink>
               </div>
             </div>
             <div className="aboutTextCont">
@@ -583,7 +491,7 @@ function Template() {
                     tailored to meet your specific needs. Our offerings include
                     Services.html designed to empower businesses and individuals
                     in achieving their goals. &nbsp;
-                    <a href="">Check Servies</a>
+                    <HashLink to="/#serviceSec">Check Services</HashLink>
                   </p>
                 </div>
               </div>
@@ -598,8 +506,9 @@ function Template() {
                 </div>
                 <div class="answer">
                   <p>
-                    Simply fill this form &nbsp;<a href="">Contact Us</a>. Our
-                    team is ready to guide you through every step.
+                    Simply fill this form &nbsp;
+                    <HashLink to="/contact/#ContactSec">Contact Us</HashLink>.
+                    Our team is ready to guide you through every step.
                   </p>
                 </div>
               </div>
@@ -776,8 +685,9 @@ function Template() {
         ></iframe>
         <div id="mapShadow" className="shadow"></div>
         <h3 id="mapShower" onClick={mapShower}>
-          <p>Look at the google map</p>
-          <img src={arrow} alt="arrow" />
+          <p>
+            Click here to adjust google map <img src={arrow} alt="arrow" />
+          </p>
         </h3>
         <div className="contactForm">
           <h2>Enquiry Form</h2>
@@ -788,11 +698,30 @@ function Template() {
             </div>
             <div>
               <label htmlFor="email">Email*</label>
-              <input type="email" name="email" id="email" required />
+              <input type="email" name="email" id="email" />
             </div>
             <div>
-              <label htmlFor="query">What are you looking for*</label>
-              <input type="text" name="query" id="query" />
+              <label htmlFor="contactNo">Contact No*</label>
+              <input type="tel" name="contact" id="contact" />
+            </div>
+            <div>
+              <select id="">
+                <option value="" disabled> What are you looking for*</option>
+                <option value=""> Branding</option>
+                <option value=""> Marketing Push</option>
+                <option value=""> Space Buying</option>
+                <option value=""> Indoor & Outdoor Branding</option>
+                <option value=""> Marketing Plans</option>
+                <option value=""> Finishing & Packaging</option>
+                <option value=""> On-Air Promotions</option>
+                <option value=""> Web Design</option>
+                <option value=""> Merchandising</option>
+                <option value=""> Offset Printing</option>
+                <option value=""> Digital Printing</option>
+                <option value=""> Web Development</option>
+              </select>
+              {/* <label htmlFor="query">What are you looking for*</label> */}
+              {/* <input type="text" name="query" id="query" /> */}
             </div>
             <div>
               <label htmlFor="message">Message*</label>

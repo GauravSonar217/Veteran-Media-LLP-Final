@@ -24,8 +24,6 @@ if (document.hidden !== undefined) {
   console.log("Page Visibility API not supported.");
 }
 
-
-
 // ******************* Soft Scroll **************************
 var navMenuAnchorTags = document.querySelectorAll(".nav-item .nav-link");
 
@@ -46,12 +44,42 @@ for (var i = 0; i < navMenuAnchorTags.length; i++) {
   });
 }
 
-
-
 function handleFileUpload() {
-  const fileInput = document.getElementById('file-input');
+  const fileInput = document.getElementById("file-input");
   const fileName = fileInput.files[0].name;
 
-  alert('File uploaded: ' + fileName);
+  alert("File uploaded: " + fileName);
   // You can perform additional actions with the uploaded file here
 }
+
+let speed = 2000,
+  position = 0,
+  bodyDiv = document.body;
+window.addEventListener("wheel", (e) => {
+  speed += e.deltaY * 0.001;
+});
+
+function raf() {
+  position += speed;
+  speed *= 0.97;
+  
+  let maxTranslateValue = (document.documentElement.scrollHeight - window.innerHeight) * 0.5;
+
+  // Stop the animation when reaching the bottom
+  if (position > maxTranslateValue) {
+    position = maxTranslateValue;
+  }
+
+  let translateValue = position * 50;
+  bodyDiv.style.transform = `translate(0,-${translateValue}px)`;
+  
+  if (position < maxTranslateValue) {
+    window.requestAnimationFrame(raf);
+  }
+}
+
+raf();
+
+
+
+// ********************* Text Fade-in *********************
