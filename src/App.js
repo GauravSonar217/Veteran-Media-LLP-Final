@@ -13,6 +13,7 @@ import Testimonial from './component/Testimonial';
 import Services from './component/Services';
 
 
+
 function App() {
 
   const router = createBrowserRouter([
@@ -58,6 +59,7 @@ function App() {
   ])
   return (
     <RouterProvider router={router}>
+      {/* <Cursor></Cursor> */}
       {/* <Button class="normalBtn" text="put data" /> */}
     </RouterProvider>
   );

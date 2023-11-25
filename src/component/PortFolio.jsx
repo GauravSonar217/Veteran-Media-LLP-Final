@@ -39,17 +39,19 @@ function PortfolioPage() {
           </div>
         </section>
         <div className="container" id="textSec">
-          <p>
-            Welcome to the Portfolio Showcase at Veteran Media Solutions LLP,
-            where new ideas and hard work come together. This carefully chosen
-            group of projects shows an assortment of wins, with each story
-            featuring problems that were solved, challenges that were overcome,
-            and hopes that were turned into reality. Our showcase shows how
-            creative people can do anything, from redefining brands in a
-            fast-paced world to making immersive digital experiences and using
-            smart packaging to turn goods into iconic stories.
-          </p>
-          <img id="bar" src={bar} alt="bar" />
+          <div className="innerCont">
+            <p>
+              Welcome to the Portfolio Showcase at Veteran Media Solutions LLP,
+              where new ideas and hard work come together. This carefully chosen
+              group of projects shows an assortment of wins, with each story
+              featuring problems that were solved, challenges that were
+              overcome, and hopes that were turned into reality. Our showcase
+              shows how creative people can do anything, from redefining brands
+              in a fast-paced world to making immersive digital experiences and
+              using smart packaging to turn goods into iconic stories.
+            </p>
+            <img id="bar" src={bar} alt="bar" />
+          </div>
         </div>
       </section>
       <section className="porfolioSec sectionPadding">

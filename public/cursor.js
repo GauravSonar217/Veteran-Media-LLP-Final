@@ -1,3 +1,4 @@
+
 let sectionName = "cursor-1"
 let sectionPrev = ""
 let sectionList = [
@@ -248,3 +249,4 @@ document.onclick = function () {
     cursor.click()
   }
 }
+

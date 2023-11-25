@@ -6,7 +6,6 @@
 
   .portHead {
     width: 100%;
-
     background: #dcf2e7;
     padding: 7.5rem 0;
     @include mediumDevice {
@@ -22,6 +21,7 @@
       border-radius: 1.25rem;
       @include flexrow;
       justify-content: space-between;
+      
       @include mediumDevice {
         display: grid;
         grid-template-columns: repeat(1, 1fr);

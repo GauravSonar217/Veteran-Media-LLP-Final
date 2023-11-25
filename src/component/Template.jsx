@@ -23,6 +23,7 @@ import part4 from "../media/png/masterLH.png";
 import part5 from "../media/png/mahindra.png";
 import part6 from "../media/png/fivestar.png";
 import Testimonial from "./Testimonial";
+import FAQSec from "./FAQSec";
 
 function Template() {
   const [showVideo, setShowVideo] = useState(false);
@@ -122,36 +123,7 @@ function Template() {
     };
   }, []);
 
-  function faqToggler() {
-    document.querySelectorAll(".faq-card").forEach((card) => {
-      const question = card.querySelector(".question");
-      const answer = card.querySelector(".answer");
-      const icon = card.querySelector(".icon");
-      const toggle = card.querySelector(".toggle");
-      const h3 = card.querySelector("h3");
-      const p = card.querySelector("p");
-
-      question.addEventListener("click", () => {
-        if (answer.style.display === "block") {
-          answer.style.display = "none";
-          icon.textContent = "+";
-          icon.style.color = "white";
-          card.style.backgroundColor = "white";
-          h3.style.color = "black";
-          p.style.color = "black";
-          toggle.style.backgroundColor = "black"; // Restore the default toggle color
-        } else {
-          answer.style.display = "block";
-          icon.textContent = "-";
-          icon.style.color = "#524FD5";
-          toggle.style.backgroundColor = "#fff"; // Change toggle background color to the specified color
-          card.style.backgroundColor = "black";
-          h3.style.color = "white";
-          p.style.color = "white";
-        }
-      });
-    });
-  }
+  
 
   function playVideo() {
     const video = document.getElementById("video");
@@ -472,7 +444,8 @@ function Template() {
           </div>
         </div>
       </section>
-      <section id="faq" className="sectionPadding">
+      <FAQSec></FAQSec>
+      {/* <section id="faq" className="sectionPadding">
         <div class="container" id="faqSection">
           <h4>More Information</h4>
           <h2>Frequently asked questions</h2>
@@ -633,7 +606,7 @@ function Template() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       <section className="blogSection sectionPadding">
         <div className="container" id="blogSec">
           <div className="innerCont" id="blogCont">
@@ -720,8 +693,6 @@ function Template() {
                 <option value=""> Digital Printing</option>
                 <option value=""> Web Development</option>
               </select>
-              {/* <label htmlFor="query">What are you looking for*</label> */}
-              {/* <input type="text" name="query" id="query" /> */}
             </div>
             <div>
               <label htmlFor="message">Message*</label>
@@ -742,7 +713,7 @@ function Template() {
                 accept=".pdf"
                 onchange="handleFileUpload()"
               ></input>
-              <button>Send Message</button>
+              <button id="messageBtn" className="btn1">Send Message</button>
             </div>
           </form>
         </div>

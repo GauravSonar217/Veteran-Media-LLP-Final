@@ -62,7 +62,7 @@ window.addEventListener("wheel", (e) => {
 function raf() {
   position += speed;
   speed *= 0.97;
-  
+
   let maxTranslateValue = (document.documentElement.scrollHeight - window.innerHeight) * 0.5;
 
   // Stop the animation when reaching the bottom
@@ -72,7 +72,7 @@ function raf() {
 
   let translateValue = position * 50;
   bodyDiv.style.transform = `translate(0,-${translateValue}px)`;
-  
+
   if (position < maxTranslateValue) {
     window.requestAnimationFrame(raf);
   }
@@ -83,3 +83,5 @@ raf();
 
 
 // ********************* Text Fade-in *********************
+
+
