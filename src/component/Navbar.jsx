@@ -101,26 +101,26 @@ function Navbar() {
             </a>
           </div>
         </div>
-        <nav className="navbar navbar-expand-lg">
+        <nav className="navbar navbar-expand-lg" id="nav">
           <div className="container" id="navbar">
             <h1 className="navbar-brand">
-              <HashLink to="/">
+              <HashLink to="index.html">
                 <img src={logo} alt="Company Logo" />
               </HashLink>
             </h1>
             <ul className="firstLinkCont">
               <li id="homelink" className="nav-item">
-                <HashLink className="nav-link active" to="/">
+                <HashLink className="nav-link active" to="index.html">
                   Home
                 </HashLink>
               </li>
               <li className="nav-item">
-                <HashLink className="nav-link" to="/about/#aboutSec">
+                <HashLink className="nav-link" to="#aboutSec">
                   About us
                 </HashLink>
               </li>
               <li className="nav-item">
-                <HashLink className="nav-link" to="/portfolio/#projectSec">
+                <HashLink className="nav-link" to="/portfolio">
                   Projects
                 </HashLink>
               </li>
@@ -155,7 +155,7 @@ function Navbar() {
                 </div>
               </li>
               <li className="nav-item">
-                <HashLink className="nav-link" to="/contact/#contactCont">
+                <HashLink className="nav-link" to="/contact/#nav">
                   contact
                 </HashLink>
               </li>

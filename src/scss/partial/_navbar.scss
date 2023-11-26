@@ -7,14 +7,14 @@
     // padding: 1.5rem 1.8rem;
     padding: 1.8rem;
     position: absolute;
-    top: 4rem;
+    top: 5rem;
     right: 0;
     background-color: $red-900;
     @include flexrow;
     flex-direction: column;
     align-items: start;
     gap: 0.9rem 5rem;
-    // visibility: hidden;
+
     display: none;
     @include largeDevice {
       width: 12rem;
@@ -257,7 +257,7 @@
           }
 
           .serviceDropdown {
-            width: 100%;
+            width: 100vw;
             height: calc(100vh - 80px);
             @include flexrow;
             background-color: $white;

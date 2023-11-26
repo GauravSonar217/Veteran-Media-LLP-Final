@@ -3,19 +3,24 @@
   height: 100%;
   position: relative;
   padding-top: 5rem;
+
   @include largeDevice {
     height: calc(100vh - 5rem);
   }
+
   @include extraLargeDevice {
-    height: calc(90vh - 5rem);
+    height: calc(90vh - 18rem);
   }
-  @include mediumDevice{
+
+  @include mediumDevice {
     padding: 5rem 0;
   }
-  @include smallDevice{
+
+  @include smallDevice {
     padding: 5rem 0;
   }
-  @include extraSmallDevice{
+
+  @include extraSmallDevice {
     padding: 5rem 0;
   }
 
@@ -24,22 +29,26 @@
     height: 100%;
     position: relative;
     z-index: 10;
+
     @include mediumDevice {
       width: 100%;
       height: 30vh;
       margin-bottom: 2rem;
     }
+
     @include smallDevice {
       width: 100%;
       height: 40vh;
       margin-bottom: 2rem;
     }
+
     @include extraSmallDevice {
       width: 100%;
       height: 40vh;
       margin-bottom: 2rem;
     }
   }
+
   .shadow {
     width: 100%;
     height: calc(100% - 5rem);
@@ -49,16 +58,20 @@
     left: 0;
     bottom: 0;
     z-index: 50;
+
     @include mediumDevice {
       display: none;
     }
+
     @include smallDevice {
       display: none;
     }
+
     @include extraSmallDevice {
       display: none;
     }
   }
+
   .contactForm {
     width: 600px;
     border-radius: 1rem;
@@ -66,27 +79,32 @@
     position: absolute;
     top: 3rem;
     right: 16%;
-    bottom: -4rem;
+    bottom: -3rem;
     background-color: $white;
     border: 2px solid rgba(176, 176, 192, 0.3);
     // border: 1px solid blue;
     z-index: 10000;
+
     @include extraLargeDevice {
-      right: 8%;
+      right: 15%;
     }
+
     @include largeDevice {
       right: 8%;
     }
+
     @include mediumDevice {
       width: 80%;
       position: static;
       margin: 0 auto;
     }
+
     @include smallDevice {
       width: 80%;
       position: static;
       margin: 0 auto;
     }
+
     @include extraSmallDevice {
       width: 100%;
       position: static;
@@ -98,101 +116,158 @@
       font-size: 2rem;
       font-weight: 500;
       margin-bottom: 2rem;
+
       @include extraLargeDevice {
         font-size: 2.5rem;
         margin-bottom: 3rem;
       }
+
       @include largeDevice {
         font-size: 2.3rem;
         margin-bottom: 1rem;
       }
-     
+
       @include mediumDevice {
         font-size: 2.5rem;
         margin-bottom: 2rem;
       }
+
       @include smallDevice {
         font-size: 2.3rem;
         margin-bottom: 2rem;
       }
+
       @include extraSmallDevice {
         font-size: 2rem;
         margin-bottom: 2rem;
         text-align: center;
       }
+
       @include bigLaptop {
         font-size: 2rem;
         margin-bottom: 2rem;
       }
     }
+
     form {
       width: 100%;
       @include flexrow;
       flex-direction: column;
       align-items: start;
-     
+
       position: relative;
-      
+
+      div {
+        margin: 5px 0px;
+        width: 100%;
+      }
+
       label {
         font-size: 1rem;
       }
+
       input {
         width: 100%;
-        padding: 1rem 2rem;
-        border-radius: 0.8rem;
+        padding: 0.5rem 1rem;
         font-size: 1.1rem;
         border: none;
         outline: none;
         border-bottom: 2px solid $black;
-      
+
         @include mediumDevice {
           margin-bottom: 1rem;
         }
+
         @include smallDevice {
           margin-bottom: 1rem;
         }
+
         @include extraLargeDevice {
           margin-bottom: 1rem;
         }
+
         @include largeDevice {
           margin-bottom: 2rem;
         }
-        @include bigLaptop{
+
+        @include bigLaptop {
           margin-bottom: 1rem;
         }
+
         @include extraSmallDevice {
           margin-bottom: 1rem;
         }
       }
+
       textarea {
         width: 100%;
-        border-radius: 1rem;
+        height: 3rem;
         padding: 1rem 2rem;
         border: none;
         outline: none;
         border-bottom: 2px solid $black;
       }
+
       .uploadCont {
         width: 100%;
-        margin: 5rem 0;
+        margin: 2rem 0;
+
+
+
+
+
+        #upload-container {
+          display: flex;
+          align-items: center;
+        }
+
+        #file-input {
+          display: none;
+        }
+
+        #upload-label {
+          cursor: pointer;
+          padding: 10px;
+          color: $black;
+          border-radius: 5px;
+          margin-right: 10px;
+        }
+
+        #upload-icon {
+          font-size: 20px;
+          margin-right: 5px;
+        }
+
+
+
+
+
+
+
+
         @include flexrow;
         justify-content: space-between;
         position: relative;
+
         @include extraLargeDevice {
           padding: 1rem 0;
         }
+
         @include largeDevice {
           padding: 1rem 0;
         }
+
         @include mediumDevice {
           padding: 1rem 0;
           margin: 3rem 0;
         }
+
         @include smallDevice {
           padding: 1rem 0;
           margin: 2.5rem 0;
 
         }
+
         @include extraSmallDevice {
           padding: 1rem 0;
           margin: 2rem 0;
@@ -204,11 +279,12 @@
           margin: 0;
           padding: 0.5rem;
         }
+
         button {
           font-size: 1.1rem;
           padding: 1.3em 0;
           padding-left: 3em;
-          padding-right: 8em ;
+          padding-right: 8em;
           background-color: $black;
           color: $white;
           border: none;
@@ -216,17 +292,20 @@
           @include flexrow;
           position: absolute;
           right: -3.5rem;
+
           @include mediumDevice {
             position: relative;
             padding: 1rem 2rem;
             right: 0;
           }
+
           @include smallDevice {
             position: relative;
             right: 0;
             padding: 1rem 2rem;
             right: 0;
           }
+
           @include extraSmallDevice {
             position: relative;
             right: 0;
@@ -234,6 +313,7 @@
             font-size: 0.9rem;
 
           }
+
           // @include mobile {
           //   padding: 0.4rem 0.8rem;
           //   font-size: 0.7rem;
@@ -251,9 +331,11 @@
             @include mediumDevice {
               display: none;
             }
+
             @include smallDevice {
               display: none;
             }
+
             @include extraSmallDevice {
               display: none;
             }
@@ -262,6 +344,7 @@
       }
     }
   }
+
   h3 {
     font-size: 1rem;
     font-weight: 400;
@@ -272,30 +355,38 @@
     position: absolute;
     top: 8rem;
     left: 16%;
+
     p {
       color: $white;
       display: inline;
       cursor: pointer;
     }
+
     img {
       margin-left: 2rem;
     }
+
     @include extraLargeDevice {
-      left: 8%;
+      left: 15%;
     }
+
     @include largeDevice {
       left: 8%;
     }
+
     @include mediumDevice {
       display: none;
     }
+
     @include smallDevice {
       display: none;
     }
+
     @include extraSmallDevice {
       display: none;
     }
   }
+
   .contactTextBox {
     width: 30%;
     @include flexrow;
@@ -307,13 +398,15 @@
     z-index: 1000;
     bottom: 0;
     left: 16%;
-   
+
     @include extraLargeDevice {
-      left: 8%;
+      left: 15%;
     }
+
     @include largeDevice {
       left: 8%;
     }
+
     @include mediumDevice {
       position: relative;
       width: 90%;
@@ -324,6 +417,7 @@
       padding: 0;
       text-align: center;
     }
+
     @include smallDevice {
       position: relative;
       width: 90%;
@@ -334,6 +428,7 @@
       padding: 0;
       text-align: center;
     }
+
     @include extraSmallDevice {
       position: relative;
       width: 90%;
@@ -344,23 +439,27 @@
       padding: 0;
       text-align: center;
     }
+
     .contactText {
       width: 100%;
       color: $white;
       padding: 1rem;
       border-radius: 1rem;
-    
+
       @include extraLargeDevice {
         width: 100%;
       }
+
       @include mediumDevice {
         width: 100%;
         background-color: $black;
       }
+
       @include smallDevice {
         width: 100%;
         background-color: $black;
       }
+
       @include extraSmallDevice {
         width: 100%;
         background-color: $black;
@@ -368,10 +467,11 @@
 
       h2 {
         color: $white;
-        @include mediumDevice{
+
+        @include mediumDevice {
           margin-bottom: 1rem;
         }
-      
+
       }
     }
   }
