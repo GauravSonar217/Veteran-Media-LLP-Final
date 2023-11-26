@@ -1,14 +1,17 @@
+@import './animation/cursor';
 @import './common/color/colors';
+@import './common/components/buttons';
 @import './common/mesures';
 @import './common/fonts/fonts';
-@import './common/mixins/mixin';
-@import './common/borders';
 @import './responsive/responsive';
 @import './common/common';
+@import './common/mixins/mixin';
+@import './common/borders';
 @import './partial/errorpage';
 @import './partial/careerPage';
-@import './partial/portfolioPage';
 @import './partial/contactPage';
+@import './partial/portfolioPage';
+@import './partial/servicePage';
 @import './partial/navbar';
 @import './partial/header';
 @import './partial/promo';
@@ -19,6 +22,7 @@
 @import './partial/progress';
 @import './partial/about';
 @import './partial/partner';
+@import './partial/team';
 @import './partial/faq';
 @import './partial/blog';
 @import './partial/contact';
@@ -26,6 +30,6 @@
 @import './partial//footer';
 
 @import 'animation/animation';
-@import 'animation/text';
+// @import 'animation/text';
 @import 'common/uiUpdate';
 @import 'responsive/responsive2';

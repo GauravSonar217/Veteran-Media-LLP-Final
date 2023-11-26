@@ -1,6 +1,6 @@
 .contactSection {
   width: 100%;
-  height: 100%;
+  // height: 100%;
   position: relative;
   padding-top: 5rem;
 
@@ -9,7 +9,7 @@
   }
 
   @include extraLargeDevice {
-    height: calc(90vh - 18rem);
+    height: calc(90vh - 5rem);
   }
 
   @include mediumDevice {
@@ -119,7 +119,7 @@
 
       @include extraLargeDevice {
         font-size: 2.5rem;
-        margin-bottom: 3rem;
+        // margin-bottom: 3rem;
       }
 
       @include largeDevice {
@@ -154,7 +154,6 @@
       @include flexrow;
       flex-direction: column;
       align-items: start;
-
       position: relative;
 
       div {
@@ -187,7 +186,41 @@
         }
 
         @include largeDevice {
-          margin-bottom: 2rem;
+          margin-bottom: 1rem;
+        }
+
+        @include bigLaptop {
+          margin-bottom: 1rem;
+        }
+
+        @include extraSmallDevice {
+          margin-bottom: 1rem;
+        }
+      }
+
+      select {
+        width: 100%;
+        padding: 1rem 0rem;
+        font-size: 1.1rem;
+        border: none;
+        outline: none;
+        border-bottom: 2px solid $black;
+        background: transparent;
+
+        @include mediumDevice {
+          margin-bottom: 1rem;
+        }
+
+        @include smallDevice {
+          margin-bottom: 1rem;
+        }
+
+        @include extraLargeDevice {
+          margin-bottom: 1rem;
+        }
+
+        @include largeDevice {
+          margin-bottom: 1rem;
         }
 
         @include bigLaptop {
@@ -211,10 +244,7 @@
       .uploadCont {
         width: 100%;
         margin: 2rem 0;
-
-
-
-
+      
 
         #upload-container {
           display: flex;
@@ -238,13 +268,6 @@
           margin-right: 5px;
         }
 
-
-
-
-
-
-
-
         @include flexrow;
         justify-content: space-between;
         position: relative;
@@ -265,7 +288,6 @@
         @include smallDevice {
           padding: 1rem 0;
           margin: 2.5rem 0;
-
         }
 
         @include extraSmallDevice {
@@ -279,17 +301,7 @@
           margin: 0;
           padding: 0.5rem;
         }
-
-        button {
-          font-size: 1.1rem;
-          padding: 1.3em 0;
-          padding-left: 3em;
-          padding-right: 8em;
-          background-color: $black;
-          color: $white;
-          border: none;
-          border-radius: 1rem;
-          @include flexrow;
+        .btn1 {
           position: absolute;
           right: -3.5rem;
 
@@ -309,25 +321,18 @@
           @include extraSmallDevice {
             position: relative;
             right: 0;
-            padding: 1rem 1.2rem;
             font-size: 0.9rem;
+            padding: 1rem 1.5rem !important;
 
           }
-
-          // @include mobile {
-          //   padding: 0.4rem 0.8rem;
-          //   font-size: 0.7rem;
-          // }
-
+          @include mobile {
+            position: relative;
+            right: 0;
+            font-size: 0.9rem;
+            padding: 1rem 1.2rem !important;
+            font-size: 0.7rem;
+          }
           &::after {
-            content: "";
-            width: 3rem;
-            border: 1px solid #fff;
-            position: absolute;
-            top: 50%;
-            right: 25%;
-            border-bottom: 2px solid #fff;
-
             @include mediumDevice {
               display: none;
             }
@@ -471,7 +476,6 @@
         @include mediumDevice {
           margin-bottom: 1rem;
         }
-
       }
     }
   }

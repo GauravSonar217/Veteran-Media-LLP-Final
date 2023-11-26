@@ -18,7 +18,11 @@ function Footer() {
                 </div>
                 <div className="addressBox">
                   <h3>Inquires</h3>
-                  <p><HashLink to="mailto: info@veteranmedias.com">info@veteranmedias.com</HashLink></p>
+                  <p>
+                    <HashLink to="mailto: info@veteranmedias.com">
+                      info@veteranmedias.com
+                    </HashLink>
+                  </p>
                 </div>
               </div>
               <div className="linkCont">
@@ -26,16 +30,17 @@ function Footer() {
                   <h3>Main Pages</h3>
                   <ul className="flinkCont">
                     <li>
-                      <HashLink to="/PortFolio">Portfolio</HashLink>
+                      <HashLink to="/portfolio/#projectSec">Portfolio</HashLink>
                     </li>
                     <li>
-                      <HashLink to="/career/#careerHead">Services</HashLink>
+                      <HashLink to="/service/#serviceDiv">Services</HashLink>
+                    </li>
+
+                    <li>
+                      <HashLink to="/career/#careerPage">Career</HashLink>
                     </li>
                     <li>
-                      <HashLink to="/career/#nav">Career</HashLink>
-                    </li>
-                    <li>
-                      <HashLink to="/contact/#nav">Contact Us</HashLink>
+                      <HashLink to="/contact/#ContactSec">Contact Us</HashLink>
                     </li>
                   </ul>
                 </div>
@@ -43,32 +48,32 @@ function Footer() {
                   <h3>Services</h3>
                   <ul className="flinkCont">
                     <li>
-                      <a href="#">Graphic Design</a>
+                      <HashLink>Graphic Design</HashLink>
                     </li>
                     <li>
-                      <a href="#">Printing Design</a>
+                      <HashLink>Printing Design</HashLink>
                     </li>
                     <li>
-                      <a href="#">Marketing</a>
+                      <HashLink>Marketing</HashLink>
                     </li>
                     <li>
-                      <a href="#">Web Design and Development</a>
+                      <HashLink>Web Design and Development</HashLink>
                     </li>
                   </ul>
                 </div>
                 <div className="linkBox">
                   <ul className="flinkCont">
                     <li>
-                      <a href="#">Privacy Policy</a>
+                      <HashLink>Privacy Policy</HashLink>
                     </li>
                     <li>
-                      <a href="#">Terms of Service</a>
+                      <HashLink>Terms of Service</HashLink>
                     </li>
                     <li>
-                      <a href="#">Sitemap</a>
+                      <HashLink>Sitemap</HashLink>
                     </li>
                     <li>
-                      <a href="#">Client Area</a>
+                      <HashLink>Client Area</HashLink>
                     </li>
                   </ul>
                 </div>

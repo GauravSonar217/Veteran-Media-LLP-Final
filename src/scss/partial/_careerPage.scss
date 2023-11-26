@@ -3,7 +3,7 @@
   height: 100%;
   @include flexrow;
   flex-direction: column;
-  border: 1px solid red;
+
   p {
     font-size: 1.1rem;
     text-align: center;
@@ -37,8 +37,6 @@
     background: #dcf2e7;
     margin-bottom: 5rem;
 
-    border: 1px solid rgb(3, 248, 3);
-
     #careerHead {
       width: 100%;
       height: 100%;
@@ -48,8 +46,7 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       grid-gap: 2rem;
-      // margin-bottom: 5rem;
-      border: 1px solid blue;
+
       @include mediumDevice {
         grid-template-columns: repeat(1, 1fr);
         grid-gap: 2rem;
@@ -72,7 +69,7 @@
 
       .careerText {
         @include flexrow;
-        border: 1px solid blue;
+
         @include largeDevice {
           justify-content: start;
         }
@@ -109,7 +106,6 @@
         }
       }
       .careerImg {
-        border: 1px solid red;
         @include flexrow;
         justify-content: end;
 
@@ -150,7 +146,6 @@
           @include mobile {
             justify-content: center;
             width: 100%;
-            border: 1px solid red;
           }
         }
       }
@@ -212,6 +207,7 @@
     @include flexrow;
     flex-direction: column;
     justify-content: start;
+ 
     h3 {
       margin-bottom: 1rem;
       text-align: center;
@@ -219,13 +215,14 @@
     p {
       width: 80%;
       text-align: center;
+      margin-bottom: 4rem;
     }
     .careerCont {
       width: 100%;
       display: grid;
       grid-template-columns: repeat(1, 1fr);
       grid-gap: 2rem;
-      padding-top: 4rem;
+
       @include extraLargeDevice {
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 1rem;
@@ -234,215 +231,200 @@
         padding-top: 2rem;
       }
       .feedbackCont {
+        width: 100%;
         position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        row-gap: 1rem;
 
-        .feedHead {
+        .container_left {
           width: 100%;
-          @include flexrow;
-          justify-content: space-between;
+          padding: 0 !important;
+          padding-right: 0 !important;
 
-          h4 {
-            margin-left: 3rem;
-            position: relative;
-            @include extraSmallDevice {
-              margin: 0;
+          @include flexrow;
+          flex-direction: column;
+
+          h1 {
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            font-weight: 500;
+            text-align: center;
+            @include mediumDevice {
+              font-size: 2.2rem;
             }
-            &::before {
-              content: "";
-              width: 2rem;
-              border: 1px solid #000;
-              position: absolute;
-              top: 50%;
-              left: -3rem;
-              @include extraSmallDevice {
-                display: none;
-              }
+            @include extraSmallDevice {
+              font-size: 1.5rem;
+              text-align: center;
             }
           }
-          .btngroup {
-            @include flexrow;
-            .move {
-              width: 2rem;
-              height: 2rem;
-              border-radius: 50%;
-              @include flexrow;
-              margin: 0 0.5rem;
-              font-size: 1.3rem;
-              @include smallDevice {
-                width: 1.5rem;
-                height: 1.5rem;
-              }
-              @include extraSmallDevice {
-                width: 1.5rem;
-                height: 1.5rem;
-                font-size: 1rem;
-              }
-            }
-            #left {
-              background-color: #fff;
-            }
-            #right {
-              background-color: #b1df41;
+          p {
+            color: #333333;
+            margin-bottom: 1rem;
+            text-align: center;
+          }
+          button {
+            padding: 1rem 2rem;
+            margin-top: 1rem;
+            outline: none;
+            border: none;
+            border-radius: 5px;
+            background-color: $parrot;
+         
+            color: $black;
+            font-size: 1.1rem;
+            cursor: pointer;
+            @include extraSmallDevice {
+              padding: 0.8rem 1.5rem;
+              font-size: 1rem;
             }
           }
         }
-        .feedCont {
+        .feedSliderCont {
           width: 100%;
+          height: 100%;
+       
           @include flexrow;
-          justify-content: space-between;
-          align-items: start;
-          padding-top: 1.5rem;
+          // background-color: #000;
+          @include extraLargeDevice {
+            height: 35vh;
+          }
+          @include bigLaptop {
+            height: 45vh;
+          }
           @include largeDevice {
-            padding-top: 1.5rem;
+            height: 45vh;
+          }
+          @include mediumDevice {
+            height: 35vh;
+          }
+          @include smallDevice {
+            height: 40vh;
           }
           @include extraSmallDevice {
-            flex-wrap: wrap;
+            height: 45vh;
+          }
+          @include smallMobile {
+            height: 48vh;
           }
 
-          .emplyeeCont {
-            width: 43%;
+          .slider {
+            width: 100%;
+            height: 100%;
+           
+            position: relative;
 
-            @include flexrow;
-            flex-direction: column;
-            @include extraSmallDevice {
+            .carousel-inner {
               width: 100%;
-            }
+              height: 100%;
+            
 
-            .employeeBox {
-              width: 100%;
-              height: 100px;
-
-              @include flexrow;
-              justify-content: space-between;
-              padding: 1rem;
-              border-radius: 1.25rem;
-              background: #fff;
-              margin-bottom: 1rem;
-              box-shadow: -3px 6px 26.4px -9px rgba(46, 46, 46, 0.15);
-              @include smallDevice {
-                padding: 0.2rem 1rem;
-              }
-              @include extraSmallDevice {
-                padding: 0rem 1rem;
-                border-radius: 0;
-              }
-
-              &:first-child {
+              .carousel-item {
                 width: 100%;
-              }
+                height: 100% !important;
+                text-align: center;
 
-              &:nth-child(2) {
-                opacity: 0.8;
-                box-shadow: -3px 6px 26.4px -9px rgba(46, 46, 46, 0.15);
-                @include extraSmallDevice {
-                  display: none;
-                }
                 .employeeImg {
-                  background-color: #d9d9d9;
-                }
-              }
-              &:last-child {
-                @include extraSmallDevice {
-                  display: none;
-                }
-                opacity: 0.5;
-                background: #fff;
-
-                /* shadow-1 */
-                box-shadow: -3px 6px 26.4px -9px rgba(46, 46, 46, 0.15);
-                .employeeImg {
-                  background-color: #d9d9d9;
-                }
-              }
-              .employeeImg {
-                width: 3.5rem;
-                height: 3.5rem;
-
-                border-radius: 50%;
-                @include largeDevice {
-                  width: 5rem;
-                  height: 5rem;
-                }
-                @include mediumDevice {
-                  width: 4rem;
-                  height: 4rem;
-                }
-                @include smallDevice {
-                  width: 3.5rem;
-                  height: 3.5rem;
-                }
-                @include extraSmallDevice {
-                  width: 3.5rem;
-                  height: 3.5rem;
-                }
-
-                img {
-                  width: 100%;
-                  height: 100%;
+                  width: 6rem;
+                  height: 6rem;
                   border-radius: 50%;
-                  object-fit: cover;
-                }
-              }
-              .employeeName {
-                @include flexrow;
-                flex-direction: column;
-                align-items: start;
-                h4 {
-                  @include extraLargeDevice {
-                    font-size: 1.1vw;
-                  }
-                  @include mediumDevice {
-                    font-size: 2vw;
-                  }
-                  @include smallDevice {
-                    font-size: 2vw;
-                  }
+                  margin: 0 auto;
+                  margin-bottom: 1rem;
                   @include extraSmallDevice {
-                    font-size: 3.5vw;
+                    width: 5rem;
+                    height: 5rem;
+                  }
+                  @include smallMobile {
+                    width: 4rem;
+                    height: 4rem;
+                    margin-bottom: 0.5rem;
+                  }
+
+                  img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 50%;
+                  }
+                }
+                h3 {
+                  font-size: 1.8rem;
+                  margin-bottom: 0.5rem;
+                  font-weight: 500;
+                  @include extraSmallDevice{
+                    font-size: 1.5rem;
+                  }
+                  @include smallMobile{
+                    font-size: 1.3rem;
                   }
                 }
                 h5 {
-                  @include extraLargeDevice {
-                    font-size: 1vw;
+                  font-size: 1.2rem;
+                  @include extraSmallDevice{
+                    font-size: 1rem;
                   }
-                  @include mediumDevice {
-                    font-size: 1.5vw;
-                  }
-                  @include smallDevice {
-                    font-size: 1.6vw;
+                }
+                p {
+                  width: 90%;
+                  font-size: 1rem;
+                  font-weight: 400;
+                  text-align: center;
+                  margin: 0 auto;
+                  padding: 2rem 3rem;
+                  position: relative;
+                  @include largeDevice {
+                    width: 80%;
+                   
                   }
                   @include extraSmallDevice {
-                    font-size: 2.5vw;
+                    width: 100%;
+               
+                    padding: 1rem 2.5rem;
+                  }
+                  @include smallMobile {
+                    width: 100%;
+                   
+                    padding: 1rem 2rem;
+                    margin: 1rem 0;
+                  }
+
+                  img {
+                    width: 2.2rem;
+                    height: 2.2rem;
+                    object-fit: cover;
+                    position: absolute;
+                    @include extraSmallDevice{
+                      width: 1.5rem;
+                      height: 1.5rem;
+                    }
+                    @include smallMobile{
+                      width: 1.1rem;
+                      height: 1.1rem;
+                    }
+
+                    &:first-child {
+                      top: 0;
+                      left: 0;
+                    }
+                    &:last-child {
+                      bottom: 0;
+                      right: 0;
+                    }
                   }
                 }
               }
             }
-          }
-          .feedback {
-            width: 50%;
-            @include extraSmallDevice {
-              width: 100%;
-            }
-            h3 {
-              font-size: 1.5rem;
-              @include smallDevice {
-                font-size: 3vw;
-                margin: 0;
-              }
-              @include extraSmallDevice {
-                font-size: 3vw;
-                margin: 0;
-              }
-            }
-            p {
-              font-size: 0.95rem;
-              width: 100%;
-              text-align: left;
-              @include smallDevice {
-                font-size: 2vw;
-              }
-              @include extraSmallDevice {
-                font-size: 2.2vw;
+            .carousel-indicators {
+              button {
+                width: 1rem;
+                height: 1rem;
+                // border: 1px solid red;
+                border-radius: 50%;
+                background-color: #ccc;
+                &.active {
+                  background-color: $parrot;
+                }
               }
             }
           }
@@ -451,7 +433,7 @@
       .contactCont {
         border-radius: 20px;
         background: #fff;
-        padding: 1rem;
+        padding: 2.5rem;
         box-shadow: -3px 6px 26.4px -9px rgba(46, 46, 46, 0.15);
         @include flexrow;
         flex-wrap: wrap;
@@ -463,6 +445,7 @@
         }
         @include extraSmallDevice {
           gap: 1rem;
+          padding: 2.5rem 1rem;
         }
 
         .inputCont {
@@ -510,27 +493,12 @@
           width: 100%;
           @include flexrow;
           justify-content: space-between;
-          border: 1px solid red;
 
           .left {
-            border: 1px solid blue;
             @include flexrow;
-            @include largeDevice {
-              justify-content: start;
-              width: 50%;
-            }
-            @include mediumDevice {
-              justify-content: start;
-              width: 50%;
-            }
-            @include smallDevice {
-              justify-content: start;
-              width: 50%;
-            }
-            @include extraSmallDevice {
-              width: 70%;
-            }
+            justify-content: start;
             p {
+              width: 100%;
               margin: 0;
               margin-left: 1rem;
               @include extraSmallDevice {
@@ -539,6 +507,7 @@
               }
               @include mobile {
                 font-size: 0.8rem;
+                margin-left: 0;
               }
             }
           }
@@ -567,7 +536,7 @@
             }
             @include mobile {
               font-size: 0.8rem;
-              padding: 0.3em 1.5em;
+              padding: 0.5em 1.5em;
             }
           }
           p {
@@ -592,16 +561,9 @@
             position: relative;
             cursor: pointer;
             padding: 0.2rem;
-            // display: none;
-            border: 1px solid red;
 
-            @include extraLargeDevice {
-              display: inline-block;
-            }
             @include extraSmallDevice {
               width: 75px;
-              // width: 60px;
-              // height: 25px;
             }
 
             .slider-button {

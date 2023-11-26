@@ -37,6 +37,7 @@
         border-radius: 1.25rem;
         position: relative;
         overflow: hidden;
+        cursor: pointer;
         @include largeDevice {
           width: 80%;
           margin: 0 auto;
@@ -57,9 +58,9 @@
           @include flexrow;
           font-size: 1.2rem;
           z-index: 100;
-          cursor: pointer ;
+          cursor: pointer;
+
           a{
-            cursor: pointer;
             color: #000;
           }
           @include smallDevice {

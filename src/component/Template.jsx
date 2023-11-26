@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
+import { HashLink } from "react-router-hash-link";
 import Swiper from "swiper";
 import Header from "./Header";
-import Accordion from "react-bootstrap/Accordion";
 import playbtn from "../media/png/play.png";
 import promovideo from "../media/production_id_5207408 (1080p).mp4";
 import serviceImg from "../media/png/services.png";
@@ -12,6 +12,7 @@ import prog3 from "../media/png/execution 1.png";
 import prog4 from "../media/png/innovation 1.png";
 import prog5 from "../media/png/creativity 1.png";
 import aboutImg from "../media/jpg/image 46.jpg";
+import upload from "../media/png/upload.png";
 import blog1 from "../media/jpg/blog1.jpg";
 import blog2 from "../media/jpg/blog2.jpg";
 import arrow from "../media/png/Vector 1.png";
@@ -21,25 +22,80 @@ import part3 from "../media/png/harisons.png";
 import part4 from "../media/png/masterLH.png";
 import part5 from "../media/png/mahindra.png";
 import part6 from "../media/png/fivestar.png";
+import member1 from "../media/jpg/yashimg.jpg";
+import member2 from "../media/jpg/divyaimg.jpg";
 import Testimonial from "./Testimonial";
+import FAQSec from "./FAQSec";
 
 function Template() {
   const [showVideo, setShowVideo] = useState(false);
   const [showbtn, setShowbtn] = useState(false);
   const [showMap, setShowMap] = useState(false);
   const [counter, setCounter] = useState(false);
-  // useEffect(() => {
-  //   let btn = document.querySelector(".accordion-button");
-  //   console.log(btn);
-  //   btn.addEventListener("click", function () {
-  //     console.log("btn clicked");
-  //     btn.classList.toggle("mystyle");
-  //     btn.classList.toggle("click");
-  //     console.log(btn);
-  //   });
-  // }, []);
-  
+  const targetRef = useRef();
 
+  let clientCounter, regularClient, projectDone, experience;
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Start the counter when the section is visible
+            startCounter();
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    if (targetRef.current) {
+      observer.observe(targetRef.current);
+    }
+
+    return () => {
+      if (targetRef.current) {
+        observer.unobserve(targetRef.current);
+      }
+      // Clear the intervals when the component unmounts or is no longer visible
+      clearInterval(clientCounter);
+      clearInterval(regularClient);
+      clearInterval(projectDone);
+      clearInterval(experience);
+    };
+  }, []);
+
+  const startCounter = () => {
+    let a = 0,
+      b = 0,
+      c = 0,
+      d = 0;
+
+    const updateCounter = () => {
+      a = Math.min(a + Math.floor(Math.random() * 100), 700);
+      b = Math.min(b + Math.floor(Math.random() * 10), 30);
+      c = Math.min(c + Math.floor(Math.random() * 100), 999);
+      d = Math.min(d + Math.floor(Math.random() * 2), 5);
+
+      document.querySelector("#one").innerHTML = a + "+";
+      document.querySelector("#two").innerHTML = b + "+";
+      document.querySelector("#three").innerHTML = c + "+";
+      document.querySelector("#four").innerHTML = d;
+    };
+
+    // Update the counter values at intervals
+    clientCounter = setInterval(updateCounter, 100);
+    regularClient = setInterval(updateCounter, 500);
+    projectDone = setInterval(updateCounter, 100);
+    experience = setInterval(updateCounter, 500);
+
+    return () => {
+      clearInterval(clientCounter);
+      clearInterval(regularClient);
+      clearInterval(projectDone);
+      clearInterval(experience);
+    };
+  };
 
   useEffect(() => {
     function moveCursor(dets) {
@@ -68,144 +124,21 @@ function Template() {
       imgCont.removeEventListener("mousemove", moveCursor);
     };
   }, []);
-  useEffect(() => {
-    document.querySelectorAll(".faq-card").forEach((card) => {
-      const question = card.querySelector(".question");
-      const answer = card.querySelector(".answer");
-      const icon = card.querySelector(".icon");
-      const toggle = card.querySelector(".toggle");
-      const h3 = card.querySelector("h3");
-      const p = card.querySelector("p");
 
-      let defaultIconColor = icon.style.color;
-      let defaultCardColor = card.style.backgroundColor;
-      let defaultH2Color = h3.style.color;
-      let defaultPColor = p.style.color;
-      let defaultToggleColor = toggle.style.backgroundColor; // Store the default toggle color
-
-      question.addEventListener("click", () => {
-        if (answer.style.display === "block") {
-          answer.style.display = "none";
-          icon.textContent = "+";
-          icon.style.color = defaultIconColor;
-          card.style.backgroundColor = "white";
-          h3.style.color = defaultH2Color;
-          p.style.color = defaultPColor;
-          toggle.style.backgroundColor = defaultToggleColor; // Restore the default toggle color
-        } else {
-          answer.style.display = "block";
-          icon.textContent = "-";
-          icon.style.color = "#524FD5";
-          toggle.style.backgroundColor = "#fff"; // Change toggle background color to the specified color
-          card.style.backgroundColor = "black";
-          h3.style.color = "white";
-          p.style.color = "white";
-        }
-      });
-    });
-  }, []);
-
-  useEffect(() => {
-    const counter = () => {
-      var a = 0;
-      var b = 0;
-      var c = 0;
-      var d = 0;
-      const clientCounter = setInterval(function () {
-        a = a + Math.floor(Math.random() * 100);
-        if (a < 700) {
-          document.querySelector("#one").innerHTML = a + "+";
-        } else {
-          a = 700;
-          document.querySelector("#one").innerHTML = a + "+";
-        }
-      }, 100);
-      const regularCLient = setInterval(function () {
-        b = b + Math.floor(Math.random() * 10);
-        if (b < 30) {
-          document.querySelector("#two").innerHTML = b + "+";
-        } else {
-          b = 30;
-          document.querySelector("#two").innerHTML = b + "+";
-        }
-      }, 100);
-      const projectDone = setInterval(function () {
-        c = c + Math.floor(Math.random() * 100);
-        if (c < 999) {
-          document.querySelector("#three").innerHTML = c + "+";
-        } else {
-          c = 999;
-          document.querySelector("#three").innerHTML = c + "+";
-        }
-      }, 100);
-      const experience = setInterval(function () {
-        d = d + Math.floor(Math.random() * 2);
-        if (d < 5) {
-          document.querySelector("#four").innerHTML = d;
-        } else {
-          d = 5;
-          document.querySelector("#four").innerHTML = d;
-        }
-      }, 100);
-
-      return () => {
-        clearInterval(clientCounter);
-        clearInterval(regularCLient);
-        clearInterval(projectDone);
-        clearInterval(experience);
-      };
-    };
-    const intervalFunctions = counter();
-    return () => {
-      intervalFunctions();
-    };
-  }, []);
-
-  const expandVideo = () => {
-    setShowVideo(true);
-    var playBtn = document.getElementById("pause");
-    var videoCont = document.getElementById("promoCont");
-    console.log(videoCont);
-    videoCont.style.height = "100vh";
-    console.log(videoCont);
-    playBtn.style.display = "none";
-  };
   function playVideo() {
     const video = document.getElementById("video");
     const videoSection = document.getElementById("videoSection");
     const videoCont = document.getElementById("videoOuter");
-    console.log(videoCont);
     const playButton = document.querySelector(".play-button");
 
-    videoCont.style.height = "100vh"; // Increase section height
+    videoCont.style.height = "100vh";
     videoSection.style.width = "100%";
     videoSection.style.height = "100%";
-    // video.style.visibility = "visible";
     playButton.style.display = "none";
 
     video.play();
   }
 
-  // useEffect(() => {
-  //   let mapShow = document.getElementById("mapShower");
-  //   let mapShadow = document.getElementById("mapShadow");
-  //   let contactBox = document.querySelector(".contactText");
-  //   let head = document.querySelector("#head");
-  //   console.log(contactBox);
-  //   console.log(mapShow);
-  //   console.log(mapShadow);
-  //   mapShow.addEventListener("click", function () {
-  //     if (!showMap) {
-  //       mapShadow.style.visibility = "hidden";
-  //       contactBox.style.backgroundColor = "black";
-  //       setShowMap(true);
-  //     } else {
-  //       mapShadow.style.visibility = "visible";
-  //       contactBox.style.backgroundColor = "transparent";
-  //       setShowMap(false);
-  //     }
-  //   });
-  // }, []);
   function mapShower() {
     let mapShow = document.getElementById("mapShower");
     let mapShadow = document.getElementById("mapShadow");
@@ -227,37 +160,18 @@ function Template() {
     });
   }
 
-  useEffect(() => {
-    var swiper = new Swiper(".mySwiper", {
-      autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-      },
-      loop: true,
-      effect: "fade",
-      autoHeight: true,
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-    });
-    console.log("slider working");
-  }, []); // Ensure this effect runs only once by passing an empty dependency arra
-
-  // swiper();
-
   return (
     <React.Fragment>
       <Header></Header>
       <section className="videoCont">
-        <img
-          src={playbtn}
-          alt="Play Button"
-          className="play-button"
-          onClick={playVideo}
-          id="pause"
-        />
         <div id="videoOuter">
+          <img
+            src={playbtn}
+            alt="Play Button"
+            className="play-button"
+            onClick={playVideo}
+            id="pause"
+          />
           <div class="video-section" id="videoSection">
             <video id="video" loop muted autoPlay>
               <source src={promovideo} type="video/mp4" />
@@ -266,7 +180,7 @@ function Template() {
           </div>
         </div>
       </section>
-      <section className="counterCont sectionPadding">
+      <section className="counterCont sectionPadding" ref={targetRef}>
         <div className="container" id="clientCont">
           <div className="innerCont" id="innercont">
             <div className="projectBox">
@@ -383,7 +297,9 @@ function Template() {
                 </div>
               </div>
             </div>
-            <button id="workBtn">See Our Work</button>
+            <HashLink to="/portfolio/#projectSec">
+              <button id="workBtn">See Our Work</button>
+            </HashLink>
           </div>
         </div>
       </section>
@@ -463,7 +379,7 @@ function Template() {
             <div className="aboutImgCont" id="imgCont">
               <img src={aboutImg} alt="about section image" />
               <div id="cursor">
-                <a href="">Read More</a>
+                <HashLink>Read More</HashLink>
               </div>
             </div>
             <div className="aboutTextCont">
@@ -528,167 +444,43 @@ function Template() {
           </div>
         </div>
       </section>
-      <section id="faq" className="sectionPadding">
-        <div class="container" id="faqSection">
-          <h4>More Information</h4>
-          <h2>Frequently asked questions</h2>
-          <div class="row my-4" id="faqCont">
-            <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
-              <div class="faq-card" id="faq-card-1">
-                <div class="question">
-                  <h3>What services does Veteran Media offer?</h3>
-                  <div class="toggle">
-                    <span class="icon">+</span>
-                  </div>
-                </div>
-                <div class="answer">
-                  <p>
-                    Veteran Media provides a comprehensive range of services
-                    tailored to meet your specific needs. Our offerings include
-                    Services.html designed to empower businesses and individuals
-                    in achieving their goals. &nbsp;{" "}
-                    <a href="">Check Servies</a>
-                  </p>
-                </div>
+      <section className="teamSec sectionPadding">
+        <div className="container" id="teamSec">
+          <div className="innerCont" id="teamCont">
+            <h4>Our Team</h4>
+            <h2>The Creative Minds Behind Untitled UI</h2>
+            <p>
+              Our philosophy centers on providing our exceptional team with the
+              resources and support they need to excel. Witness the synergy of
+              talent and dedication as we strive for excellence in every
+              project.
+            </p>
+            <div className="teamBoxCont">
+              <div className="teamBox">
+                <img src={member1} alt="employess image" />
+                <h3>Piyush More</h3>
+                <h6>Founder & Managing Director</h6>
               </div>
-            </div>
-            <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
-              <div class="faq-card" id="faq-card-2">
-                <div class="question">
-                  <h3>How can I get started with Veteran Media?</h3>
-                  <div class="toggle">
-                    <span class="icon">+</span>
-                  </div>
-                </div>
-                <div class="answer">
-                  <p>
-                    Simply fill this form &nbsp;<a href="">Contact Us</a>. Our
-                    team is ready to guide you through every step.
-                  </p>
-                </div>
+              <div className="teamBox">
+                <img src={member1} alt="employess image" />
+                <h3>Yashwant Gosavi</h3>
+                <h6>Cnslt. Web Designer & Developer</h6>
               </div>
-            </div>
-            <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
-              <div class="faq-card" id="faq-card-3">
-                <div class="question">
-                  <h3>
-                    What sets Veteran Media apart from other agencies in the
-                    industry?
-                  </h3>
-                  <div class="toggle">
-                    <span class="icon">+</span>
-                  </div>
-                </div>
-                <div class="answer">
-                  <p>
-                    At Veteran, we distinguish ourselves through Veteran Media
-                    stands out in the industry through its:
-                    <ul>
-                      <li>
-                        Expertise: A team with extensive experience and
-                        specialized knowledge.
-                      </li>
-                      <li>
-                        Personalized Approach: Tailoring solutions to each
-                        client's unique needs. Cutting-edge
-                      </li>
-                      <li>
-                        Technology: Utilizing innovative tools and staying
-                        current with industry trends.
-                      </li>
-                      <li>
-                        Commitment to Excellence: Industry recognition,
-                        certifications, and a track record of success.
-                      </li>
-                      <li>
-                        Client Satisfaction: Positive testimonials, case
-                        studies, and a client-centric approach.
-                      </li>
-                      <li>
-                        Innovative Strategies: Creative problem-solving and
-                        adaptability to industry changes.
-                      </li>
-                      <li>
-                        Proven Track Record: Successful past campaigns and
-                        long-term client relationships.
-                      </li>
-                      <li>
-                        Collaborative Partnerships: Working closely with clients
-                        as trusted, long-term partners..
-                      </li>
-                    </ul>
-                    Our commitment to excellence and client satisfaction sets us
-                    apart in the competitive landscape.
-                  </p>
-                </div>
+              <div className="teamBox">
+                <img src={member1} alt="employess image" />
+                <h3>Darshan Chaudhari</h3>
+                <h6>Motion Graphic Designer</h6>
               </div>
-            </div>
-            <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
-              <div class="faq-card" id="faq-card-4">
-                <div class="question">
-                  <h3>
-                    Is Veteran suitable for small Businesses/ Startups or larger
-                    enterprises?
-                  </h3>
-                  <div class="toggle">
-                    <span class="icon">+</span>
-                  </div>
-                </div>
-                <div class="answer">
-                  <p>
-                    Veteran Media caters to a diverse clientele, including small
-                    businesses, startups, and larger enterprises. Our scalable
-                    solutions are adaptable to the unique requirements of
-                    businesses of all sizes. Whether you're just starting or
-                    looking to expand, we have the expertise to assist you.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
-              <div class="faq-card" id="faq-card-5">
-                <div class="question">
-                  <h3>What is the typical timeline for project completion?</h3>
-                  <div class="toggle">
-                    <span class="icon">+</span>
-                  </div>
-                </div>
-                <div class="answer">
-                  <p>
-                    Project timelines can vary based on the nature and scope of
-                    the work. During the initial consultation, we'll work with
-                    you to establish realistic timelines that align with your
-                    objectives. Our commitment to efficiency ensures timely
-                    delivery without compromising on quality.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
-              <div class="faq-card" id="faq-card-6">
-                <div class="question">
-                  <h3>
-                    How does Veteran Media LLP ensure client satisfaction?
-                  </h3>
-                  <div class="toggle">
-                    <span class="icon">+</span>
-                  </div>
-                </div>
-                <div class="answer">
-                  <p>
-                    Client satisfaction is at the core of our values. We
-                    maintain transparent communication throughout the project,
-                    provide regular updates, and actively seek feedback. Our
-                    team is dedicated to surpassing your expectations, and we
-                    prioritize your satisfaction in every aspect of our
-                    partnership.
-                  </p>
-                </div>
+              <div className="teamBox">
+                <img src={member2} alt="employess image" />
+                <h3>Divya Sonar</h3>
+                <h6>UI-UX & Graphic Designer</h6>
               </div>
             </div>
           </div>
         </div>
       </section>
+      <FAQSec></FAQSec>
       <section className="blogSection sectionPadding">
         <div className="container" id="blogSec">
           <div className="innerCont" id="blogCont">
@@ -740,18 +532,19 @@ function Template() {
         ></iframe>
         <div id="mapShadow" className="shadow"></div>
         <h3 id="mapShower" onClick={mapShower}>
-          <p>Click here to adjust google map    <img src={arrow} alt="arrow" /></p>
-      
+          <p>
+            Click here to adjust google map <img src={arrow} alt="arrow" />
+          </p>
         </h3>
         <div className="contactForm">
           <h2>Enquiry Form</h2>
           <form>
             <div>
               <label htmlFor="name">Name*</label>
-              <input type="text" name="name" id="name" />
+              <input type="text" name="name" id="name" required />
             </div>
             <div>
-              <label htmlFor="email" aria-required>Email*</label>
+              <label htmlFor="email">Email*</label>
               <input type="email" name="email" id="email" />
             </div>
             <div>
@@ -759,8 +552,24 @@ function Template() {
               <input type="tel" name="contact" id="contact" />
             </div>
             <div>
-              <label htmlFor="query">What are you looking for*</label>
-              <input type="text" name="query" id="query" />
+              <select id="">
+                <option value="" disabled>
+                  {" "}
+                  What are you looking for*
+                </option>
+                <option value=""> Branding</option>
+                <option value=""> Marketing Push</option>
+                <option value=""> Space Buying</option>
+                <option value=""> Indoor & Outdoor Branding</option>
+                <option value=""> Marketing Plans</option>
+                <option value=""> Finishing & Packaging</option>
+                <option value=""> On-Air Promotions</option>
+                <option value=""> Web Design</option>
+                <option value=""> Merchandising</option>
+                <option value=""> Offset Printing</option>
+                <option value=""> Digital Printing</option>
+                <option value=""> Web Development</option>
+              </select>
             </div>
             <div>
               <label htmlFor="message">Message*</label>
@@ -770,7 +579,10 @@ function Template() {
             </div>
             <div id="upload-container" className="uploadCont">
               <label for="file-input" id="upload-label">
-                <div id="upload-icon"><img src="../media/png/upload.png" alt="upload Image"></img></div> Upload File
+                <div id="upload-icon">
+                  <img src={upload} alt="upload Image"></img>
+                </div>
+                Upload File
               </label>
               <input
                 type="file"
@@ -778,7 +590,9 @@ function Template() {
                 accept=".pdf"
                 onchange="handleFileUpload()"
               ></input>
-              <button>Send Message</button>
+              <button id="messageBtn" className="btn1">
+                Send Message
+              </button>
             </div>
           </form>
         </div>

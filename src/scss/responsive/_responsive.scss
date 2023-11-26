@@ -42,7 +42,7 @@
 
 // Extra large devices (large desktops, 1200px and up)
 @mixin extraLargeDevice {
-  @media (min-width: 1440px) {
+  @media (min-width: 1441px) {
     @content;
   }
 }

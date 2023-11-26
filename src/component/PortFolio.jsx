@@ -4,7 +4,6 @@ import projectData from "../data/projectData.json";
 import bar from "../media/png/career.png";
 import stars from "../media/png/stars.png";
 import employee from "../media/png/employee.png";
-import { useEffect } from "react";
 import { HashLink } from "react-router-hash-link";
 import p1 from "../media/jpg/p1.jpg";
 import p2 from "../media/jpg/p2.jpg";
@@ -16,7 +15,7 @@ import p6 from "../media/jpg/p6.jpg";
 function PortfolioPage() {
   const [serviceInfo, setServiceInfo] = useState(projectData[0]);
   const handleService = (service) => {
-    console.log(service)
+    console.log(service);
     let link = document.getElementById("projectLink");
     console.log(link);
     link.style.backgroundColor = "#b1df41";
@@ -40,16 +39,19 @@ function PortfolioPage() {
           </div>
         </section>
         <div className="container" id="textSec">
-          <p>
-            Welcome to the Portfolio Showcase at Veteran Media Solutions LLP,
-            where new ideas and hard work come together. This carefully chosen
-            group of projects shows an assortment of wins, with each story
-            featuring problems that were solved, challenges that were overcome,
-            and hopes that were turned into reality. Our showcase shows how
-            creative people can do anything, from redefining brands in a
-            fast-paced world to making immersive digital experiences and using
-            smart packaging to turn goods into iconic stories.
-          </p>
+          <div className="innerCont">
+            <p>
+              Welcome to the Portfolio Showcase at Veteran Media Solutions LLP,
+              where new ideas and hard work come together. This carefully chosen
+              group of projects shows an assortment of wins, with each story
+              featuring problems that were solved, challenges that were
+              overcome, and hopes that were turned into reality. Our showcase
+              shows how creative people can do anything, from redefining brands
+              in a fast-paced world to making immersive digital experiences and
+              using smart packaging to turn goods into iconic stories.
+            </p>
+            <img id="bar" src={bar} alt="bar" />
+          </div>
         </div>
       </section>
       <section className="porfolioSec sectionPadding">
@@ -140,7 +142,9 @@ function PortfolioPage() {
               ideas?
             </h2>
             <p>And we can help you bring it to the world.</p>
-            <button id="connectBtn">Let’s Talk</button>
+            <HashLink className="nav-link" to="/contact/#ContactSec">
+              <button id="connectBtn">Let’s Talk</button>
+            </HashLink>
           </div>
         </div>
       </section>

@@ -9,6 +9,9 @@ import Footer from './component/Footer';
 import Contact from './component/Contact';
 import PortfolioPage from './component/PortFolio';
 import "../src/App.css";
+import Testimonial from './component/Testimonial';
+import Services from './component/Services';
+
 
 
 function App() {
@@ -45,13 +48,18 @@ function App() {
         },
         {
           path: "/contact/",
-          element: <Contact />,
+          element: <Contact></Contact>,
+        },
+        {
+          path: "/service/",
+          element: <Services></Services>,
         },
       ],
     }
   ])
   return (
     <RouterProvider router={router}>
+      {/* <Cursor></Cursor> */}
       {/* <Button class="normalBtn" text="put data" /> */}
     </RouterProvider>
   );
