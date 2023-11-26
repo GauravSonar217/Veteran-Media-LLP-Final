@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import careerImg from "../media/png/Group 96.png";
 import bar from "../media/png/career.png";
-import stars from "../media/png/stars.png";
-import employee from "../media/png/employee.png";
-import { useEffect } from "react";
+import Feedback from "./Feedback";
+import { HashLink } from "react-router-hash-link";
 
 function CareerPage() {
   const [toggle, setToggle] = useState(false);
@@ -16,17 +15,20 @@ function CareerPage() {
         slider.classList.remove("active");
         sliderbtn.innerHTML = "x";
         setToggle(!toggle);
+        console.log("unchecked")
       } else {
         slider.classList.add("active");
         sliderbtn.innerHTML = "&#10003;";
         setToggle(!toggle);
+        console.log("checked")
+
       }
     });
   }
 
   return (
     <React.Fragment>
-      <section className="careerTop">
+      <section className="careerTop" id="careerPage">
         <section className="careerHead">
           <div className="container" id="careerHead">
             <div className="careerText">
@@ -43,13 +45,13 @@ function CareerPage() {
             </div>
           </div>
         </section>
-          <p>
-            Are you passionate about creativity, innovation, and making a
-            significant impact in advertising and branding? At Veteran Media
-            Solutions LLP, We're looking for dynamic individuals to join our
-            dedicated team of professionals.
-          </p>
-          <img id="bar" src={bar} alt="bar" />
+        <p>
+          Are you passionate about creativity, innovation, and making a
+          significant impact in advertising and branding? At Veteran Media
+          Solutions LLP, We're looking for dynamic individuals to join our
+          dedicated team of professionals.
+        </p>
+        <img id="bar" src={bar} alt="bar" />
       </section>
 
       <section className="careerSec sectionPadding">
@@ -64,57 +66,16 @@ function CareerPage() {
           </p>
           <div className="careerCont">
             <div className="feedbackCont">
-              <div className="feedHead">
-                <h4>Employee Says</h4>
-                <div className="btngroup">
-                  <button className="move" id="left">
-                    &lt;
-                  </button>
-                  <button className="move" id="right">
-                    &gt;
-                  </button>
-                </div>
+              <div class="container_left">
+                <h1>Read what our customers love about us</h1>
+                <p>
+                  Over 100 companies from diverse sectors consult us to enhance
+                  the user experience of their products and services.
+                </p>
+                <button>Read our success stories</button>
               </div>
-              <div className="feedCont">
-                <div className="emplyeeCont">
-                  <div className="employeeBox">
-                    <div className="employeeImg">
-                      <img src={employee} alt="employee image" />
-                    </div>
-                    <div className="employeeName">
-                      <h4>Yashwant Gosavi</h4>
-                      <h5>Graphic Desinger</h5>
-                    </div>
-                  </div>
-                  <div className="employeeBox">
-                    <div className="employeeImg"></div>
-                    <div className="employeeName">
-                      <h4>Yashwant Gosavi</h4>
-                      <h5>Graphic Desinger</h5>
-                    </div>
-                  </div>
-                  <div className="employeeBox">
-                    <div className="employeeImg"></div>
-                    <div className="employeeName">
-                      <h4>Yashwant Gosavi</h4>
-                      <h5>Graphic Desinger</h5>
-                    </div>
-                  </div>
-                </div>
-                <div className="feedback">
-                  <h3>It was a Great Experience!</h3>
-                  <img className="rating" src={stars} alt="rating" />
-                  <p>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book. It has survived not only five centuries,
-                    but also the leap into electronic typesetting, remaining
-                    essentially unchanged. It was popularised in the 1960s with
-                    the release of Letraset sheets containing Lorem Ipsum .
-                  </p>
-                </div>
+              <div className="feedSliderCont">
+                <Feedback></Feedback>
               </div>
             </div>
             <div className="contactCont">
@@ -143,7 +104,7 @@ function CareerPage() {
                     <div class="slider-button">x</div>
                   </div>
                   <p>
-                    I agree with <a href="">privacy policy</a>
+                    I agree with <HashLink>privacy policy</HashLink>
                   </p>
                 </div>
                 <button id="applybtn">Apply</button>

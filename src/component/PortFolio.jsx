@@ -142,7 +142,7 @@ function PortfolioPage() {
               ideas?
             </h2>
             <p>And we can help you bring it to the world.</p>
-            <HashLink className="nav-link" to="/contact/#projectSec">
+            <HashLink className="nav-link" to="/contact/#ContactSec">
               <button id="connectBtn">Let’s Talk</button>
             </HashLink>
           </div>

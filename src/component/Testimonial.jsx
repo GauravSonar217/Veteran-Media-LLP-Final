@@ -7,7 +7,6 @@ import pic1 from "../media/jpg/pic1.jpg";
 import pic2 from "../media/jpg/pic2.jpg";
 import pic3 from "../media/jpg/pic3.jpg";
 import pic4 from "../media/jpg/pic4.jpg";
-import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 

@@ -244,13 +244,19 @@
 
           .serviceDropdown {
             width: 100vw;
-            height: calc(100vh - 80px);
+            height: calc(90vh - 80px);
             @include flexrow;
             background-color: $white;
             position: absolute;
             left: 0;
             top: 4.5rem;
             display: none;
+            @include extraLargeDevice{
+            height: calc(100vh - 100px);
+            }
+            @include largeDevice{
+            height: calc(105vh - 100px);
+            }
             @include extraLargeDevice{
             height: calc(100vh - 100px);
             }
