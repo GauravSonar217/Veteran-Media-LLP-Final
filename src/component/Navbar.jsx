@@ -4,6 +4,7 @@ import mail from "../media/svg/mail.svg";
 import link from "../media/svg/link.svg";
 import logo from "../media/svg/logo.svg";
 import menubar from "../media/svg/hamburger.svg";
+import cross from "../media/svg/cross.svg";
 import facebook from "../media/svg/facebook.svg";
 import insta from "../media/svg/insta.svg";
 import linkedin from "../media/svg/linkedin.svg";
@@ -41,7 +42,7 @@ function Navbar() {
         linkbar1.style.display = "flex";
         linkbar2.style.display = "flex";
         setShowMenu(true);
-      }else{
+      } else {
         linkbar1.style.display = "none";
         linkbar2.style.display = "none";
         setShowMenu(false);
@@ -54,7 +55,7 @@ function Navbar() {
       <div className="wrapper">
         <div id="followCont">
           <h2>
-            Follow us:{" "}
+            Follow us:
             <img
               onClick={closeFollow}
               id="close"
@@ -86,12 +87,12 @@ function Navbar() {
             </h1>
             <ul className="firstLinkCont">
               <li id="homelink" className="nav-item">
-                <HashLink className="nav-link active" to="/home">
+                <HashLink className="nav-link active" to="/">
                   Home
                 </HashLink>
               </li>
-              <li className="nav-item">
-                <HashLink className="nav-link" to="#aboutSec">
+              <li className="nav-item" >
+                <HashLink className="nav-link" to="/about/#aboutSec">
                   About us
                 </HashLink>
               </li>
@@ -101,7 +102,7 @@ function Navbar() {
                 </HashLink>
               </li>
               <li className="nav-item serviceLink">
-                <HashLink className="nav-link">Services</HashLink>
+                <HashLink to="/" className="nav-link">Services</HashLink>
                 <div className="serviceDropdown">
                   <div className="serviceCont">
                     <div className="services">
@@ -111,7 +112,7 @@ function Navbar() {
                           className="serveName"
                           onClick={() => handleClick(service)}
                         >
-                          <HashLink href="">{service.serviceName}</HashLink>
+                          <HashLink>{service.serviceName}</HashLink>
                         </h1>
                       ))}
                     </div>
@@ -154,7 +155,7 @@ function Navbar() {
               </li>
             </ul>
             <div id="toggleMenu" className="menubar" onClick={menuToggler}>
-              <img src={menubar} alt="" />
+              <img src={showMenu ? cross : menubar} alt="" />
             </div>
           </div>
         </nav>

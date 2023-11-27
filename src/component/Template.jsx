@@ -132,7 +132,13 @@ function Template() {
     const videoCont = document.getElementById("videoOuter");
     const playButton = document.querySelector(".play-button");
 
-    videoCont.style.height = "100vh";
+    // Check if the device width is below 425px (mobile device)
+    if (window.innerWidth <= 425) {
+      videoCont.style.height = "30vh"; // Set height to 30vh for mobile devices
+    } else {
+      videoCont.style.height = "100vh"; // Set height to 100vh for other devices
+    }
+
     videoSection.style.width = "100%";
     videoSection.style.height = "100%";
     playButton.style.display = "none";
@@ -285,10 +291,10 @@ function Template() {
               </div>
               <div className="workBox">
                 <div className="workImgBox">
-                  <img src={workImg3} alt="workdone image" />
+                  <img src={workImg4} alt="workdone image" />
                 </div>
                 <div className="workTextBox">
-                  <h3>Outdoor Branding</h3>
+                  <h3>Printing</h3>
                   <h5>
                     <HashLink>Read More</HashLink>
                   </h5>
@@ -296,10 +302,10 @@ function Template() {
               </div>
               <div className="workBox">
                 <div className="workImgBox">
-                  <img src={workImg4} alt="workdone image" />
+                  <img src={workImg3} alt="workdone image" />
                 </div>
                 <div className="workTextBox">
-                  <h3>Printing</h3>
+                  <h3>Outdoor Branding</h3>
                   <h5>
                     <HashLink>Read More</HashLink>
                   </h5>
@@ -566,7 +572,6 @@ function Template() {
             <div>
               <select id="">
                 <option value="" disabled>
-                  {" "}
                   What are you looking for*
                 </option>
                 <option value=""> Branding</option>

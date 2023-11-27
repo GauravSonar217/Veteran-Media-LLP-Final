@@ -3,7 +3,6 @@ footer {
   background-color: #161616;
   position: relative;
   overflow: hidden;
-  border: 1px solid red;
 
   h6 {
     color: $white;
@@ -18,12 +17,11 @@ footer {
   .footerTextCont {
     width: 100%;
     z-index: 1000;
-    border: 1px solid blue;
+   
 
     #footerCont {
       width: 100%;
       height: 100%;
-      border: 1px solid blue;
 
       #footerTextBox {
         width: 100%;
@@ -31,8 +29,7 @@ footer {
         justify-content: space-between;
         display: grid;
         grid-template-columns: 30% auto;
-        border: 1px solid red;
-
+   
         @include mediumDevice {
           grid-template-columns: repeat(1, 1fr);
         }
@@ -54,8 +51,11 @@ footer {
           @include flexrow;
           flex-direction: column;
           justify-content: end;
-          border: 1px solid yellow;
+       
 
+          @include largeDevice {
+            padding-top: 0rem;
+          }
           @include mediumDevice {
             padding: 3rem 0;
             padding-bottom: 1rem;
@@ -72,28 +72,25 @@ footer {
           }
 
           .addressBox {
-            a {
-              color: $white;
-              text-decoration: underline;
-            }
-
             width: 100%;
             @include flexrow;
             flex-direction: column;
             align-items: start;
-            justify-content: end;
+            justify-content: start;
+           
+
+            a {
+              color: $white;
+              text-decoration: underline;
+            }
 
             &:not(:last-child) {
               margin-bottom: 2rem;
             }
 
             h3 {
-              font-size: 1.5rem;
               color: #fff;
-
-              @include largeDevice {
-                font-size: 1.3rem;
-              }
+              margin-bottom: 1rem;
 
               @include mediumDevice {
                 font-size: 2rem;
@@ -105,13 +102,9 @@ footer {
             }
 
             p {
-              font-size: 1rem;
+              font-size: 0.9rem;
 
               margin: 0;
-
-              @include largeDevice {
-                font-size: 0.9rem;
-              }
 
               @include mediumDevice {
                 font-size: 1.1rem;
@@ -130,7 +123,6 @@ footer {
           color: #fff;
           padding-top: 8rem;
           padding-bottom: 5rem;
-          border: 1px solid blue;
           display: grid;
           grid-template-columns: repeat(3, 1fr);
           grid-gap: 4rem;
@@ -154,14 +146,12 @@ footer {
             @include flexrow;
             flex-direction: column;
             align-items: start;
-            border: 1px solid blue;
-
+         
             &:not(:last-child) {
               justify-content: start;
             }
-            &:last-child{
+            &:last-child {
               justify-content: end;
-              // padding-bottom: 2rem;
             }
 
             h3 {

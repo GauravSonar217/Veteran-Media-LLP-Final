@@ -3,7 +3,6 @@
   height: 100%;
   @include flexrow;
   overflow: hidden;
-  // position: relative;
 
   .play-button {
     position: absolute;
@@ -12,6 +11,10 @@
     transform: translate(-50%, -50%);
     z-index: 10000;
     cursor: pointer;
+    @include extraSmallDevice {
+      width: 10rem;
+      height: 10rem;
+    }
   }
 
   #videoOuter {
@@ -19,6 +22,9 @@
     width: 100%;
     height: 40vh;
     overflow: hidden;
+
+    @include extraSmallDevice {
+    }
 
     .video-section {
       position: absolute;

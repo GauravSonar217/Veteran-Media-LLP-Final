@@ -4,12 +4,14 @@
   position: relative;
   padding-top: 5rem;
 
+  @include extraLargeDevice {
+    height: calc(90vh - 5rem);
+  }
   @include largeDevice {
     height: calc(100vh - 5rem);
   }
-
-  @include extraLargeDevice {
-    height: calc(90vh - 5rem);
+  @include bigLaptop {
+    height: calc(100vh - 5rem);
   }
 
   @include mediumDevice {
@@ -82,7 +84,6 @@
     bottom: -3rem;
     background-color: $white;
     border: 2px solid rgba(176, 176, 192, 0.3);
-    border: 1px solid blue; 
     z-index: 10000;
 
     @include extraLargeDevice {
@@ -90,6 +91,9 @@
     }
 
     @include largeDevice {
+      right: 8%;
+    }
+    @include bigLaptop {
       right: 8%;
     }
 
@@ -278,6 +282,9 @@
         @include largeDevice {
           padding: 1rem 0;
         }
+        @include bigLaptop {
+          padding: 1rem 0;
+        }
 
         @include mediumDevice {
           padding: 1rem 0;
@@ -377,6 +384,9 @@
     @include largeDevice {
       left: 8%;
     }
+    @include bigLaptop {
+      left: 8%;
+    }
 
     @include mediumDevice {
       display: none;
@@ -408,6 +418,9 @@
     }
 
     @include largeDevice {
+      left: 8%;
+    }
+    @include bigLaptop {
       left: 8%;
     }
 

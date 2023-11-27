@@ -30,10 +30,6 @@ function App() {
           element: <Template />,
         },
         {
-          path: "/home",
-          element: <Template />,
-        },
-        {
           path: "/about/",
           element: <Template />,
         },
@@ -51,7 +47,7 @@ function App() {
         },
         {
           path: "/service/",
-          element: <Services></Services>,
+          element: <Template />,
         },
       ],
     }

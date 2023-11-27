@@ -4,27 +4,26 @@ import bar from "../media/png/career.png";
 import Feedback from "./Feedback";
 import { HashLink } from "react-router-hash-link";
 
-function CareerPage() {
-  const [toggle, setToggle] = useState(false);
+  function CareerPage() {
+    const [toggle, setToggle] = useState(false);
 
-  function checkToggle() {
-    const slider = document.querySelector(".slider");
-    const sliderbtn = document.querySelector(".slider-button");
-    slider.addEventListener("click", function () {
-      if (toggle) {
-        slider.classList.remove("active");
-        sliderbtn.innerHTML = "x";
-        setToggle(!toggle);
-        console.log("unchecked")
-      } else {
-        slider.classList.add("active");
-        sliderbtn.innerHTML = "&#10003;";
-        setToggle(!toggle);
-        console.log("checked")
-
-      }
-    });
-  }
+    function checkToggle() {
+      const checker = document.querySelector(".checker");
+      const sliderbtn = document.querySelector(".slider-button");
+      checker.addEventListener("click", function () {
+        if (toggle) {
+          checker.classList.remove("active");
+          sliderbtn.innerHTML = "x";
+          setToggle(!toggle);
+          console.log("unchecked")
+        } else {
+          checker.classList.add("active");
+          sliderbtn.innerHTML = "&#10003;";
+          setToggle(!toggle);
+          console.log("checked")
+        }
+      });
+    }
 
   return (
     <React.Fragment>
@@ -66,6 +65,9 @@ function CareerPage() {
           </p>
           <div className="careerCont">
             <div className="feedbackCont">
+              <div className="feedSliderCont">
+                <Feedback></Feedback>
+              </div>
               <div class="container_left">
                 <h1>Read what our customers love about us</h1>
                 <p>
@@ -73,9 +75,6 @@ function CareerPage() {
                   the user experience of their products and services.
                 </p>
                 <button>Read our success stories</button>
-              </div>
-              <div className="feedSliderCont">
-                <Feedback></Feedback>
               </div>
             </div>
             <div className="contactCont">
@@ -100,7 +99,7 @@ function CareerPage() {
               ></textarea>
               <div className="formfooter">
                 <div className="left">
-                  <div class="slider" onClick={checkToggle}>
+                  <div class="checker" onClick={checkToggle}>
                     <div class="slider-button">x</div>
                   </div>
                   <p>

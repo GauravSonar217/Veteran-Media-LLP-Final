@@ -108,9 +108,7 @@
       .menubar {
         width: 2.5rem;
         display: none;
-
         cursor: pointer;
-        // padding: 1rem;
         @include mediumDevice {
           display: inline-block;
         }
@@ -121,7 +119,7 @@
           display: inline-block;
         }
         img {
-          width: 100%;
+          width: 80%;
         }
       }
       .navbar-brand {
@@ -132,7 +130,7 @@
           width: 150px;
         }
         @include extraSmallDevice {
-          width: 120px;
+          width: 130px;
         }
       }
       .firstLinkCont {
@@ -295,11 +293,13 @@
                   font-weight: 400;
                   a {
                     font-size: 3.6rem;
-                    // font-weight: 400;
                     text-transform: capitalize;
                     text-decoration: none;
                     color: $black;
                     position: relative;
+                    @include largeDevice{
+                      font-size: 3rem;
+                    }
 
                     &:hover {
                       &::after {

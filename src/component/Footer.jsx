@@ -33,7 +33,7 @@ function Footer() {
                       <HashLink to="/portfolio/#projectSec">Portfolio</HashLink>
                     </li>
                     <li>
-                      <HashLink to="/service/#serviceDiv">Services</HashLink>
+                      <HashLink to="/service/#serviceSec">Services</HashLink>
                     </li>
 
                     <li>

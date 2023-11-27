@@ -4,6 +4,7 @@ import projectData from "../data/projectData.json";
 import bar from "../media/png/career.png";
 import employee from "../media/png/employee.png";
 import { HashLink } from "react-router-hash-link";
+const imageSrc = require('../media/jpg/p1.jpg');
 import p1 from "../media/jpg/p1.jpg";
 import p2 from "../media/jpg/p2.jpg";
 import p3 from "../media/jpg/p3.jpg";
@@ -13,13 +14,13 @@ import p6 from "../media/jpg/p6.jpg";
 
 function PortfolioPage() {
   const [serviceInfo, setServiceInfo] = useState(projectData[0]);
+  const [activeService, setActiveService] = useState(
+    projectData[0].serviceName
+  );
+
   const handleService = (service) => {
-    console.log(service);
-    let link = document.getElementById("projectLink");
-    console.log(link);
-    link.style.backgroundColor = "#b1df41";
-    link.style.color = "black";
     setServiceInfo(service);
+    setActiveService(service.serviceName);
   };
 
   return (
@@ -62,6 +63,9 @@ function PortfolioPage() {
                 id="projectLink"
                 key={index}
                 onClick={() => handleService(service)}
+                className={
+                  service.serviceName === activeService ? "activeService" : ""
+                }
               >
                 {service.serviceName}
               </HashLink>
