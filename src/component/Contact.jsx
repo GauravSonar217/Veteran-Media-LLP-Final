@@ -116,7 +116,7 @@ function Contact() {
                   </span>
                   Phone number:
                 </h5>
-                <p>+91-253-2970363</p>
+                <p>+91 93729 38392</p>
               </div>
               <div className="addBox">
                 <h5>

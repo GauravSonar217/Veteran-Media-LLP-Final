@@ -24,6 +24,9 @@ function Footer() {
                     </HashLink>
                   </p>
                 </div>
+                <h2>
+                  Website Visitors: <span id="count"> 10</span>
+                </h2>
               </div>
               <div className="linkCont">
                 <div className="linkBox">

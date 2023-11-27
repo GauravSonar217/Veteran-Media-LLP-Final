@@ -64,16 +64,16 @@ function Navbar() {
             />
           </h2>
           <div className="socialIconBox">
-            <a href="">
+            <a href="https://www.facebook.com/VeteranMedias">
               <img src={facebook} alt="facebook-icon" />
             </a>
-            <a href="">
+            <a href="https://www.instagram.com/vetaranmedias/">
               <img src={insta} alt="instagram-icon" />
             </a>
-            <a href="">
+            <a href="https://www.linkedin.com/company/veteran-media-solutions/">
               <img src={linkedin} alt="Linkedin icon" />
             </a>
-            <a href="">
+            <a href="https://twitter.com/veteran-media-solutions/">
               <img src={twitter} alt="twitter-icon" />
             </a>
           </div>
@@ -149,9 +149,9 @@ function Navbar() {
                 </a>
               </li>
               <li className="links">
-                <a href="#" onClick={showfollow} id="sociaLinks">
+                <HashLink to="/" onClick={showfollow} id="sociaLinks">
                   <img src={link} alt="links" />
-                </a>
+                </HashLink>
               </li>
             </ul>
             <div id="toggleMenu" className="menubar" onClick={menuToggler}>

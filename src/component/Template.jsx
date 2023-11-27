@@ -132,9 +132,18 @@ function Template() {
     const videoCont = document.getElementById("videoOuter");
     const playButton = document.querySelector(".play-button");
 
+    // // Check if the device width is below 425px (mobile device)
+    // if (window.innerWidth <= 425) {
+    //   videoCont.style.height = "30vh"; // Set height to 30vh for mobile devices
+    // } else {
+    //   videoCont.style.height = "100vh"; // Set height to 100vh for other devices
+    // }
+
     // Check if the device width is below 425px (mobile device)
     if (window.innerWidth <= 425) {
       videoCont.style.height = "30vh"; // Set height to 30vh for mobile devices
+    } else if (window.innerWidth >= 768 && window.innerWidth <= 992) {
+      videoCont.style.height = "50vh"; // Set height to 50vh for tablet-sized screens
     } else {
       videoCont.style.height = "100vh"; // Set height to 100vh for other devices
     }
@@ -458,7 +467,7 @@ function Template() {
           </div>
         </div>
       </section>
-      <section className="teamSec sectionPadding">
+      {/* <section className="teamSec sectionPadding">
         <div className="container" id="teamSec">
           <div className="innerCont" id="teamCont">
             <h4>Our Team</h4>
@@ -493,7 +502,7 @@ function Template() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       <FAQSec></FAQSec>
       <section className="blogSection sectionPadding">
         <div className="container" id="blogSec">
