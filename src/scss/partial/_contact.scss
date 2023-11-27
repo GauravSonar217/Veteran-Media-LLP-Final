@@ -82,7 +82,7 @@
     bottom: -3rem;
     background-color: $white;
     border: 2px solid rgba(176, 176, 192, 0.3);
-    // border: 1px solid blue;
+    border: 1px solid blue; 
     z-index: 10000;
 
     @include extraLargeDevice {
@@ -244,7 +244,6 @@
       .uploadCont {
         width: 100%;
         margin: 2rem 0;
-      
 
         #upload-container {
           display: flex;

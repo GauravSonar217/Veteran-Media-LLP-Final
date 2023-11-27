@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Portfolio from "../media/png/portfolio.png";
 import projectData from "../data/projectData.json";
 import bar from "../media/png/career.png";
-import stars from "../media/png/stars.png";
 import employee from "../media/png/employee.png";
 import { HashLink } from "react-router-hash-link";
 import p1 from "../media/jpg/p1.jpg";

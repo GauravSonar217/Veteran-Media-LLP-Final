@@ -1,11 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import { HashLink } from "react-router-hash-link";
-import Swiper from "swiper";
 import Header from "./Header";
 import playbtn from "../media/png/play.png";
 import promovideo from "../media/production_id_5207408 (1080p).mp4";
 import serviceImg from "../media/png/services.png";
-import workImg from "../media/jpg/image 17.jpg";
+import workImg1 from "../media/jpg/work1.jpg";
+import workImg2 from "../media/jpg/work2.jpg";
+import workImg3 from "../media/jpg/work3.jpg";
+import workImg4 from "../media/jpg/work4.jpg";
 import prog1 from "../media/png/understandingVision 1.png";
 import prog2 from "../media/png/lightbulb 1.png";
 import prog3 from "../media/png/execution 1.png";
@@ -24,7 +26,6 @@ import part5 from "../media/png/mahindra.png";
 import part6 from "../media/png/fivestar.png";
 import member1 from "../media/jpg/yashimg.jpg";
 import member2 from "../media/jpg/divyaimg.jpg";
-import Testimonial from "./Testimonial";
 import FAQSec from "./FAQSec";
 
 function Template() {
@@ -262,38 +263,46 @@ function Template() {
             <div className="workCont">
               <div className="workBox">
                 <div className="workImgBox">
-                  <img src={workImg} alt="workdone image" />
+                  <img src={workImg1} alt="workdone image" />
                 </div>
                 <div className="workTextBox">
-                  <h3>Packaging Desing </h3>
-                  <h5>Master light House</h5>
+                  <h3>Packaging Design</h3>
+                  <h5>
+                    <HashLink>Read More</HashLink>
+                  </h5>
                 </div>
               </div>
               <div className="workBox">
                 <div className="workImgBox">
-                  <img src={workImg} alt="workdone image" />
+                  <img src={workImg2} alt="workdone image" />
                 </div>
                 <div className="workTextBox">
-                  <h3>Packaging Desing </h3>
-                  <h5>Master light House</h5>
+                  <h3>Merchandising Design</h3>
+                  <h5>
+                    <HashLink>Read More</HashLink>
+                  </h5>
                 </div>
               </div>
               <div className="workBox">
                 <div className="workImgBox">
-                  <img src={workImg} alt="workdone image" />
+                  <img src={workImg3} alt="workdone image" />
                 </div>
                 <div className="workTextBox">
-                  <h3>Packaging Desing </h3>
-                  <h5>Master light House</h5>
+                  <h3>Outdoor Branding</h3>
+                  <h5>
+                    <HashLink>Read More</HashLink>
+                  </h5>
                 </div>
               </div>
               <div className="workBox">
                 <div className="workImgBox">
-                  <img src={workImg} alt="workdone image" />
+                  <img src={workImg4} alt="workdone image" />
                 </div>
                 <div className="workTextBox">
-                  <h3>Packaging Desing </h3>
-                  <h5>Master light House</h5>
+                  <h3>Printing</h3>
+                  <h5>
+                    <HashLink>Read More</HashLink>
+                  </h5>
                 </div>
               </div>
             </div>
@@ -303,7 +312,6 @@ function Template() {
           </div>
         </div>
       </section>
-      <Testimonial></Testimonial>
       <section className="progressSec sectionPadding">
         <div className="container" id="progressSec">
           <div className="innerCont" id="innerProgressSec">
@@ -494,7 +502,9 @@ function Template() {
                   <img src={blog1} alt="blo1" />
                 </div>
                 <div className="blogTextCont">
-                  <h3>Our design process explained</h3>
+                  <h3>
+                    <HashLink>Our design process explained</HashLink>
+                  </h3>
                   <h5>April 27, 2023</h5>
                 </div>
               </div>
@@ -503,7 +513,9 @@ function Template() {
                   <img src={blog2} alt="blo2" />
                 </div>
                 <div className="blogTextCont">
-                  <h3>A peek into our branding strategy</h3>
+                  <h3>
+                    <HashLink>A peek into our branding strategy</HashLink>
+                  </h3>
                   <h5>May 10, 2023</h5>
                 </div>
               </div>
