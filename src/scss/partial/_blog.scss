@@ -18,23 +18,22 @@
           font-size: 2.5rem;
           font-weight: 500;
           margin-bottom: 2rem;
-          @include smallDevice{
+          @include smallDevice {
             margin-bottom: 1.5rem;
           }
-          @include mobile{
-            font-size: 2rem;
+          @include mobile {
+            font-size: 1.8rem;
             margin-bottom: 1.5rem;
           }
         }
-        h5{
+        h5 {
           cursor: pointer;
-          &:hover{
+          &:hover {
             border-bottom: 2px solid $black;
           }
-            @include extraSmallDevice{
-                font-size: 1.1rem;
-            }
-          
+          @include extraSmallDevice {
+            font-size: 1rem;
+          }
         }
       }
       .blogBoxCont {
@@ -45,19 +44,15 @@
         grid-gap: 2rem;
         @include mediumDevice {
           grid-template-columns: repeat(1, 1fr);
-          grid-gap: 1rem;
         }
         @include smallDevice {
           grid-template-columns: repeat(1, 1fr);
-          grid-gap: 2rem;
         }
         @include mediumDevice {
           grid-template-columns: repeat(1, 1fr);
-          grid-gap: 1rem;
         }
         @include extraSmallDevice {
           grid-template-columns: repeat(1, 1fr);
-          grid-gap: 1rem;
         }
         .blogBox {
           // border: 1px solid blue;
@@ -65,15 +60,15 @@
           @include flexrow;
           flex-direction: column;
           gap: 1rem;
-          @include mediumDevice{
+          @include mediumDevice {
             width: 80%;
             margin: 0 auto;
           }
-          @include smallDevice{
+          @include smallDevice {
             width: 100%;
             margin: 0 auto;
           }
-          @include extraSmallDevice{
+          @include extraSmallDevice {
             width: 100%;
             height: 100%;
           }
@@ -111,11 +106,17 @@
                 font-size: 1.1rem;
                 text-align: center;
               }
+              a {
+                color: $black;
+              }
             }
             h5 {
               font-size: 1rem;
               text-align: center;
               @include extraLargeDevice {
+                text-align: left;
+              }
+              @include bigLaptop {
                 text-align: left;
               }
               @include mediumDevice {

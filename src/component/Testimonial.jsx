@@ -59,100 +59,135 @@ function Testimonial() {
     <React.Fragment>
       <section className="testiSec sectionPadding">
         <div className="container" id="sliderCont">
-          <div class="swiper-container">
-            <div class="swiper mySwiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <div class="card">
-                    <div class="image">
-                      <img src={pic1} alt="Card Image" />
+          <div className="innerCont">
+            <h2>What they think</h2>
+            <div class="swiper-container">
+              <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="card">
+                      <div class="image">
+                        <img src={pic1} alt="Card Image" />
+                      </div>
+                      <h3>Ayo Ogunseinde</h3>
+                      <h5>Fashion Model</h5>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Possimus, numquam facere quod blanditiis pariatur
+                        minima. Mollitia soluta quas voluptatibus accusamus?
+                      </p>
                     </div>
-                    <h3>Ayo Ogunseinde</h3>
-                    <h5>Fashion Model</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, numquam facere quod blanditiis pariatur minima. Mollitia soluta quas voluptatibus accusamus?</p>
                   </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="card">
-                    <div class="image">
-                      <img src={pic2} alt="Card Image" />
+                  <div class="swiper-slide">
+                    <div class="card">
+                      <div class="image">
+                        <img src={pic2} alt="Card Image" />
+                      </div>
+                      <h3>Aiony Haust</h3>
+                      <h5>Product Manager</h5>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Possimus, numquam facere quod blanditiis pariatur
+                        minima. Mollitia soluta quas voluptatibus accusamus?
+                      </p>
                     </div>
-                    <h3>Aiony Haust</h3>
-                    <h5>Product Manager</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, numquam facere quod blanditiis pariatur minima. Mollitia soluta quas voluptatibus accusamus?</p>
                   </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="card">
-                    <div class="image">
-                      <img src={pic3} alt="Card Image" />
+                  <div class="swiper-slide">
+                    <div class="card">
+                      <div class="image">
+                        <img src={pic3} alt="Card Image" />
+                      </div>
+                      <h3>Ian Dooley</h3>
+                      <h5>Online Teacher</h5>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Possimus, numquam facere quod blanditiis pariatur
+                        minima. Mollitia soluta quas voluptatibus accusamus?
+                      </p>
                     </div>
-                    <h3>Ian Dooley</h3>
-                    <h5>Online Teacher</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, numquam facere quod blanditiis pariatur minima. Mollitia soluta quas voluptatibus accusamus?</p>
                   </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="card">
-                    <div class="image">
-                      <img src={pic4} alt="Card Image" />
+                  <div class="swiper-slide">
+                    <div class="card">
+                      <div class="image">
+                        <img src={pic4} alt="Card Image" />
+                      </div>
+                      <h3>Rafaella Mendes</h3>
+                      <h5>Sale Manager</h5>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Possimus, numquam facere quod blanditiis pariatur
+                        minima. Mollitia soluta quas voluptatibus accusamus?
+                      </p>
                     </div>
-                    <h3>Rafaella Mendes</h3>
-                    <h5>Sale Manager</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, numquam facere quod blanditiis pariatur minima. Mollitia soluta quas voluptatibus accusamus?</p>
                   </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="card">
-                    <div class="image">
-                      <img src={pic1} alt="Card Image" />
+                  <div class="swiper-slide">
+                    <div class="card">
+                      <div class="image">
+                        <img src={pic1} alt="Card Image" />
+                      </div>
+                      <h3>Ayo Ogunseinde</h3>
+                      <h5>Fashion Model</h5>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Possimus, numquam facere quod blanditiis pariatur
+                        minima. Mollitia soluta quas voluptatibus accusamus?
+                      </p>
                     </div>
-                    <h3>Ayo Ogunseinde</h3>
-                    <h5>Fashion Model</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, numquam facere quod blanditiis pariatur minima. Mollitia soluta quas voluptatibus accusamus?</p>
                   </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="card">
-                    <div class="image">
-                      <img src={pic2} alt="Card Image" />
+                  <div class="swiper-slide">
+                    <div class="card">
+                      <div class="image">
+                        <img src={pic2} alt="Card Image" />
+                      </div>
+                      <h3>Aiony Haust</h3>
+                      <h5>Product Manager</h5>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Possimus, numquam facere quod blanditiis pariatur
+                        minima. Mollitia soluta quas voluptatibus accusamus?
+                      </p>
                     </div>
-                    <h3>Aiony Haust</h3>
-                    <h5>Product Manager</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, numquam facere quod blanditiis pariatur minima. Mollitia soluta quas voluptatibus accusamus?</p>
                   </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="card">
-                    <div class="image">
-                      <img src={pic3} alt="Card Image" />
+                  <div class="swiper-slide">
+                    <div class="card">
+                      <div class="image">
+                        <img src={pic3} alt="Card Image" />
+                      </div>
+                      <h3>Ian Dooley</h3>
+                      <h5>Online Teacher</h5>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Possimus, numquam facere quod blanditiis pariatur
+                        minima. Mollitia soluta quas voluptatibus accusamus?
+                      </p>
                     </div>
-                    <h3>Ian Dooley</h3>
-                    <h5>Online Teacher</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, numquam facere quod blanditiis pariatur minima. Mollitia soluta quas voluptatibus accusamus?</p>
                   </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="card">
-                    <div class="image">
-                      <img src={pic4} alt="Card Image" />
+                  <div class="swiper-slide">
+                    <div class="card">
+                      <div class="image">
+                        <img src={pic4} alt="Card Image" />
+                      </div>
+                      <h3>Rafaella Mendes</h3>
+                      <h5>Sale Manager</h5>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Possimus, numquam facere quod blanditiis pariatur
+                        minima. Mollitia soluta quas voluptatibus accusamus?
+                      </p>
                     </div>
-                    <h3>Rafaella Mendes</h3>
-                    <h5>Sale Manager</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, numquam facere quod blanditiis pariatur minima. Mollitia soluta quas voluptatibus accusamus?</p>
                   </div>
                 </div>
               </div>
-            </div>
-            {/* <!-- If we need pagination --> */}
-            <div class="swiper-pagination"></div>
+              {/* <!-- If we need pagination --> */}
+              <div class="swiper-pagination"></div>
 
-            {/* <!-- If we need navigation buttons --> */}
-            {/* <div class="swiper-button-prev"></div>
+              {/* <!-- If we need navigation buttons --> */}
+              {/* <div class="swiper-button-prev"></div>
           <div class="swiper-button-next"></div> */}
 
-            {/* <!-- If we need scrollbar --> */}
-            <div class="swiper-scrollbar"></div>
+              {/* <!-- If we need scrollbar --> */}
+              <div class="swiper-scrollbar"></div>
+            </div>
           </div>
         </div>
       </section>

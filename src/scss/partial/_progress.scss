@@ -18,6 +18,7 @@
         font-weight: 400;
         margin-bottom: 2rem;
         @include extraSmallDevice {
+          font-size: 1.3rem;
           margin-bottom: 1rem;
         }
       }
@@ -26,13 +27,16 @@
         font-weight: 500;
         margin-bottom: 2rem;
         @include extraSmallDevice {
-          font-size: 2.4rem;
+          font-size: 2rem;
           margin-bottom: 1rem;
         }
       }
       p {
         font-size: 1.1rem;
         font-weight: 400;
+        @include extraSmallDevice{
+          font-size: 1rem;
+        }
       }
     }
     .progressCont {
@@ -41,6 +45,11 @@
       align-items: start;
       justify-content: space-between;
       flex-wrap: wrap;
+
+      row-gap: 2rem;
+      @include extraSmallDevice{
+        row-gap: 1rem;
+      }
      
       @include extraLargeDevice {
         flex-wrap: nowrap;
@@ -75,15 +84,24 @@
           @include largeDevice {
             width: 32%;
           }
+          @include bigLaptop {
+            width: 32%;
+          }
         }
 
         &:nth-child(4) {
           @include largeDevice {
             width: 49%;
           }
+          @include bigLaptop {
+            width: 49%;
+          }
         }
         &:last-child {
           @include largeDevice {
+            width: 49%;
+          }
+          @include bigLaptop {
             width: 49%;
           }
         }
@@ -112,6 +130,9 @@
           @include largeDevice {
             font-size: 1.8rem;
           }
+          @include bigLaptop {
+            font-size: 1.8rem;
+          }
           @include mediumDevice {
             font-size: 2rem;
           }
@@ -126,6 +147,9 @@
           font-size: 1rem;
           font-weight: 400;
           @include largeDevice {
+            font-size: 1.1rem;
+          }
+          @include bigLaptop {
             font-size: 1.1rem;
           }
           @include mediumDevice {

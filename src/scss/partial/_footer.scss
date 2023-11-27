@@ -1,7 +1,6 @@
 footer {
   width: 100%;
   background-color: #161616;
-  ;
   position: relative;
   overflow: hidden;
 
@@ -43,16 +42,20 @@ footer {
         }
 
         .addressCont {
-
           height: 100%;
           color: #fff;
-          padding-top: 6rem;
-          padding-bottom: 5rem;
+          // padding-top: 5rem;
+          padding-bottom: 4rem;
           padding-right: 3rem;
           @include flexrow;
           flex-direction: column;
+          align-items: start;
           justify-content: end;
+          border: 1px solid blue;
 
+          @include largeDevice {
+            padding-top: 0rem;
+          }
           @include mediumDevice {
             padding: 3rem 0;
             padding-bottom: 1rem;
@@ -69,28 +72,25 @@ footer {
           }
 
           .addressBox {
-            a {
-              color: $white;
-              text-decoration: underline;
-            }
-
             width: 100%;
             @include flexrow;
             flex-direction: column;
             align-items: start;
-            justify-content: end;
+            justify-content: start;
+            border: 1px solid red;
+
+            a {
+              color: $white;
+              text-decoration: underline;
+            }
 
             &:not(:last-child) {
               margin-bottom: 2rem;
             }
 
             h3 {
-              font-size: 1.5rem;
               color: #fff;
-
-              @include largeDevice {
-                font-size: 1.3rem;
-              }
+              margin-bottom: 1rem;
 
               @include mediumDevice {
                 font-size: 2rem;
@@ -102,13 +102,9 @@ footer {
             }
 
             p {
-              font-size: 1rem;
+              font-size: 0.9rem;
 
               margin: 0;
-
-              @include largeDevice {
-                font-size: 0.9rem;
-              }
 
               @include mediumDevice {
                 font-size: 1.1rem;
@@ -119,6 +115,32 @@ footer {
               }
             }
           }
+          h2 {
+            color: $white;
+            margin: 0;
+            @include bigLaptop {
+              font-size: 1.8rem;
+            }
+            @include largeDevice{
+              font-size: 1.6rem;
+            }
+            @include smallMobile{
+              font-size: 1.5rem;
+            }
+            #count {
+              font-size: 2rem;
+              border: 1px solid red;
+              @include largeDevice{
+              font-size: 1.7rem;
+              }
+              @include extraSmallDevice{
+              font-size: 1.5rem;
+              }
+              @include mobile{
+              font-size: 1.4rem;
+              }
+            }
+          }
         }
 
         .linkCont {
@@ -126,11 +148,11 @@ footer {
           height: 100%;
           color: #fff;
           padding-top: 8rem;
-          padding-bottom: 5rem;
-
+          padding-bottom: 4rem;
           display: grid;
           grid-template-columns: repeat(3, 1fr);
           grid-gap: 4rem;
+          border: 1px solid blue;
 
           @include mediumDevice {
             padding-top: 2rem;
@@ -148,22 +170,16 @@ footer {
           }
 
           .linkBox {
-
             @include flexrow;
             flex-direction: column;
             align-items: start;
-            justify-content: end;
+            border: 1px solid blue;
 
             &:not(:last-child) {
-              @include mediumDevice {
-                justify-content: start;
-              }
+              justify-content: start;
             }
-
-            &:not(:last-child) {
-              @include smallDevice {
-                justify-content: start;
-              }
+            &:last-child {
+              justify-content: end;
             }
 
             h3 {
@@ -213,7 +229,6 @@ footer {
     width: 100%;
     background: #2b2b2b;
 
-
     #copyCont {
       width: 100%;
       height: 100%;
@@ -231,7 +246,6 @@ footer {
         @include smallDevice {
           flex-direction: column;
           text-align: center;
-
         }
 
         h4 {

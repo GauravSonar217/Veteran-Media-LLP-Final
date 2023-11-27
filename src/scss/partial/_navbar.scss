@@ -14,6 +14,7 @@
     align-items: start;
     gap: 0.9rem 5rem;
     display: none;
+    z-index: 100;
     @include largeDevice {
       width: 12rem;
       padding-top: 1.5rem;
@@ -47,10 +48,9 @@
       @include largeDevice {
         width: 100%;
       }
-      @include mediumDevice{
+      @include mediumDevice {
         display: block;
         position: absolute;
-
       }
 
       a {
@@ -108,9 +108,7 @@
       .menubar {
         width: 2.5rem;
         display: none;
-
         cursor: pointer;
-        // padding: 1rem;
         @include mediumDevice {
           display: inline-block;
         }
@@ -121,7 +119,7 @@
           display: inline-block;
         }
         img {
-          width: 100%;
+          width: 80%;
         }
       }
       .navbar-brand {
@@ -132,7 +130,7 @@
           width: 150px;
         }
         @include extraSmallDevice {
-          width: 120px;
+          width: 130px;
         }
       }
       .firstLinkCont {
@@ -251,14 +249,14 @@
             left: 0;
             top: 4.5rem;
             display: none;
-            @include extraLargeDevice{
-            height: calc(100vh - 100px);
+            @include extraLargeDevice {
+              height: calc(100vh - 100px);
             }
-            @include largeDevice{
-            height: calc(105vh - 100px);
+            @include largeDevice {
+              height: calc(105vh - 100px);
             }
-            @include extraLargeDevice{
-            height: calc(100vh - 100px);
+            @include extraLargeDevice {
+              height: calc(100vh - 100px);
             }
 
             .serviceCont {
@@ -268,7 +266,7 @@
               display: grid;
               grid-template-columns: repeat(2, 1fr);
               grid-gap: 4rem;
-           
+
               @include largeDevice {
                 width: 80%;
                 grid-gap: 2rem;
@@ -276,18 +274,44 @@
 
               .services {
                 position: relative;
-                border-right: 4px dashed $light;
                 @include flexrow;
                 align-items: start;
                 flex-direction: column;
+
+                &::after {
+                  content: "";
+                  width: 3px;
+                  height: 60%;
+                  position: absolute;
+                  top: 50%;
+                  right: 0;
+                  transform: translateY(-50%);
+                  border: 3px dashed $light;
+                }
 
                 h1 {
                   font-weight: 400;
                   a {
                     font-size: 3.6rem;
-                    // font-weight: 400;
                     text-transform: capitalize;
+                    text-decoration: none;
                     color: $black;
+                    position: relative;
+                    @include largeDevice{
+                      font-size: 3rem;
+                    }
+
+                    &:hover {
+                      &::after {
+                        content: "";
+                        width: 100%;
+                        height: 2px;
+                        background-color: $black;
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                      }
+                    }
                   }
 
                   &:not(:last-child) {
@@ -304,6 +328,7 @@
                   padding: 0;
 
                   li {
+                
                     a {
                       width: 100%;
                       font-size: 1.25rem;

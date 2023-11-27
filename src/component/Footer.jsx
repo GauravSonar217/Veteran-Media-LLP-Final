@@ -24,6 +24,9 @@ function Footer() {
                     </HashLink>
                   </p>
                 </div>
+                <h2>
+                  Website Visitors: <span id="count"> 10</span>
+                </h2>
               </div>
               <div className="linkCont">
                 <div className="linkBox">
@@ -33,7 +36,7 @@ function Footer() {
                       <HashLink to="/portfolio/#projectSec">Portfolio</HashLink>
                     </li>
                     <li>
-                      <HashLink to="/service/#serviceDiv">Services</HashLink>
+                      <HashLink to="/service/#serviceSec">Services</HashLink>
                     </li>
 
                     <li>

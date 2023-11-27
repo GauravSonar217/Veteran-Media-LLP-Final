@@ -7,7 +7,7 @@
   p {
     font-size: 1.1rem;
     text-align: center;
-    width: 80%;
+    width: 60%;
     margin-bottom: 1rem;
     @include mediumDevice {
       font-size: 1rem;
@@ -207,7 +207,7 @@
     @include flexrow;
     flex-direction: column;
     justify-content: start;
- 
+
     h3 {
       margin-bottom: 1rem;
       text-align: center;
@@ -271,7 +271,7 @@
             border: none;
             border-radius: 5px;
             background-color: $parrot;
-         
+
             color: $black;
             font-size: 1.1rem;
             cursor: pointer;
@@ -284,7 +284,7 @@
         .feedSliderCont {
           width: 100%;
           height: 100%;
-       
+
           @include flexrow;
           // background-color: #000;
           @include extraLargeDevice {
@@ -312,13 +312,12 @@
           .slider {
             width: 100%;
             height: 100%;
-           
+
             position: relative;
 
             .carousel-inner {
               width: 100%;
               height: 100%;
-            
 
               .carousel-item {
                 width: 100%;
@@ -352,16 +351,16 @@
                   font-size: 1.8rem;
                   margin-bottom: 0.5rem;
                   font-weight: 500;
-                  @include extraSmallDevice{
+                  @include extraSmallDevice {
                     font-size: 1.5rem;
                   }
-                  @include smallMobile{
+                  @include smallMobile {
                     font-size: 1.3rem;
                   }
                 }
                 h5 {
                   font-size: 1.2rem;
-                  @include extraSmallDevice{
+                  @include extraSmallDevice {
                     font-size: 1rem;
                   }
                 }
@@ -375,16 +374,15 @@
                   position: relative;
                   @include largeDevice {
                     width: 80%;
-                   
                   }
                   @include extraSmallDevice {
                     width: 100%;
-               
+
                     padding: 1rem 2.5rem;
                   }
                   @include smallMobile {
                     width: 100%;
-                   
+
                     padding: 1rem 2rem;
                     margin: 1rem 0;
                   }
@@ -394,11 +392,11 @@
                     height: 2.2rem;
                     object-fit: cover;
                     position: absolute;
-                    @include extraSmallDevice{
+                    @include extraSmallDevice {
                       width: 1.5rem;
                       height: 1.5rem;
                     }
-                    @include smallMobile{
+                    @include smallMobile {
                       width: 1.1rem;
                       height: 1.1rem;
                     }
@@ -417,8 +415,8 @@
             }
             .carousel-indicators {
               button {
-                width: 1rem;
-                height: 1rem;
+                width: 15px;
+                height: 15px;
                 // border: 1px solid red;
                 border-radius: 50%;
                 background-color: #ccc;
@@ -553,9 +551,9 @@
               text-decoration: underline;
             }
           }
-          .slider {
-            width: 70px;
-            height: 30px;
+          .checker {
+            width: 75px;
+            height: 35px;
             border: 1px solid black;
             border-radius: 25px;
             position: relative;

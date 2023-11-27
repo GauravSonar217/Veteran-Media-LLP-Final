@@ -68,7 +68,7 @@
         }
         @include extraSmallDevice {
           grid-template-columns: repeat(1, 1fr);
-          grid-gap: 1rem;
+          grid-gap: 3rem;
           padding: 0;
         }
 
@@ -149,7 +149,7 @@
                 font-size: 1.4rem;
               }
               @include extraSmallDevice {
-                font-size: 1.5rem;
+                font-size: 1.4rem;
               }
             }
             h5 {
@@ -162,6 +162,9 @@
               }
               @include mobile {
                 font-size: 1rem;
+              }
+              a{
+                color: #b0b0c0;
               }
             }
           }

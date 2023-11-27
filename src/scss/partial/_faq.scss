@@ -15,7 +15,7 @@
       margin-bottom: 2rem;
       text-align: center;
       @include extraSmallDevice{
-        font-size: 2.2rem;
+        font-size: 2rem;
         margin-bottom: 1.5rem;
       }
     }
@@ -34,7 +34,7 @@
           padding: 1.5rem 2.5rem;
         }
         @include extraSmallDevice{
-          padding: 1rem 1.3rem;
+          padding: 1rem !important;
         }
 
 
@@ -68,6 +68,11 @@
             @include flexrow;
            
             @include largeDevice{
+              width: 1.1rem;
+              height: 1.1rem;
+              padding: 0.9rem;
+            }
+            @include bigLaptop{
               width: 1.1rem;
               height: 1.1rem;
               padding: 0.9rem;

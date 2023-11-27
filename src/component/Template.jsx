@@ -1,11 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import { HashLink } from "react-router-hash-link";
-import Swiper from "swiper";
 import Header from "./Header";
 import playbtn from "../media/png/play.png";
 import promovideo from "../media/production_id_5207408 (1080p).mp4";
 import serviceImg from "../media/png/services.png";
-import workImg from "../media/jpg/image 17.jpg";
+import workImg1 from "../media/jpg/work1.jpg";
+import workImg2 from "../media/jpg/work2.jpg";
+import workImg3 from "../media/jpg/work3.jpg";
+import workImg4 from "../media/jpg/work4.jpg";
 import prog1 from "../media/png/understandingVision 1.png";
 import prog2 from "../media/png/lightbulb 1.png";
 import prog3 from "../media/png/execution 1.png";
@@ -24,7 +26,6 @@ import part5 from "../media/png/mahindra.png";
 import part6 from "../media/png/fivestar.png";
 import member1 from "../media/jpg/yashimg.jpg";
 import member2 from "../media/jpg/divyaimg.jpg";
-import Testimonial from "./Testimonial";
 import FAQSec from "./FAQSec";
 
 function Template() {
@@ -131,7 +132,22 @@ function Template() {
     const videoCont = document.getElementById("videoOuter");
     const playButton = document.querySelector(".play-button");
 
-    videoCont.style.height = "100vh";
+    // // Check if the device width is below 425px (mobile device)
+    // if (window.innerWidth <= 425) {
+    //   videoCont.style.height = "30vh"; // Set height to 30vh for mobile devices
+    // } else {
+    //   videoCont.style.height = "100vh"; // Set height to 100vh for other devices
+    // }
+
+    // Check if the device width is below 425px (mobile device)
+    if (window.innerWidth <= 425) {
+      videoCont.style.height = "30vh"; // Set height to 30vh for mobile devices
+    } else if (window.innerWidth >= 768 && window.innerWidth <= 992) {
+      videoCont.style.height = "50vh"; // Set height to 50vh for tablet-sized screens
+    } else {
+      videoCont.style.height = "100vh"; // Set height to 100vh for other devices
+    }
+
     videoSection.style.width = "100%";
     videoSection.style.height = "100%";
     playButton.style.display = "none";
@@ -262,38 +278,46 @@ function Template() {
             <div className="workCont">
               <div className="workBox">
                 <div className="workImgBox">
-                  <img src={workImg} alt="workdone image" />
+                  <img src={workImg1} alt="workdone image" />
                 </div>
                 <div className="workTextBox">
-                  <h3>Packaging Desing </h3>
-                  <h5>Master light House</h5>
+                  <h3>Packaging Design</h3>
+                  <h5>
+                    <HashLink>Read More</HashLink>
+                  </h5>
                 </div>
               </div>
               <div className="workBox">
                 <div className="workImgBox">
-                  <img src={workImg} alt="workdone image" />
+                  <img src={workImg2} alt="workdone image" />
                 </div>
                 <div className="workTextBox">
-                  <h3>Packaging Desing </h3>
-                  <h5>Master light House</h5>
+                  <h3>Merchandising Design</h3>
+                  <h5>
+                    <HashLink>Read More</HashLink>
+                  </h5>
                 </div>
               </div>
               <div className="workBox">
                 <div className="workImgBox">
-                  <img src={workImg} alt="workdone image" />
+                  <img src={workImg4} alt="workdone image" />
                 </div>
                 <div className="workTextBox">
-                  <h3>Packaging Desing </h3>
-                  <h5>Master light House</h5>
+                  <h3>Printing</h3>
+                  <h5>
+                    <HashLink>Read More</HashLink>
+                  </h5>
                 </div>
               </div>
               <div className="workBox">
                 <div className="workImgBox">
-                  <img src={workImg} alt="workdone image" />
+                  <img src={workImg3} alt="workdone image" />
                 </div>
                 <div className="workTextBox">
-                  <h3>Packaging Desing </h3>
-                  <h5>Master light House</h5>
+                  <h3>Outdoor Branding</h3>
+                  <h5>
+                    <HashLink>Read More</HashLink>
+                  </h5>
                 </div>
               </div>
             </div>
@@ -303,7 +327,6 @@ function Template() {
           </div>
         </div>
       </section>
-      <Testimonial></Testimonial>
       <section className="progressSec sectionPadding">
         <div className="container" id="progressSec">
           <div className="innerCont" id="innerProgressSec">
@@ -444,7 +467,7 @@ function Template() {
           </div>
         </div>
       </section>
-      <section className="teamSec sectionPadding">
+      {/* <section className="teamSec sectionPadding">
         <div className="container" id="teamSec">
           <div className="innerCont" id="teamCont">
             <h4>Our Team</h4>
@@ -479,7 +502,7 @@ function Template() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       <FAQSec></FAQSec>
       <section className="blogSection sectionPadding">
         <div className="container" id="blogSec">
@@ -494,7 +517,9 @@ function Template() {
                   <img src={blog1} alt="blo1" />
                 </div>
                 <div className="blogTextCont">
-                  <h3>Our design process explained</h3>
+                  <h3>
+                    <HashLink>Our design process explained</HashLink>
+                  </h3>
                   <h5>April 27, 2023</h5>
                 </div>
               </div>
@@ -503,7 +528,9 @@ function Template() {
                   <img src={blog2} alt="blo2" />
                 </div>
                 <div className="blogTextCont">
-                  <h3>A peek into our branding strategy</h3>
+                  <h3>
+                    <HashLink>A peek into our branding strategy</HashLink>
+                  </h3>
                   <h5>May 10, 2023</h5>
                 </div>
               </div>
@@ -554,7 +581,6 @@ function Template() {
             <div>
               <select id="">
                 <option value="" disabled>
-                  {" "}
                   What are you looking for*
                 </option>
                 <option value=""> Branding</option>

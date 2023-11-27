@@ -51,10 +51,6 @@
         flex-direction: column;
         align-items: start;
        
-
-        @include largeDevice {
-          align-items: center;
-        }
         @include mediumDevice {
           align-items: center;
         }
@@ -74,7 +70,7 @@
           text-align: left;
           @include largeDevice {
             font-size: 3.5rem;
-            text-align: center;
+            text-align: left;
             margin-bottom: 2rem;
           }
           @include mediumDevice {
@@ -95,8 +91,9 @@
         }
         p {
           margin: 0;
+          text-align: left;
           @include largeDevice {
-            text-align: center;
+            text-align: left;
           }
           @include mediumDevice {
             text-align: center;
@@ -135,14 +132,10 @@
           justify-content: center;
         }
         img {
-          width: 25rem;
-          height: 25rem;
+          width: 20rem;
+          height: 20rem;
           border-radius: 1.25rem;
 
-          @include largeDevice {
-            width: 22rem;
-            height: 22rem;
-          }
           @include mediumDevice {
             height: 80%;
           }
@@ -166,7 +159,6 @@
 .contactFormSec {
   width: 100%;
   height: 100%;
-
 
   #formWrapper {
     width: 100%;
@@ -207,9 +199,8 @@
         #getForm {
           width: 100%;
           height: 100%;
-      
           border-radius: 1rem;
-          padding: 4rem 2rem;
+          padding: 2rem;
           padding-bottom: 8rem;
           background-color: $white;
           border: 2px solid rgba(176, 176, 192, 0.3);
@@ -326,6 +317,9 @@
         }
       }
       .contactTextBox {
+
+        padding: 1rem 0;
+        
         @include extraSmallDevice{
           width: 100%;
         }
@@ -340,7 +334,7 @@
 
         .addBox {
           width: 100%;
-          // border: 1px solid red;
+        
           margin: 3rem 0;
           @include extraSmallDevice{
             margin: 2rem 0;
@@ -428,5 +422,4 @@
 .faqSec {
   width: 100%;
   height: 100%;
-  margin-bottom: 10rem;
 }
