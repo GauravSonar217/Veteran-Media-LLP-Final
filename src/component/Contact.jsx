@@ -1,4 +1,5 @@
 import React from "react";
+import { motion, useScroll } from "framer-motion";
 import ContactHead from "../media/png/contact.png";
 import bar from "../media/png/career.png";
 import address from "../media/svg/address.svg";
@@ -12,7 +13,14 @@ function Contact() {
       <section className="projectSec">
         <section id="ContactSec">
           <div className="container" id="projectCont">
-            <div className="contactText">
+            <motion.div
+              className="contactText"
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 1,
+              }}
+              initial={{ opacity: 0, y: -100 }}
+            >
               <h1>Let's Shape Your Vision</h1>
               <p>Ready to take the next step in transforming your brand?</p>
               <p>
@@ -22,15 +30,29 @@ function Contact() {
                 transaction; it's the beginning of a collaboration that will
                 shape your brand's narrative.
               </p>
-            </div>
+            </motion.div>
             <div className="contactImg">
-              <img src={ContactHead} alt="vector image" />
+              <motion.img
+                src={ContactHead}
+                alt="vector image"
+                animate={{ opacity: 1, x: 0 }}
+                transition={{
+                  duration: 1,
+                }}
+                initial={{ opacity: 0, x: 300 }}
+              />
             </div>
           </div>
         </section>
         <div className="container" id="textSec">
           <div className="innerCont">
-            <p>
+            <motion.p
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 1,
+              }}
+              initial={{ opacity: 0, y: 100 }}
+            >
               Welcome to the Portfolio Showcase at Veteran Media Solutions LLP,
               where new ideas and hard work come together. This carefully chosen
               group of projects shows an assortment of wins, with each story
@@ -39,7 +61,7 @@ function Contact() {
               shows how creative people can do anything, from redefining brands
               in a fast-paced world to making immersive digital experiences and
               using smart packaging to turn goods into iconic stories.
-            </p>
+            </motion.p>
             <img id="bar" src={bar} alt="bar" />
           </div>
         </div>
@@ -59,20 +81,22 @@ function Contact() {
                 </div>
 
                 <div>
-                  <select id="">
-                    <option value="">What are you looking for*</option>
-                    <option value=""> Branding</option>
-                    <option value=""> Marketing Push</option>
-                    <option value=""> Space Buying</option>
-                    <option value=""> Indoor & Outdoor Branding</option>
-                    <option value=""> Marketing Plans</option>
-                    <option value=""> Finishing & Packaging</option>
-                    <option value=""> On-Air Promotions</option>
-                    <option value=""> Web Design</option>
-                    <option value=""> Merchandising</option>
-                    <option value=""> Offset Printing</option>
-                    <option value=""> Digital Printing</option>
-                    <option value=""> Web Development</option>
+                  <select>
+                    <option value="" selected disabled>
+                      What are you looking for*
+                    </option>
+                    <option value="1"> Branding</option>
+                    <option value="2"> Marketing Push</option>
+                    <option value="3"> Space Buying</option>
+                    <option value="4"> Indoor & Outdoor Branding</option>
+                    <option value="5"> Marketing Plans</option>
+                    <option value="6"> Finishing & Packaging</option>
+                    <option value="7"> On-Air Promotions</option>
+                    <option value="8"> Web Design</option>
+                    <option value="9"> Merchandising</option>
+                    <option value="10"> Offset Printing</option>
+                    <option value="11"> Digital Printing</option>
+                    <option value="12"> Web Development</option>
                   </select>
                   {/* <label htmlFor="query">What are you looking for*</label> */}
                   {/* <input type="text" name="query" id="query" /> */}
@@ -142,25 +166,43 @@ function Contact() {
       </section>
       <section className="mapSec sectionPadding">
         <div className="container" id="mapCont">
-          <h2>Find us on Google Map</h2>
-          <p>
+          <motion.h2
+            initial={{ opacity: 0, y: -100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 1,
+            }}
+          >
+            Find us on Google Map
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: -100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 1,
+            }}
+          >
             Discover our location effortlessly on Google Maps – your gateway to
             our doorstep. <br /> Navigate with ease and join us on the map for a
             seamless experience.
-          </p>
-          <iframe
+          </motion.p>
+          <motion.iframe
+            initial={{ opacity: 0, x: 300 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{
+              duration: 1,
+            }}
             className="outMap"
             src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3748.406429425029!2d73.8036145!3d20.0334121!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bddea323f2ad1ef%3A0xba3a9388a398fa65!2sVeteran%20Media%20Solutions%20LLP!5e0!3m2!1sen!2sin!4v1700457867538!5m2!1sen!2sin"
             style={{ border: 0 }}
             allowFullScreen=""
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
+          ></motion.iframe>
         </div>
       </section>
       <section className="faqSec">
-      <FAQSec></FAQSec>
-
+        <FAQSec></FAQSec>
       </section>
     </React.Fragment>
   );

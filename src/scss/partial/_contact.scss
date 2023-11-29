@@ -88,7 +88,6 @@
 
     @include extraLargeDevice {
       right: 15%;
-     
     }
 
     @include largeDevice {
@@ -213,6 +212,8 @@
         outline: none;
         border-bottom: 2px solid $black;
         background: transparent;
+        height: auto;
+        overflow-y: auto; 
 
         @include mediumDevice {
           margin-bottom: 1rem;
@@ -332,7 +333,6 @@
             right: 0;
             font-size: 0.9rem;
             padding: 1rem 1.5rem !important;
-
           }
           @include mobile {
             position: relative;

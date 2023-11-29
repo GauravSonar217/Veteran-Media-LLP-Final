@@ -1,29 +1,27 @@
 import React, { useState, useEffect } from "react";
+import { motion, useScroll } from "framer-motion";
 import careerImg from "../media/png/Group 96.png";
 import bar from "../media/png/career.png";
 import Feedback from "./Feedback";
 import { HashLink } from "react-router-hash-link";
 
-  function CareerPage() {
-    const [toggle, setToggle] = useState(false);
+function CareerPage() {
+  const [toggle, setToggle] = useState(false);
 
-    function checkToggle() {
-      const checker = document.querySelector(".checker");
-      const sliderbtn = document.querySelector(".slider-button");
-      checker.addEventListener("click", function () {
-        if (toggle) {
-          checker.classList.remove("active");
-          sliderbtn.innerHTML = "x";
-          setToggle(!toggle);
-          console.log("unchecked")
-        } else {
-          checker.classList.add("active");
-          sliderbtn.innerHTML = "&#10003;";
-          setToggle(!toggle);
-          console.log("checked")
-        }
-      });
+  function checkToggle() {
+    const checker = document.querySelector(".checker");
+    const sliderbtn = document.querySelector(".slider-button");
+
+    if (toggle) {
+      checker.classList.remove("active");
+      sliderbtn.innerHTML = "x";
+      setToggle(!toggle);
+    } else {
+      checker.classList.add("active");
+      sliderbtn.innerHTML = "&#10003;";
+      setToggle(!toggle);
     }
+  }
 
   return (
     <React.Fragment>
@@ -31,12 +29,26 @@ import { HashLink } from "react-router-hash-link";
         <section className="careerHead">
           <div className="container" id="careerHead">
             <div className="careerText">
-              <h1>
+              <motion.h1
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 1,
+                }}
+                initial={{ opacity: 0, y: -100 }}
+              >
                 Join Our Dynamic Team <br /> At Veteran Media
-              </h1>
+              </motion.h1>
             </div>
             <div className="careerImg">
-              <img src={careerImg} alt="vector image" />
+              <motion.img
+                src={careerImg}
+                alt="vector image"
+                animate={{ opacity: 1, x: 0 }}
+                transition={{
+                  duration: 1,
+                }}
+                initial={{ opacity: 0, x: 300 }}
+              />
             </div>
             <div className="searchBar">
               <input type="text" placeholder="Search..." />
@@ -44,40 +56,72 @@ import { HashLink } from "react-router-hash-link";
             </div>
           </div>
         </section>
-        <p>
+        <motion.p
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 1,
+          }}
+          initial={{ opacity: 0, y: 200 }}
+        >
           Are you passionate about creativity, innovation, and making a
           significant impact in advertising and branding? At Veteran Media
           Solutions LLP, We're looking for dynamic individuals to join our
           dedicated team of professionals.
-        </p>
+        </motion.p>
         <img id="bar" src={bar} alt="bar" />
       </section>
 
       <section className="careerSec sectionPadding">
         <div className="container" id="careerSec">
-          <h3>Apply Now to be part of the Veteran Team</h3>
-          <p>
+          <motion.h3
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 1,
+            }}
+            initial={{ opacity: 0, y: -200 }}
+          >
+            Apply Now to be part of the Veteran Team
+          </motion.h3>
+          <motion.p
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 1,
+            }}
+            initial={{ opacity: 0, y: -200 }}
+          >
             As a rapidly growing agency with a proven track record, we offer a
             collaborative and inspiring work environment where your skills and
             ideas can thrive. We are giving you the moment to explore exciting
             career opportunities with us and be part of a journey that shapes
             our clients and our team's success stories.
-          </p>
+          </motion.p>
           <div className="careerCont">
             <div className="feedbackCont">
-              <div className="feedSliderCont">
+              <motion.div className="feedSliderCont"
+               initial={{ translateX: -300 }}
+               whileInView={{ translateX: 0 }}
+               transition={{
+                 duration: 1,
+               }}
+              >
                 <Feedback></Feedback>
-              </div>
-              <div class="container_left">
+              </motion.div>
+              {/* <div class="container_left">
                 <h1>Read what our customers love about us</h1>
                 <p>
                   Over 100 companies from diverse sectors consult us to enhance
                   the user experience of their products and services.
                 </p>
                 <button>Read our success stories</button>
-              </div>
+              </div> */}
             </div>
-            <div className="contactCont">
+            <motion.div className="contactCont"
+             initial={{ translateX: 300 }}
+             whileInView={{ translateX: 0 }}
+             transition={{
+               duration: 1,
+             }}
+            >
               <div className="inputCont">
                 <input type="text" name="fullname" placeholder="Full Name*" />
                 <input type="email" name="email" placeholder="Email*" />
@@ -108,7 +152,7 @@ import { HashLink } from "react-router-hash-link";
                 </div>
                 <button id="applybtn">Apply</button>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>

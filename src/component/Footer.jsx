@@ -1,4 +1,5 @@
 import React from "react";
+import { motion, useScroll } from "framer-motion";
 import { HashLink } from "react-router-hash-link";
 
 function Footer() {
@@ -9,27 +10,51 @@ function Footer() {
           <div className="container" id="footerCont">
             <div className="innerCont" id="footerTextBox">
               <div className="addressCont">
-                <div className="addressBox">
+                <motion.div className="addressBox"
+                 initial={{ opacity: 0, y: -100 }}
+                 whileInView={{opacity: 1,  y: 0 }}
+                 transition={{
+                   duration: 1,
+                 }}
+                >
                   <h3>Our Address</h3>
                   <p>
                     Flat No 4, Yogiraj CHS, Dindori Rd, RTO Corner, Gorksha
                     Nagar, Nashik, Maharashtra 422004
                   </p>
-                </div>
-                <div className="addressBox">
+                </motion.div>
+                <motion.div className="addressBox"
+                 initial={{ opacity: 0, y: -100 }}
+                 whileInView={{opacity: 1,  y: 0 }}
+                 transition={{
+                   duration: 1,
+                 }}
+                >
                   <h3>Inquires</h3>
                   <p>
                     <HashLink to="mailto: info@veteranmedias.com">
                       info@veteranmedias.com
                     </HashLink>
                   </p>
-                </div>
-                <h2>
+                </motion.div>
+                {/* <motion.h2
+                 initial={{ opacity: 0, y: -100 }}
+                 whileInView={{opacity: 1,  y: 0 }}
+                 transition={{
+                   duration: 1,
+                 }}
+                >
                   Website Visitors: <span id="count"> 10</span>
-                </h2>
+                </motion.h2> */}
               </div>
               <div className="linkCont">
-                <div className="linkBox">
+                <motion.div className="linkBox"
+                 initial={{ opacity: 0, y: -100 }}
+                 whileInView={{opacity: 1,  y: 0 }}
+                 transition={{
+                   duration: 1,
+                 }}
+                >
                   <h3>Main Pages</h3>
                   <ul className="flinkCont">
                     <li>
@@ -46,8 +71,14 @@ function Footer() {
                       <HashLink to="/contact/#ContactSec">Contact Us</HashLink>
                     </li>
                   </ul>
-                </div>
-                <div className="linkBox">
+                </motion.div>
+                <motion.div className="linkBox"
+                 initial={{ opacity: 0, y: -100 }}
+                 whileInView={{opacity: 1,  y: 0 }}
+                 transition={{
+                   duration: 1,
+                 }}
+                >
                   <h3>Services</h3>
                   <ul className="flinkCont">
                     <li>
@@ -63,8 +94,14 @@ function Footer() {
                       <HashLink>Web Design and Development</HashLink>
                     </li>
                   </ul>
-                </div>
-                <div className="linkBox">
+                </motion.div>
+                <motion.div className="linkBox"
+                 initial={{ opacity: 0, y: -100 }}
+                 whileInView={{opacity: 1,  y: 0 }}
+                 transition={{
+                   duration: 1,
+                 }}
+                >
                   <ul className="flinkCont">
                     <li>
                       <HashLink>Privacy Policy</HashLink>
@@ -79,7 +116,7 @@ function Footer() {
                       <HashLink>Client Area</HashLink>
                     </li>
                   </ul>
-                </div>
+                </motion.div>
               </div>
             </div>
           </div>

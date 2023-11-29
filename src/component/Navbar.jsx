@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import call from "../media/svg/phone.svg";
 import mail from "../media/svg/mail.svg";
 import link from "../media/svg/link.svg";
@@ -16,7 +17,8 @@ import { HashLink } from "react-router-hash-link";
 function Navbar() {
   const [selectedService, setSelectedService] = useState(serviceData[0]);
   const [showMenu, setShowMenu] = useState(false);
-  console.log(selectedService);
+  const [isVisible, setIsVisible] = useState(false);
+  const isMobile = window.innerWidth <= 575;
 
   const handleClick = (service) => {
     setSelectedService(service);
@@ -25,11 +27,13 @@ function Navbar() {
     setSelectedService(serviceData[0]);
   }, []);
 
-  const closeFollow = () => {
-    document.getElementById("followCont").style.display = "none";
+  const toggleDiv = () => {
+    setIsVisible(!isVisible);
+    return false;
   };
-  const showfollow = () => {
-    document.getElementById("followCont").style.display = "block";
+
+  const closeFollow = () => {
+    setIsVisible(!isVisible);
   };
 
   function menuToggler() {
@@ -37,23 +41,21 @@ function Navbar() {
     let linkbar1 = document.querySelector(".firstLinkCont");
     let linkbar2 = document.querySelector(".secondLinkCont");
 
-    menubar.addEventListener("click", function () {
-      if (!showMenu) {
-        linkbar1.style.display = "flex";
-        linkbar2.style.display = "flex";
-        setShowMenu(true);
-      } else {
-        linkbar1.style.display = "none";
-        linkbar2.style.display = "none";
-        setShowMenu(false);
-      }
-    });
+    if (!showMenu) {
+      linkbar1.style.display = "flex";
+      linkbar2.style.display = "flex";
+      setShowMenu(true);
+    } else {
+      linkbar1.style.display = "none";
+      linkbar2.style.display = "none";
+      setShowMenu(false);
+    }
   }
 
   return (
     <React.Fragment>
       <div className="wrapper">
-        <div id="followCont">
+        <div id="followCont" className={`${isVisible ? "visible" : ""}`}>
           <h2>
             Follow us:
             <img
@@ -91,7 +93,7 @@ function Navbar() {
                   Home
                 </HashLink>
               </li>
-              <li className="nav-item" >
+              <li className="nav-item">
                 <HashLink className="nav-link" to="/about/#aboutSec">
                   About us
                 </HashLink>
@@ -102,7 +104,14 @@ function Navbar() {
                 </HashLink>
               </li>
               <li className="nav-item serviceLink">
-                <HashLink to="/" className="nav-link">Services</HashLink>
+                {isMobile ? (
+                  <HashLink to="/service/#serviceSec" className="nav-link">
+                    Services
+                  </HashLink>
+                ) : (
+                  <HashLink className="nav-link">Services</HashLink>
+                )}
+
                 <div className="serviceDropdown">
                   <div className="serviceCont">
                     <div className="services">
@@ -121,9 +130,16 @@ function Navbar() {
                         {selectedService &&
                           selectedService.subServices.map(
                             (subService, index) => (
-                              <li key={index}>
+                              <motion.li
+                                initial={{ opacity: 0, translateY: -50 }}
+                                whileInView={{ opacity: 1, translateY: 0 }}
+                                transition={{
+                                  duration: 1,
+                                }}
+                                key={index}
+                              >
                                 <HashLink>{subService}</HashLink>
-                              </li>
+                              </motion.li>
                             )
                           )}
                       </ul>
@@ -149,7 +165,7 @@ function Navbar() {
                 </a>
               </li>
               <li className="links">
-                <HashLink to="/" onClick={showfollow} id="sociaLinks">
+                <HashLink to="#" onClick={toggleDiv} id="sociaLinks">
                   <img src={link} alt="links" />
                 </HashLink>
               </li>
