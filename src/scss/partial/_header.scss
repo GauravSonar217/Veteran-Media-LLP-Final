@@ -26,7 +26,6 @@ header {
   h1 {
     text-align: center;
     font-size: 6vw;
-    font-weight: 600;
     line-height: 100%;
     @include extraSmallDevice {
       font-size: 8.5vw !important;

@@ -1,46 +1,56 @@
-import React from "react";
+import React, { useState } from "react";
+import { motion, useScroll } from "framer-motion";
 import { HashLink } from "react-router-hash-link";
 
 function FAQSec() {
-  function faqToggler() {
-    document.querySelectorAll(".faq-card").forEach((card) => {
-      const question = card.querySelector(".question");
-      const answer = card.querySelector(".answer");
-      const icon = card.querySelector(".icon");
-      const toggle = card.querySelector(".toggle");
-      const h3 = card.querySelector("h3");
-      const p = card.querySelector("p");
+  const [showAns, setShowAns] = useState(false);
 
-      question.addEventListener("click", () => {
-        if (answer.style.display === "block") {
-          answer.style.display = "none";
-          icon.textContent = "+";
-          icon.style.color = "white";
-          card.style.backgroundColor = "white";
-          h3.style.color = "black";
-          p.style.color = "black";
-          toggle.style.backgroundColor = "black"; // Restore the default toggle color
-        } else {
-          answer.style.display = "block";
-          icon.textContent = "-";
-          icon.style.color = "#524FD5";
-          toggle.style.backgroundColor = "#fff"; // Change toggle background color to the specified color
-          card.style.backgroundColor = "black";
-          h3.style.color = "white";
-          p.style.color = "white";
-        }
-      });
-    });
+  function faqToggler(event) {
+    const question = event.currentTarget;
+    //   const answer = question.nextElementSibling;    
+    const parent = question.parentNode;
+    const icon = parent.querySelector(".icon");
+
+    setShowAns((prevShowAns) => !prevShowAns);
+    if (!showAns) {
+      // setShowAns(true);
+      parent.classList.add("activeAns");
+      icon.textContent = "-";
+
+    } else {
+      // setShowAns(false);
+      parent.classList.remove("activeAns");
+      icon.textContent = "+";
+    }
   }
+
   return (
     <React.Fragment>
       <section id="faq" className="sectionPadding">
         <div class="container" id="faqSection">
-          <h4>More Information</h4>
-          <h2>Frequently asked questions</h2>
+          <motion.h4
+           initial={{ opacity: 0, y: -100 }}
+           whileInView={{opacity: 1,  y: 0 }}
+           transition={{
+             duration: 1,
+           }}
+          >More Information</motion.h4>
+          <motion.h2
+           initial={{ opacity: 0, y: -100 }}
+           whileInView={{opacity: 1,  y: 0 }}
+           transition={{
+             duration: 1,
+           }}
+          >Frequently asked questions</motion.h2>
           <div class="row my-4" id="faqCont">
             <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
-              <div class="faq-card" id="faq-card-1">
+              <motion.div class="faq-card" id="faq-card-1"
+               initial={{ x: -200 }}
+               whileInView={{ x: 0 }}
+               transition={{
+                 duration: 1,
+               }}
+              >
                 <div onClick={faqToggler} class="question">
                   <h3>What services does Veteran Media offer?</h3>
                   <div class="toggle">
@@ -56,10 +66,16 @@ function FAQSec() {
                     <HashLink to="/#serviceSec">Check Services</HashLink>
                   </p>
                 </div>
-              </div>
+              </motion.div>
             </div>
             <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
-              <div class="faq-card" id="faq-card-2">
+              <motion.div class="faq-card" id="faq-card-2"
+                initial={{ x: 200 }}
+                whileInView={{ x: 0 }}
+                transition={{
+                  duration: 1,
+                }}
+              >
                 <div onClick={faqToggler} class="question">
                   <h3>How can I get started with Veteran Media?</h3>
                   <div class="toggle">
@@ -73,10 +89,16 @@ function FAQSec() {
                     Our team is ready to guide you through every step.
                   </p>
                 </div>
-              </div>
+              </motion.div>
             </div>
             <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
-              <div class="faq-card" id="faq-card-3">
+              <motion.div class="faq-card" id="faq-card-3"
+              initial={{ x: -200 }}
+              whileInView={{ x: 0 }}
+              transition={{
+                duration: 1,
+              }}
+              >
                 <div onClick={faqToggler} class="question">
                   <h3>
                     What sets Veteran Media apart from other agencies in the
@@ -128,10 +150,16 @@ function FAQSec() {
                     apart in the competitive landscape.
                   </p>
                 </div>
-              </div>
+              </motion.div>
             </div>
             <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
-              <div class="faq-card" id="faq-card-4">
+              <motion.div class="faq-card" id="faq-card-4"
+              initial={{ x: 200 }}
+              whileInView={{ x: 0 }}
+              transition={{
+                duration: 1,
+              }}
+              >
                 <div onClick={faqToggler} class="question">
                   <h3>
                     Is Veteran suitable for small Businesses/ Startups or larger
@@ -150,10 +178,16 @@ function FAQSec() {
                     looking to expand, we have the expertise to assist you.
                   </p>
                 </div>
-              </div>
+              </motion.div>
             </div>
             <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
-              <div class="faq-card" id="faq-card-5">
+              <motion.div class="faq-card" id="faq-card-5"
+               initial={{ x: -200 }}
+               whileInView={{ x: 0 }}
+               transition={{
+                 duration: 1,
+               }}
+              >
                 <div onClick={faqToggler} class="question">
                   <h3>What is the typical timeline for project completion?</h3>
                   <div class="toggle">
@@ -169,10 +203,16 @@ function FAQSec() {
                     delivery without compromising on quality.
                   </p>
                 </div>
-              </div>
+              </motion.div>
             </div>
             <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
-              <div class="faq-card" id="faq-card-6">
+              <motion.div class="faq-card" id="faq-card-6"
+               initial={{ x: 200 }}
+               whileInView={{ x: 0 }}
+               transition={{
+                 duration: 1,
+               }}
+              >
                 <div onClick={faqToggler} class="question">
                   <h3>
                     How does Veteran Media LLP ensure client satisfaction?
@@ -191,7 +231,7 @@ function FAQSec() {
                     partnership.
                   </p>
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>

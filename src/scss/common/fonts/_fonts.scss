@@ -1,15 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text&display=swap');
 
 
-p,h1,h2,h3,h4,h5,h6,span,a{
+p,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+a {
     font-family: 'DM Sans', sans-serif;
 }
 
-P,span{
+h1 {
+    font-family: 'DM Serif Text', serif !important;
+}
+
+P,
+span {
     font-size: $desc;
     color: $desc;
 }
 
-h1,h2,h3,h4,h5,h6{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     color: $black;
 }

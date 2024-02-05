@@ -2,35 +2,3 @@
   padding: 1.2rem 2rem !important;
   border-radius: 18px !important;
 }
-
-
-@media (max-width: 575.98px) {
-  header {
-    p {
-      font-size: 1rem;
-      width: 100%;
-      margin-bottom: 4rem;
-    }
-
-    h1 {
-      font-size: 9.5vw !important;
-    }
-  }
-
-  .counterCont #clientCont #innercont .projectBox {
-    border-radius: 12px;
-  }
-
-  .serviceSec #serviceSec #innercont {
-    grid-template-columns: repeat(1, 1fr);
-    grid-gap: 4rem;
-  }
-
-  .wrapper nav #navbar .menubar img {
-    width: 65%;
-  }
-
-  .wrapper nav #navbar .navbar-brand {
-    width: 150px;
-  }
-}

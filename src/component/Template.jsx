@@ -1,9 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
+import { motion, useScroll } from "framer-motion";
 import { HashLink } from "react-router-hash-link";
 import Header from "./Header";
 import playbtn from "../media/png/play.png";
 import promovideo from "../media/production_id_5207408 (1080p).mp4";
 import serviceImg from "../media/png/services.png";
+import chatbox from "../media/png/chatbox.png";
+import closechat from "../media/svg/closechat.svg";
 import workImg1 from "../media/jpg/work1.jpg";
 import workImg2 from "../media/jpg/work2.jpg";
 import workImg3 from "../media/jpg/work3.jpg";
@@ -103,7 +106,6 @@ function Template() {
       const cursor = document.getElementById("cursor");
       const imgCont = document.getElementById("imgCont");
       const imgContRect = imgCont.getBoundingClientRect();
-
       const mouseX = dets.clientX - imgContRect.left;
       const mouseY = dets.clientY - imgContRect.top;
 
@@ -117,8 +119,7 @@ function Template() {
         cursor.style.top = mouseY + "px";
       }
     }
-    console.log("moving");
-    console.log("moving inside work container");
+
     const imgCont = document.getElementById("imgCont");
     imgCont.addEventListener("mousemove", moveCursor);
     return () => {
@@ -131,13 +132,6 @@ function Template() {
     const videoSection = document.getElementById("videoSection");
     const videoCont = document.getElementById("videoOuter");
     const playButton = document.querySelector(".play-button");
-
-    // // Check if the device width is below 425px (mobile device)
-    // if (window.innerWidth <= 425) {
-    //   videoCont.style.height = "30vh"; // Set height to 30vh for mobile devices
-    // } else {
-    //   videoCont.style.height = "100vh"; // Set height to 100vh for other devices
-    // }
 
     // Check if the device width is below 425px (mobile device)
     if (window.innerWidth <= 425) {
@@ -160,25 +154,41 @@ function Template() {
     let mapShadow = document.getElementById("mapShadow");
     let contactBox = document.querySelector(".contactText");
     let head = document.querySelector("#head");
-    console.log(contactBox);
-    console.log(mapShow);
-    console.log(mapShadow);
-    mapShow.addEventListener("click", function () {
-      if (!showMap) {
-        mapShadow.style.visibility = "hidden";
-        contactBox.style.backgroundColor = "black";
-        setShowMap(true);
-      } else {
-        mapShadow.style.visibility = "visible";
-        contactBox.style.backgroundColor = "transparent";
-        setShowMap(false);
-      }
-    });
+
+    if (!showMap) {
+      mapShadow.style.visibility = "hidden";
+      contactBox.style.backgroundColor = "black";
+      setShowMap(true);
+    } else {
+      mapShadow.style.visibility = "visible";
+      contactBox.style.backgroundColor = "transparent";
+      setShowMap(false);
+    }
   }
 
   return (
     <React.Fragment>
       <Header></Header>
+      <div className="chatBoxIcon">
+        <img src={chatbox} alt="" />
+      </div>
+      <div id="chatBox">
+        <div className="chatHead">
+          <h5>Introduce yourself and chat!</h5>
+          <img src={closechat} alt="" />
+        </div>
+        <div className="chatInputCont">
+          <input type="text" placeholder="Your name*" />
+          <input type="email" placeholder="Your email*" />
+          <input type="phone" placeholder="Your phone*" />
+          <textarea
+            name="message"
+            id="message"
+            placeholder="Your message*"
+          ></textarea>
+          <button className="chatBtn">Start Chat</button>
+        </div>
+      </div>
       <section className="videoCont">
         <div id="videoOuter">
           <img
@@ -198,7 +208,15 @@ function Template() {
       </section>
       <section className="counterCont sectionPadding" ref={targetRef}>
         <div className="container" id="clientCont">
-          <div className="innerCont" id="innercont">
+          <motion.div
+            className="innerCont"
+            id="innercont"
+            initial={{ opacity: 0, translateY: 200 }}
+            whileInView={{ opacity: 1, translateY: 0 }}
+            transition={{
+              duration: 0.8,
+            }}
+          >
             <div className="projectBox">
               <h2 id="one"></h2>
               <h3>Happy clients</h3>
@@ -215,57 +233,155 @@ function Template() {
               <h2 id="four"></h2>
               <h3>Years experience</h3>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
       <section className="serviceSec sectionPadding">
         <div className="container" id="serviceSec">
           <div className="innerCont" id="innercont">
-            <div className="serviceImgCont">
+            <motion.div
+             initial={{ translateX: 300 }}
+             whileInView={{ translateX: 0 }}
+             transition={{
+               duration: 1,
+             }}
+              className="serviceImgCont"
+            >
               <img src={serviceImg} alt="service section image" />
-            </div>
+            </motion.div>
             <div className="serviceTextCont">
               <div className="serve">
-                <h2>Our Services</h2>
-                <h3 className="ourServiceList">
-                  <a href="#">Branding</a>
-                </h3>
-                <h3 className="ourServiceList">
-                  <a href="#">Space Buying</a>
-                </h3>
-                <h3 className="ourServiceList">
-                  <a href="#">Marketing Plans</a>
-                </h3>
-                <h3 className="ourServiceList">
-                  <a href="#">On-Air Promotions</a>
-                </h3>
-                <h3 className="ourServiceList">
-                  <a href="#">Merchandising</a>
-                </h3>
-                <h3 className="ourServiceList">
-                  <a href="#">Digital Printing</a>
-                </h3>
+                <motion.h2
+                  initial={{ opacity: 0, translateY: -50 }}
+                  whileInView={{ opacity: 1, translateY: 0 }}
+                  transition={{
+                    duration: 0.8,
+                  }}
+                >
+                  Our Services
+                </motion.h2>
+                <motion.h3
+                  className="ourServiceList"
+                  initial={{ opacity: 0, translateY: -50 }}
+                  whileInView={{ opacity: 1, translateY: 0 }}
+                  transition={{
+                    duration: 1,
+                  }}
+                >
+                  <HashLink>Branding</HashLink>
+                </motion.h3>
+                <motion.h3
+                  className="ourServiceList"
+                  initial={{ opacity: 0, translateY: -50 }}
+                  whileInView={{ opacity: 1, translateY: 0 }}
+                  transition={{
+                    duration: 1,
+                  }}
+                >
+                  <HashLink>Space Buying</HashLink>
+                </motion.h3>
+                <motion.h3
+                  className="ourServiceList"
+                  initial={{ opacity: 0, translateY: -50 }}
+                  whileInView={{ opacity: 1, translateY: 0 }}
+                  transition={{
+                    duration: 1,
+                  }}
+                >
+                  <HashLink>Marketing Plans</HashLink>
+                </motion.h3>
+                <motion.h3
+                  className="ourServiceList"
+                  initial={{ opacity: 0, translateY: -50 }}
+                  whileInView={{ opacity: 1, translateY: 0 }}
+                  transition={{
+                    duration: 1,
+                  }}
+                >
+                  <HashLink>On-Air Promotions</HashLink>
+                </motion.h3>
+                <motion.h3
+                  className="ourServiceList"
+                  initial={{ opacity: 0, translateY: -50 }}
+                  whileInView={{ opacity: 1, translateY: 0 }}
+                  transition={{
+                    duration: 1,
+                  }}
+                >
+                  <HashLink>Merchandising</HashLink>
+                </motion.h3>
+                <motion.h3
+                  className="ourServiceList"
+                  initial={{ opacity: 0, translateY: -50 }}
+                  whileInView={{ opacity: 1, translateY: 0 }}
+                  transition={{
+                    duration: 1,
+                  }}
+                >
+                  <HashLink>Digital Printing</HashLink>
+                </motion.h3>
               </div>
               <div className="serve">
                 <h2>f</h2>
-                <h3 className="ourServiceList">
-                  <a href="#">Marketing Push</a>
-                </h3>
-                <h3 className="ourServiceList">
-                  <a href="#">Indoor & Outdoor Branding</a>
-                </h3>
-                <h3 className="ourServiceList">
-                  <a href="#">Finishing & Packaging</a>
-                </h3>
-                <h3 className="ourServiceList">
-                  <a href="#">Web Design</a>
-                </h3>
-                <h3 className="ourServiceList">
-                  <a href="#">Offset Printing</a>
-                </h3>
-                <h3 className="ourServiceList">
-                  <a href="#">Web Development</a>
-                </h3>
+                <motion.h3
+                  initial={{ opacity: 0, translateY: -50 }}
+                  whileInView={{ opacity: 1, translateY: 0 }}
+                  transition={{
+                    duration: 1,
+                  }}
+                >
+                  <HashLink>Marketing Push</HashLink>
+                </motion.h3>
+                <motion.h3
+                  className="ourServiceList"
+                  initial={{ opacity: 0, translateY: -50 }}
+                  whileInView={{ opacity: 1, translateY: 0 }}
+                  transition={{
+                    duration: 1,
+                  }}
+                >
+                  <HashLink>Indoor & Outdoor Branding</HashLink>
+                </motion.h3>
+                <motion.h3
+                  className="ourServiceList"
+                  initial={{ opacity: 0, translateY: -50 }}
+                  whileInView={{ opacity: 1, translateY: 0 }}
+                  transition={{
+                    duration: 1,
+                  }}
+                >
+                  <HashLink>Finishing & Packaging</HashLink>
+                </motion.h3>
+                <motion.h3
+                  className="ourServiceList"
+                  initial={{ opacity: 0, translateY: -50 }}
+                  whileInView={{ opacity: 1, translateY: 0 }}
+                  transition={{
+                    duration: 1,
+                  }}
+                >
+                  <HashLink>Web Design</HashLink>
+                </motion.h3>
+                <motion.h3
+                  className="ourServiceList"
+                  initial={{ opacity: 0, translateY: -50 }}
+                  whileInView={{ opacity: 1, translateY: 0 }}
+                  transition={{
+                    duration: 1,
+                  }}
+                >
+                  <HashLink>Offset Printing</HashLink>
+                </motion.h3>
+                <motion.h3
+                  className="ourServiceList"
+                  initial={{ opacity: 0, translateY: -50 }}
+                  whileInView={{ opacity: 1, translateY: 0 }}
+                  transition={{
+                    duration: 1,
+                  }}
+                >
+                  <HashLink>Web Development</HashLink>
+                </motion.h3>
               </div>
             </div>
           </div>
@@ -276,7 +392,14 @@ function Template() {
           <div className="innerCont" id="ourWork">
             <h2>Our Work</h2>
             <div className="workCont">
-              <div className="workBox">
+              <motion.div
+                initial={{ translateX: -300 }}
+                whileInView={{ translateX: 0 }}
+                transition={{
+                  duration: 1,
+                }}
+                className="workBox"
+              >
                 <div className="workImgBox">
                   <img src={workImg1} alt="workdone image" />
                 </div>
@@ -286,8 +409,15 @@ function Template() {
                     <HashLink>Read More</HashLink>
                   </h5>
                 </div>
-              </div>
-              <div className="workBox">
+              </motion.div>
+              <motion.div
+                initial={{ translateX: 300 }}
+                whileInView={{ translateX: 0 }}
+                transition={{
+                  duration: 1,
+                }}
+                className="workBox"
+              >
                 <div className="workImgBox">
                   <img src={workImg2} alt="workdone image" />
                 </div>
@@ -297,8 +427,15 @@ function Template() {
                     <HashLink>Read More</HashLink>
                   </h5>
                 </div>
-              </div>
-              <div className="workBox">
+              </motion.div>
+              <motion.div
+                initial={{ translateX: -300 }}
+                whileInView={{ translateX: 0 }}
+                transition={{
+                  duration: 1,
+                }}
+                className="workBox"
+              >
                 <div className="workImgBox">
                   <img src={workImg4} alt="workdone image" />
                 </div>
@@ -308,8 +445,15 @@ function Template() {
                     <HashLink>Read More</HashLink>
                   </h5>
                 </div>
-              </div>
-              <div className="workBox">
+              </motion.div>
+              <motion.div
+                initial={{ translateX: 300 }}
+                whileInView={{ translateX: 0 }}
+                transition={{
+                  duration: 1,
+                }}
+                className="workBox"
+              >
                 <div className="workImgBox">
                   <img src={workImg3} alt="workdone image" />
                 </div>
@@ -319,10 +463,16 @@ function Template() {
                     <HashLink>Read More</HashLink>
                   </h5>
                 </div>
-              </div>
+              </motion.div>
             </div>
             <HashLink to="/portfolio/#projectSec">
-              <button id="workBtn">See Our Work</button>
+              <motion.button id="workBtn"
+               initial={{ y: 200 }}
+               whileInView={{ y: 0 }}
+               transition={{
+                 duration: 1,
+               }}
+              >See Our Work</motion.button>
             </HashLink>
           </div>
         </div>
@@ -330,17 +480,35 @@ function Template() {
       <section className="progressSec sectionPadding">
         <div className="container" id="progressSec">
           <div className="innerCont" id="innerProgressSec">
-            <h3>Our work process</h3>
-            <h2>
+            <motion.h3
+             initial={{ opacity: 0, y: -100 }}
+             whileInView={{opacity: 1,  y: 0 }}
+             transition={{
+               duration: 1,
+             }}
+            >Our work process</motion.h3>
+            <motion.h2
+            initial={{ opacity: 0, y: -100 }}
+            whileInView={{opacity: 1,  y: 0 }}
+            transition={{
+              duration: 1,
+            }}
+            >
               Mastering Brilliance: A Seamless Journey through Veteran Media
               Solutions LLP's Success Blueprint.
-            </h2>
-            <p>
+            </motion.h2>
+            <motion.p
+             initial={{ opacity: 0, y: -100 }}
+             whileInView={{opacity: 1,  y: 0 }}
+             transition={{
+               duration: 1,
+             }}
+            >
               Behind every successful brand is a meticulously crafted process
               that transforms ideas into impactful results. At Veteran Media.
               our work process is more than a series of steps; it's a journey of
               creativity, strategy, and dedication. Check our success steps out!
-            </p>
+            </motion.p>
           </div>
           <div className="progressCont">
             <div className="progressBox">
@@ -399,19 +567,47 @@ function Template() {
       <section className="aboutSec sectionPadding">
         <div className="container" id="aboutSec">
           <div className="innerCont" id="aboutInner">
-            <div className="aboutImgCont" id="imgCont">
+            <motion.div
+              initial={{ opacity: 0, translateX: -300 }}
+              whileInView={{ opacity: 1, translateX: 0 }}
+              transition={{
+                duration: 1,
+              }}
+              className="aboutImgCont"
+              id="imgCont"
+            >
               <img src={aboutImg} alt="about section image" />
               <div id="cursor">
                 <HashLink>Read More</HashLink>
               </div>
-            </div>
+            </motion.div>
             <div className="aboutTextCont">
-              <h3>About us</h3>
-              <h2>
+              <motion.h3
+                initial={{ opacity: 0, translateY: -80 }}
+                whileInView={{ opacity: 1, translateY: 0 }}
+                transition={{
+                  duration: 0.8,
+                }}
+              >
+                About us
+              </motion.h3>
+              <motion.h2
+                initial={{ opacity: 0, translateY: -80 }}
+                whileInView={{ opacity: 1, translateY: 0 }}
+                transition={{
+                  duration: 0.8,
+                }}
+              >
                 Crafting Stories, Building Brands, Meet Veteran Media Solutions
                 LLP
-              </h2>
-              <p>
+              </motion.h2>
+              <motion.p
+                initial={{ opacity: 0, translateY: -80 }}
+                whileInView={{ opacity: 1, translateY: 0 }}
+                transition={{
+                  duration: 1,
+                }}
+              >
                 You need to dive into the heart of Veteran Media Solutions,
                 where the journey of creativity and innovation unfolds. With
                 years of expertise, we've navigated the ever-evolving landscape
@@ -419,13 +615,19 @@ function Template() {
                 success stories. Our hardworking group of professionals is more
                 than just a job; we're a group of visionaries, planners, and
                 creative thinkers who will take your brand to new heights.
-              </p>
+              </motion.p>
             </div>
           </div>
         </div>
       </section>
       <section className="partnerSec sectionPadding container">
-        <h2>Our Major Clients</h2>
+        <motion.h2
+          initial={{ opacity: 0, y: -100 }}
+          whileInView={{opacity: 1,  y: 0 }}
+          transition={{
+            duration: 1,
+          }}
+        >Our Major Clients</motion.h2>
         <div class="logo-slider">
           <div class="logo-slide-track">
             <div class="slide">
@@ -512,7 +714,14 @@ function Template() {
               <h5>View All</h5>
             </div>
             <div className="blogBoxCont">
-              <div className="blogBox">
+              <motion.div
+                initial={{ translateX: -200 }}
+                whileInView={{ translateX: 0 }}
+                transition={{
+                  duration: 1,
+                }}
+                className="blogBox"
+              >
                 <div className="blogImgCont">
                   <img src={blog1} alt="blo1" />
                 </div>
@@ -522,8 +731,15 @@ function Template() {
                   </h3>
                   <h5>April 27, 2023</h5>
                 </div>
-              </div>
-              <div className="blogBox">
+              </motion.div>
+              <motion.div
+                initial={{ x: 200 }}
+                whileInView={{ x: 0 }}
+                transition={{
+                  duration: 1,
+                }}
+                className="blogBox"
+              >
                 <div className="blogImgCont">
                   <img src={blog2} alt="blo2" />
                 </div>
@@ -533,7 +749,7 @@ function Template() {
                   </h3>
                   <h5>May 10, 2023</h5>
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>
@@ -563,7 +779,14 @@ function Template() {
             Click here to adjust google map <img src={arrow} alt="arrow" />
           </p>
         </h3>
-        <div className="contactForm">
+        <motion.div
+          initial={{ translateX: 400 }}
+          whileInView={{ translateX: 0 }}
+          transition={{
+            duration: 1,
+          }}
+          className="contactForm"
+        >
           <h2>Enquiry Form</h2>
           <form>
             <div>
@@ -579,22 +802,22 @@ function Template() {
               <input type="tel" name="contact" id="contact" />
             </div>
             <div>
-              <select id="">
-                <option value="" disabled>
+              <select size="">
+                <option value="" selected disabled>
                   What are you looking for*
                 </option>
-                <option value=""> Branding</option>
-                <option value=""> Marketing Push</option>
-                <option value=""> Space Buying</option>
-                <option value=""> Indoor & Outdoor Branding</option>
-                <option value=""> Marketing Plans</option>
-                <option value=""> Finishing & Packaging</option>
-                <option value=""> On-Air Promotions</option>
-                <option value=""> Web Design</option>
-                <option value=""> Merchandising</option>
-                <option value=""> Offset Printing</option>
-                <option value=""> Digital Printing</option>
-                <option value=""> Web Development</option>
+                <option value="1"> Branding</option>
+                <option value="2"> Marketing Push</option>
+                <option value="3"> Space Buying</option>
+                <option value="4"> Indoor & Outdoor Branding</option>
+                <option value="5"> Marketing Plans</option>
+                <option value="6"> Finishing & Packaging</option>
+                <option value="7"> On-Air Promotions</option>
+                <option value="8"> Web Design</option>
+                <option value="9"> Merchandising</option>
+                <option value="10"> Offset Printing</option>
+                <option value="11"> Digital Printing</option>
+                <option value="12"> Web Development</option>
               </select>
             </div>
             <div>
@@ -621,7 +844,7 @@ function Template() {
               </button>
             </div>
           </form>
-        </div>
+        </motion.div>
       </section>
     </React.Fragment>
   );
